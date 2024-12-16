@@ -1,0 +1,4 @@
+<button [ngClass]="classes" [disabled]="disabled">
+  <span *ngIf="loading">Please wait</span>
+  <ng-content *ngIf="!loading"></ng-content>
+</button>

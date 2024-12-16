@@ -1,0 +1,9 @@
+{
+  "include": [
+      "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/app/dynamic-routes.ts",
+    "src/app/app.routes.ts"
+  ]
+}

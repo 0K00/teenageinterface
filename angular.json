@@ -105,7 +105,7 @@
             "compodoc": true,
             "compodocArgs": [
               "-e",
-              "json",
+              "-p tsconfig.compodoc.json",
               "-d",
               "."
             ],
@@ -120,7 +120,7 @@
             "compodoc": true,
             "compodocArgs": [
               "-e",
-              "json",
+              "-p tsconfig.compodoc.json",
               "-d",
               "."
             ],
