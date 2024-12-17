@@ -9,10 +9,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HighlightLoader } from 'ngx-highlightjs';
 import { ButtonComponent } from "../../components/button/button.component";
+import { IconsComponent } from '../../components/icons/icons.component';
 
 @Component({
   selector: 'aHeader',
-  imports: [CommonModule, RouterModule, ButtonComponent],
+  imports: [CommonModule, RouterModule, ButtonComponent, IconsComponent],
   templateUrl: './header.shared.html'
 })
 export class HeaderShared implements OnInit {
@@ -28,15 +29,14 @@ export class HeaderShared implements OnInit {
   }
 
   toggle() {
+    this.mode = this.mode === "dark" ? "light" : "dark";
     const htmlElement = document.documentElement;
     const currentMode = htmlElement.getAttribute('data-mode');
 
     if (currentMode === 'dark') {
-      this.mode = "dark";
       this.onAppThemeChange("dark");
       htmlElement.setAttribute('data-mode', 'light');
     } else {
-      this.mode = "light";
       this.onAppThemeChange("light");
       htmlElement.setAttribute('data-mode', 'dark');
     }
@@ -44,5 +44,9 @@ export class HeaderShared implements OnInit {
 
   onAppThemeChange(appTheme: 'dark' | 'light') {
     this.hljsLoader.setTheme(appTheme === 'dark' ? 'assets/styles/github-dark-dimmed.css' : 'assets/styles/github.css');
+  }
+
+  toGithub(): void {
+    window.open("https://github.com/0K00/alpha", "_blank");
   }
 }

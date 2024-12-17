@@ -10,12 +10,21 @@
         </div>
       </div>
       <div class="flex gap-6 items-center">
-        <aButton type="link" [routerLink]="['documentation/installation']" >Docs</aButton>
-        <aButton type="link" [routerLink]="['components/button']" >Components</aButton>
-        <aButton type="link" [routerLink]="['components/button']" >Showcase</aButton>
+        <div class="flex items-center gap-6 mr-3">
+          <aButton type="link" [routerLink]="['documentation']" >Docs</aButton>
+          <aButton type="link" [routerLink]="['components']" >Components</aButton>
+          <aButton type="link" [routerLink]="['components/button']" >Showcase</aButton>
+        </div>
         <div class="w-px h-5 dark:bg-neutral-800 bg-neutral-200"></div>
-        <button>github</button>
-        <button (click)="toggle()">{{mode}}</button>
+        <div class="flex items-center gap-2">
+          <aButton type="ghost" (click)="toGithub()">
+            <aIcon icon="github" />
+          </aButton>
+          <aButton type="ghost" (click)="toggle()">
+            <aIcon *ngIf="mode === 'dark'" icon="sun-1" />
+            <aIcon *ngIf="mode === 'light'" icon="moon" />
+          </aButton>
+        </div>
       </div>
     </div>
   </div>

@@ -7,13 +7,40 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { HighlightAuto } from 'ngx-highlightjs';
+import { IconsComponent } from "../../components/icons/icons.component";
 
 @Component({
   selector: 'aCode',
-  imports: [CommonModule, HighlightAuto],
+  imports: [CommonModule, HighlightAuto, IconsComponent],
   templateUrl: './code.component.html'
 })
 export class CodeComponent  {
   @Input() code: string = "";
   @Input() language: string = "";
+
+  public isCopied: boolean = false;
+  private timeout: ReturnType<typeof setTimeout> | null = null;
+
+  public copy(): void {
+    if (!navigator.clipboard){
+      const textArea = document.createElement('textarea');
+      textArea.value = this.code;
+      document.body.appendChild(textArea);
+
+      textArea.select();
+      document.execCommand('copy');
+
+      document.body.removeChild(textArea);
+    } else {
+      navigator.clipboard.writeText(this.code);
+    }
+
+    if(this.timeout) clearTimeout(this.timeout);
+
+    this.isCopied = true;
+
+    this.timeout = setTimeout(() => {
+      this.isCopied = false;
+    }, 3000);
+  }
 }

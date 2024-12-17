@@ -95,10 +95,15 @@ function generateRoutes() {
     });
 
     const childrenRoutes = children
-      .map(route => `      { path: '${route.fileName}', component: ${route.component}, data: { title: '${route.title}', order: ${route.order} } }`)
-      .join(',\n');
+      .map(route => `{ path: '${route.fileName}', component: ${route.component}, data: { title: '${route.title}', order: ${route.order} } }`)
+      .join(',\n      ');
 
-    routeDefinitions.push(`  { path: '${parent}', component: ComponentsPage, children: [\n${childrenRoutes}\n  ] }`);
+    routeDefinitions.push(`
+  { path: '${parent}', component: ComponentsPage, children: [
+      { path: '', redirectTo: '${children[0].fileName}', pathMatch: 'full' },
+      ${childrenRoutes}
+    ]
+  }`);
   }
 
   const routesContent = `

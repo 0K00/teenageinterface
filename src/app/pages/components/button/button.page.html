@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-6 mb-8">
     <div class="flex flex-col gap-2">
       <div class="text-sm font-medium flex gap-2 mb-4">
-        <div class="cursor-pointer transition-colors duration-300 text-neutral-500 hover:text-neutral-900 hover:dark:text-neutral-100" >Components</div>
+        <div [routerLink]="['components']"  class="cursor-pointer transition-colors duration-300 text-neutral-500 hover:text-neutral-900 hover:dark:text-neutral-100" >Components</div>
         <div class="dark:text-neutral-800 text-neutral-300">/</div>
         <div class="dark:text-blue-600 text-blue-800">Button</div>
       </div>
@@ -359,6 +359,106 @@
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
             <aButton type="link">
               Link
+            </aButton>
+          </div>
+        </aTab>
+        <aTab tabTitle="Code">
+          <aCode [language]="'language-typescript'" [code]="linkCode" />
+        </aTab>
+      </aTabs>
+    </div>
+
+    <div id="icon" #icon>
+      <h4
+      (click)="scrollToElement(icon)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        Icon
+      </h4>
+      <aTabs>
+        <aTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+            <aButton type="outline">
+              <aIcon icon="gear-1" />
+            </aButton>
+          </div>
+        </aTab>
+        <aTab tabTitle="Code">
+          <aCode [language]="'language-typescript'" [code]="linkCode" />
+        </aTab>
+      </aTabs>
+    </div>
+
+    <div id="withIcon" #withIcon>
+      <h4
+      (click)="scrollToElement(withIcon)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        With Icon
+      </h4>
+      <aTabs>
+        <aTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+            <aButton type="default">
+              <aIcon icon="download" />
+              <div>Download files</div>
+            </aButton>
+          </div>
+        </aTab>
+        <aTab tabTitle="Code">
+          <aCode [language]="'language-typescript'" [code]="linkCode" />
+        </aTab>
+      </aTabs>
+    </div>
+
+    <div id="Loading" #Loading>
+      <h4
+      (click)="scrollToElement(Loading)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        Loading
+      </h4>
+      <aTabs>
+        <aTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+            <aButton type="default" [loading]="true">
+              <div>Log in</div>
             </aButton>
           </div>
         </aTab>

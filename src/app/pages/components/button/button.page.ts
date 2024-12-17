@@ -9,6 +9,8 @@ import TRowComponent from "../../../components/table/tRow/tRow.component";
 import THeaderComponent from "../../../components/table/tHeader/tHeader.component";
 import TCellComponent from "../../../components/table/tCell/tCell.component";
 import TBodyComponent from "../../../components/table/tBody/tBody.component";
+import { RouterModule } from "@angular/router";
+import { IconsComponent } from "../../../components/icons/icons.component";
 
 const pageInfo = {
   title: "Components / Button",
@@ -18,7 +20,7 @@ const pageInfo = {
 @Component({
   selector: "pages-button",
   standalone: true,
-  imports: [ButtonComponent, TabsComponent, TabComponent, CodeComponent, TableComponent, TRowComponent, THeaderComponent, TCellComponent, TBodyComponent],
+  imports: [RouterModule, ButtonComponent, TabsComponent, TabComponent, CodeComponent, TableComponent, TRowComponent, THeaderComponent, TCellComponent, TBodyComponent, IconsComponent],
   templateUrl: './button.page.html',
 })
 

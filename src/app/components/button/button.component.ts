@@ -6,10 +6,11 @@
  */
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IconsComponent } from '../icons/icons.component';
 
 @Component({
   selector: 'aButton',
-  imports: [CommonModule],
+  imports: [CommonModule, IconsComponent],
   templateUrl: './button.component.html'
 })
 export class ButtonComponent {
@@ -129,6 +130,7 @@ export class ButtonComponent {
   ];
 
   private commonClasses: string[] = [
+    "min-w-[42px]",
     "cursor-pointer",
     "transition",
     "duration-300",
@@ -158,6 +160,6 @@ export class ButtonComponent {
       link: this.link,
     };
 
-    return [...this.commonClasses, ...(classMap[this.type] || classMap.default), this.loading ? "pointer-events-none opacity-80" : ""];
+    return [...this.commonClasses, ...(classMap[this.type] || classMap.default), this.loading ? "pointer-events-none opacity-80 dark:opacity-70" : ""];
   }
 }

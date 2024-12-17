@@ -1,4 +1,5 @@
 <button [ngClass]="classes" [disabled]="disabled">
+  <aIcon *ngIf="loading" icon="loader" other="spinning" />
   <span *ngIf="loading">Please wait</span>
   <ng-content *ngIf="!loading"></ng-content>
 </button>
