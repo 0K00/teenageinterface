@@ -9,10 +9,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SideNavComponent } from '../../shared/layout/navigation/side-nav/side-nav.component';
+import { AnchorNavComponent } from '../../shared/layout/navigation/anchor-nav/anchor-nav.component';
 
 @Component({
   selector: 'componentsPage',
-  imports: [CommonModule, RouterOutlet, SideNavComponent],
+  imports: [CommonModule, RouterOutlet, SideNavComponent, AnchorNavComponent],
   templateUrl: './components.page.html'
 })
 export class ComponentsPage  {}

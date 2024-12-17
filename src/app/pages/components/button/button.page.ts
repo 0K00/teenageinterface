@@ -35,6 +35,7 @@ export default class ButtonPage {
   scrollToElement($element: HTMLElement): void {
     const currentUrl = window.location.href.split('#')[0];
     window.history.pushState(null, '', `${currentUrl}#${$element.id}`);
-    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    let position = $element.getBoundingClientRect();
+    window.scrollTo({left: position.left, top: position.top + window.scrollY - 80, behavior: "smooth"});
   }
 }

@@ -1,1 +1,22 @@
-<button (click)="toggle()">{{mode}}</button>
+<div class="mb-24">
+  <div class="fixed top-0 p-4 dark:bg-neutral-950/60 bg-neutral-50/60 backdrop-blur-sm border-b border-neutral-300 dark:border-neutral-800 w-full z-10">
+    <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between">
+      <div class="flex gap-2 items-center">
+        <div class="font-['Geist'] text-neutral-950 font-semibold text-xl dark:text-neutral-50">
+          alpha_
+        </div>
+        <div class="font-['Geist'] bg-blue-100 dark:bg-blue-950 text-blue-800 font-medium dark:text-blue-200 text-xs py-1 px-2 rounded-lg">
+          v0.1.0
+        </div>
+      </div>
+      <div class="flex gap-6 items-center">
+        <aButton type="link" [routerLink]="['documentation/installation']" >Docs</aButton>
+        <aButton type="link" [routerLink]="['components/button']" >Components</aButton>
+        <aButton type="link" [routerLink]="['components/button']" >Showcase</aButton>
+        <div class="w-px h-5 dark:bg-neutral-800 bg-neutral-200"></div>
+        <button>github</button>
+        <button (click)="toggle()">{{mode}}</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,13 @@
 <div class="flex w-full gap-16 justify-center">
-  <side-nav />
+  <div class="relative">
+    <div class="absolute -left-56">
+      <side-nav />
+    </div>
+  </div>
   <div class="w-1/2">
     <router-outlet></router-outlet>
   </div>
-  <side-nav />
+  <div class="relative">
+    <anchor-nav />
+  </div>
 </div>

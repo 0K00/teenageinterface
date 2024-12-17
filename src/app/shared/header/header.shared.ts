@@ -6,11 +6,13 @@
  */
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { HighlightLoader } from 'ngx-highlightjs';
+import { ButtonComponent } from "../../components/button/button.component";
 
 @Component({
   selector: 'aHeader',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule, ButtonComponent],
   templateUrl: './header.shared.html'
 })
 export class HeaderShared implements OnInit {
