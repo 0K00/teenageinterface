@@ -57,7 +57,7 @@ export const Default: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<Button [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</Button>`
+    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
   })
 };
 
@@ -71,7 +71,7 @@ export const Primary: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<Button [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</Button>`
+    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
   })
 };
 
@@ -85,7 +85,7 @@ export const Destructive: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<Button [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</Button>`
+    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
   })
 };
 
@@ -99,7 +99,7 @@ export const Outline: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<Button [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</Button>`
+    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
   })
 };
 
@@ -114,7 +114,7 @@ export const Ghost: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<Button [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</Button>`
+    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
   })
 };
 
@@ -128,6 +128,6 @@ export const Link: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<Button [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</Button>`
+    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
   })
 };

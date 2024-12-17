@@ -1,0 +1,10 @@
+<div class="w-full">
+  <ul class="flex h-9 border-b dark:border-neutral-800 border-neutral-300">
+    <li class="group transition duration-300 cursor-pointer text-sm font-medium text-neutral-500 py-2 px-4 shadow-tab shadow-transparent" *ngFor="let tab of tabs" (click)="selectTab(tab)" [ngClass]="tab.active ? 'dark:shadow-blue-600 !shadow-blue-800 dark:!text-neutral-50 !text-neutral-950' : ''">
+      <span class="group-hover:dark:text-neutral-50 group-hover:text-neutral-900">{{ tab.tabTitle }}</span>
+    </li>
+  </ul>
+  <div class="px-4 py-5">
+    <ng-content></ng-content>
+  </div>
+</div>

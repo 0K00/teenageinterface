@@ -1,0 +1,12 @@
+<nav class="side-nav">
+  <ul>
+    <li *ngFor="let navItem of navItems">
+      <strong>{{ navItem.section }}</strong>
+      <ul>
+        <li *ngFor="let item of navItem.items">
+          <a [routerLink]="item.path">{{ item.title }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

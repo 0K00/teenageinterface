@@ -11,6 +11,9 @@ module.exports = {
   darkMode: ['selector', '[data-mode="dark"]'],
   theme: {
     extend: {
+      boxShadow: {
+        "tab": "0px 2px 0px 0px rgba(0, 0, 0, 1), inset 0px -1px 0px 0px rgba(0, 0, 0, 1)"
+      }
     },
   },
   plugins: [],

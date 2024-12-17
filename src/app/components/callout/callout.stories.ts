@@ -41,7 +41,7 @@ export const Default: Story = {
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<Callout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a neutral action.</Callout>`
+    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a neutral action.</aCallout>`
   })
 };
 
@@ -55,7 +55,7 @@ export const Success: Story = {
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<Callout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a successful or positive action.</Callout>`
+    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a successful or positive action.</aCallout>`
   })
 };
 
@@ -69,7 +69,7 @@ export const Informative: Story = {
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<Callout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a neutral informative change or action</Callout>`
+    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a neutral informative change or action</aCallout>`
   })
 };
 
@@ -83,7 +83,7 @@ export const Warn: Story = {
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<Callout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates neutral information to ald in understanding.</Callout>`
+    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates neutral information to ald in understanding.</aCallout>`
   })
 };
 
@@ -97,7 +97,7 @@ export const Destructive: Story = {
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<Callout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a warning that might need attention.</Callout>`
+    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a warning that might need attention.</aCallout>`
   })
 };
 

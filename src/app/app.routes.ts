@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-import { dynamicRoutes } from './dynamic-routes';
-
+import { routes as dynamicRoutes } from './routes.routes';
 
 const staticRoutes: Routes = [
 
@@ -9,7 +8,7 @@ const staticRoutes: Routes = [
 const fallbackRoute: Routes = [{ path: "**", redirectTo: "home" }];
 
 export const routes: Routes = [
-  ...staticRoutes,
   ...dynamicRoutes,
+  ...staticRoutes,
   ...fallbackRoute
 ];
