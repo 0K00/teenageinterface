@@ -1,7 +1,7 @@
-<div class="group border relative border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 max-h-[640px] overflow-auto whitespace-nowrap p-4 rounded-lg">
+<div class="group border relative border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 max-h-[640px] overflow-auto whitespace-nowrap py-4 px-6 rounded-lg">
   <button class="group-hover:opacity-100 opacity-0 absolute right-4 top-2">Copy</button>
-  <pre class="-my-4">
-    <code  [highlightAuto]="code" class="language-typescript" [innerHTML]="code">
+  <pre class="inline-grid whitespace-pre-wrap m-0 p-0">
+    <code  [highlightAuto]="code" class="{{language}} text-sm dark:font-normal font-medium font-['Geist'] !bg-transparent !p-0" [innerHTML]="code">
     </code>
   </pre>
 </div>

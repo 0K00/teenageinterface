@@ -15,4 +15,5 @@ import { HighlightAuto } from 'ngx-highlightjs';
 })
 export class CodeComponent  {
   @Input() code: string = "";
+  @Input() language: string = "";
 }

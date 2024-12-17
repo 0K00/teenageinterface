@@ -28,22 +28,32 @@ export class SideNavComponent {
 
     const navMap: { [key: string]: { title: string; path: string; order: number }[] } = {};
 
-    routes.forEach(route => {
-      if (route.data?.['title']) {
-        const [section, title] = route.data['title'].split(' / ');
-        const order = route.data['order'] ?? 999;
+    const processRoutes = (currentRoutes: Routes, parentPath = '') => {
+      currentRoutes.forEach(route => {
+        const fullPath = parentPath + '/' + route.path;
 
-        if (!navMap[section]) {
-          navMap[section] = [];
+        if (route.data?.['title']) {
+          const [section, title] = route.data['title'].split(' / ');
+          const order = route.data['order'] ?? 999;
+
+          if (!navMap[section]) {
+            navMap[section] = [];
+          }
+
+          navMap[section].push({
+            title,
+            path: fullPath.replace(/\/+/g, '/'),
+            order
+          });
         }
 
-        navMap[section].push({
-          title,
-          path: '/' + route.path,
-          order
-        });
-      }
-    });
+        if (route.children) {
+          processRoutes(route.children, fullPath);
+        }
+      });
+    };
+
+    processRoutes(routes);
 
     const sortedSections = sectionOrder.filter(section => navMap[section]);
 

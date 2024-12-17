@@ -30,10 +30,25 @@ function extractPageData(filePath) {
   const pageTitle = pageInfoMatch ? pageInfoMatch[1] : null;
   const order = pageInfoMatch ? parseInt(pageInfoMatch[2], 10) : 999;
 
-  const classMatch = content.match(/export\s+default\s+class\s+(\w+)\s*{/);
-  const className = classMatch ? classMatch[1] : null;
+  const classMatch = content.match(/export\s+(default\s+class|class)\s+(\w+)\s*{/);
+  const className = classMatch ? classMatch[2] : null;
 
   return { pageTitle, order, className };
+}
+
+function groupByParentDirectory(routes) {
+  const groupedRoutes = {};
+
+  for (const route of routes) {
+    const parentDir = route.path.split('/')[0];
+
+    if (!groupedRoutes[parentDir]) {
+      groupedRoutes[parentDir] = [];
+    }
+    groupedRoutes[parentDir].push(route);
+  }
+
+  return groupedRoutes;
 }
 
 function generateRoutes() {
@@ -53,9 +68,11 @@ function generateRoutes() {
     }
 
     const routePath = path.dirname(importPath).replace(/\\/g, '/');
+    const fileName = path.basename(importPath, '.page');
 
     routes.push({
       path: routePath,
+      fileName: fileName,
       component: className,
       title: pageTitle,
       order: order,
@@ -65,16 +82,36 @@ function generateRoutes() {
 
   routes.sort((a, b) => a.order - b.order);
 
+  const groupedRoutes = groupByParentDirectory(routes);
+
+  const imports = [];
+  const routeDefinitions = [];
+
+  for (const parent in groupedRoutes) {
+    const children = groupedRoutes[parent];
+
+    children.forEach(route => {
+      imports.push(`import ${route.component} from './pages/${route.importPath}';`);
+    });
+
+    const childrenRoutes = children
+      .map(route => `      { path: '${route.fileName}', component: ${route.component}, data: { title: '${route.title}', order: ${route.order} } }`)
+      .join(',\n');
+
+    routeDefinitions.push(`  { path: '${parent}', component: ComponentsPage, children: [\n${childrenRoutes}\n  ] }`);
+  }
+
   const routesContent = `
-    import { Routes } from '@angular/router';
-    ${routes.map(route => `import ${route.component} from './pages/${route.importPath}';`).join('\n')}
+import { Routes } from '@angular/router';
+import { ComponentsPage } from './pages/components/components.page';
+${imports.join('\n')}
 
-    export const routes: Routes = [
-    ${routes.map(route => `  { path: '${route.path}', component: ${route.component}, data: { title: '${route.title}', order: ${route.order} } }`).join(',\n')}
-    ];
-    `;
+export const routes: Routes = [
+${routeDefinitions.join(',\n')}
+];
+`;
 
-  fs.writeFileSync(OUTPUT_FILE, routesContent.trim());
+  fs.writeFileSync(OUTPUT_FILE, routesContent.trim() + '\n');
   console.log(`✅ The file ${OUTPUT_FILE} was generated successfully.`);
 }
 
