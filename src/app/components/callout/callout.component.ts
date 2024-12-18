@@ -6,15 +6,16 @@
  */
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IconsComponent } from '../icons/icons.component';
 
 @Component({
   selector: 'aCallout',
-  imports: [CommonModule],
+  imports: [CommonModule, IconsComponent],
   templateUrl: './callout.component.html'
 })
 export class CalloutComponent {
 
-  @Input() id: string = "";
+  @Input() id: string | null = null;
   @Input() title: string = "";
   @Input() icon: string = "";
   @Input() type: "default" | "success" | "informative" | "warn" | "destructive" = "default";
@@ -23,9 +24,9 @@ export class CalloutComponent {
     "border-neutral-300",
     "bg-neutral-100",
     "text-neutral-800",
-    "dark:border-neutral-600",
-    "dark:bg-neutral-800",
-    "dark:text-neutral-100"
+    "dark:border-neutral-800",
+    "dark:bg-neutral-900",
+    "dark:text-neutral-300"
   ];
   private success: string[] = [
     "border-green-300",
@@ -62,7 +63,8 @@ export class CalloutComponent {
 
   private commonClasses: string[] = [
     "flex",
-    "gap-2",
+    "flex-col",
+    "gap-0",
     "border",
     "rounded-lg",
     "p-4",

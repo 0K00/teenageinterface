@@ -4,17 +4,17 @@
       <div class="text-sm font-medium flex gap-2 mb-4">
         <div [routerLink]="['/components']"  class="cursor-pointer transition-colors duration-300 text-neutral-500 hover:text-neutral-900 hover:dark:text-neutral-100" >Components</div>
         <div class="dark:text-neutral-800 text-neutral-300">/</div>
-        <div class="dark:text-blue-600 text-blue-800">Button</div>
+        <div class="dark:text-blue-600 text-blue-800">Callout</div>
       </div>
-      <h2 class="text-4xl font-semibold">Button</h2>
-      <p class="text-xl font-medium text-neutral-500">Trigger an action or event, such as submitting a form or displaying a dialog.</p>
+      <h2 class="text-4xl font-semibold">Callout</h2>
+      <p class="text-xl font-medium text-neutral-500">Short message to attract user's attention.</p>
     </div>
     <aTabs>
       <aTab tabTitle="Preview" [active]="true">
         <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-          <aButton type="default">
-            Button
-          </aButton>
+          <aCallout type="default" title="Default" icon="person">
+            Indicates a neutral action.
+          </aCallout>
         </div>
       </aTab>
       <aTab tabTitle="Code">
@@ -68,7 +68,7 @@
             <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">type</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">"default" | "primary" | "destructive" | "outline" | "ghost" | "link"</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">"default" | "success" | "informative" | "warn" | "destructive"</span>
           </aTCell>
           <aTCell>
             <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">"default"</span>
@@ -77,26 +77,22 @@
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">loading</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">title</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string</span>
           </aTCell>
-          <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
-          </aTCell>
+          <aTCell><span class="dark:text-neutral-700 text-neutral-400">—</span></aTCell>
         </aTRow>
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">disabled</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">icon</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string</span>
           </aTCell>
-          <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
-          </aTCell>
+          <aTCell><span class="dark:text-neutral-700 text-neutral-400">—</span></aTCell>
         </aTRow>
       </aTBody>
     </aTable>
@@ -122,7 +118,7 @@
     ">
       Installation
     </h3>
-    <aCode [language]="'sh'" [code]="'npm install @alpha/button'" />
+    <aCode [language]="'sh'" [code]="'npm install @alpha/callout'" />
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="usage" #usage>
@@ -192,9 +188,9 @@
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default">
-              Button
-            </aButton>
+            <aCallout type="default" title="Default" icon="person">
+              Indicates a neutral action.
+            </aCallout>
           </div>
         </aTab>
         <aTab tabTitle="Code">
@@ -203,9 +199,9 @@
       </aTabs>
     </div>
 
-    <div id="primary" #primary>
+    <div id="success" #success>
       <h4
-      (click)="scrollToElement(primary)"
+      (click)="scrollToElement(success)"
       class="
         cursor-pointer
         relative
@@ -220,18 +216,84 @@
         before:dark:text-blue-950
         before:text-blue-300
       ">
-        Primary
+        Success
       </h4>
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="primary">
-              Primary
-            </aButton>
+            <aCallout type="success" title="Success" icon="check-circled">
+              Indicates a successful or positive action.
+            </aCallout>
           </div>
         </aTab>
         <aTab tabTitle="Code">
           <aCode [language]="'language-typescript'" [code]="primaryCode" />
+        </aTab>
+      </aTabs>
+    </div>
+
+    <div id="informative" #informative>
+      <h4
+      (click)="scrollToElement(informative)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        Informative
+      </h4>
+      <aTabs>
+        <aTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+            <aCallout type="informative" title="Informative" icon="information-circled-2">
+              Indicates a neutral informative change or action.
+            </aCallout>
+          </div>
+        </aTab>
+        <aTab tabTitle="Code">
+          <aCode [language]="'language-typescript'" [code]="destructiveCode" />
+        </aTab>
+      </aTabs>
+    </div>
+
+    <div id="warn" #warn>
+      <h4
+      (click)="scrollToElement(warn)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        Warning
+      </h4>
+      <aTabs>
+        <aTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+            <aCallout type="warn" title="You sure?" icon="information-circled-2-1">
+              Indicates neutral information to ald in understanding.
+            </aCallout>
+          </div>
+        </aTab>
+        <aTab tabTitle="Code">
+          <aCode [language]="'language-typescript'" [code]="outlineCode" />
         </aTab>
       </aTabs>
     </div>
@@ -258,212 +320,13 @@
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="destructive">
-              Destructive
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="destructiveCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="outline" #outline>
-      <h4
-      (click)="scrollToElement(outline)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        Outline
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="outline">
-              Outline
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="outlineCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="ghost" #ghost>
-      <h4
-      (click)="scrollToElement(ghost)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        Ghost
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="ghost">
-              Ghost
-            </aButton>
+            <aCallout type="destructive" title="Unexpected Error" icon="warning">
+              Indicates a warning that might need attention.
+            </aCallout>
           </div>
         </aTab>
         <aTab tabTitle="Code">
           <aCode [language]="'language-typescript'" [code]="ghostCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="link" #link>
-      <h4
-      (click)="scrollToElement(link)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        Link
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="link">
-              Link
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="linkCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="icon" #icon>
-      <h4
-      (click)="scrollToElement(icon)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        Icon
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="outline">
-              <aIcon icon="gear-1" />
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="iconCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="withIcon" #withIcon>
-      <h4
-      (click)="scrollToElement(withIcon)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        With Icon
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default">
-              <aIcon icon="download" />
-              <div>Download files</div>
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="withCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="Loading" #Loading>
-      <h4
-      (click)="scrollToElement(Loading)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        Loading
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default" [loading]="true">
-              <div>Log in</div>
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="loadingCode" />
         </aTab>
       </aTabs>
     </div>

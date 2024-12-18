@@ -49,16 +49,21 @@ export class AnchorNavComponent implements AfterViewInit {
     const routerOutletContent = document.querySelector('router-outlet')?.nextElementSibling;
     if (routerOutletContent) {
       const divsWithId = routerOutletContent.querySelectorAll('div[id]');
-      this.anchors = Array.from(divsWithId).map((div: Element) => {
+
+      this.anchors = Array.from(divsWithId).flatMap((div: Element) => {
         const h3 = div.querySelector('h3');
         const h4 = div.querySelector('h4');
 
-        return {
+        if (!h3 && !h4) {
+          return [];
+        }
+
+        return [{
           id: div.id,
-          level: h3 ? 0 : h4 ? 1 : 2,
+          level: h3 ? 0 : 1,
           title: h3?.textContent?.trim() || h4?.textContent?.trim() || 'Untitled',
           offsetTop: div.getBoundingClientRect().top + window.scrollY
-        };
+        }];
       });
     }
   }

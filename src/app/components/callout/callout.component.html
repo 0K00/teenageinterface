@@ -1,9 +1,9 @@
 <div [id]="id" [ngClass]="classes">
-  <div>{{icon}}</div>
-  <div class="flex flex-col">
+  <div class="flex gap-2">
+    <aIcon [icon]="icon" />
     <div class="font-medium">{{title}}</div>
-    <div class="text-sm">
-      <ng-content></ng-content>
-    </div>
+  </div>
+  <div class="text-sm ml-6">
+    <ng-content></ng-content>
   </div>
 </div>

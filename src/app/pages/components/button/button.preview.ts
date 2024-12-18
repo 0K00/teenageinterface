@@ -83,3 +83,41 @@ import { ButtonComponent } from "@alpha/button";
 })
 
 export default class ButtonPage {}`;
+
+export const iconCode = `import { CommonModule } from '@angular/common';
+import { ButtonComponent } from "@alpha/button";
+import { IconsComponent } from "@alpha/icons";
+
+@Component({
+  selector: "pages-button",
+  standalone: true,
+  imports: [ButtonComponent, IconsComponent],
+  template:\`<aButton type="outline"><aIcon icon="gear-1" /></aButton>\`,
+})
+
+export default class ButtonPage {}`;
+
+export const withCode = `import { CommonModule } from '@angular/common';
+import { ButtonComponent } from "@alpha/button";
+import { IconsComponent } from "@alpha/icons";
+
+@Component({
+  selector: "pages-button",
+  standalone: true,
+  imports: [ButtonComponent, IconsComponent],
+  template:\`<aButton type="default"><aIcon icon="download" /><div>Download files</div></aButton>\`,
+})
+
+export default class ButtonPage {}`;
+
+export const loadingCode = `import { CommonModule } from '@angular/common';
+import { ButtonComponent } from "@alpha/button";
+
+@Component({
+  selector: "pages-button",
+  standalone: true,
+  imports: [ButtonComponent],
+  template: \` <aButton type="default" [loading]="true" >Log in</aButton> \`,
+})
+
+export default class ButtonPage {}`;

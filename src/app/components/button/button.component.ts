@@ -15,7 +15,7 @@ import { IconsComponent } from '../icons/icons.component';
 })
 export class ButtonComponent {
 
-  @Input() id: string = "";
+  @Input() id: string | null = null;
   @Input() disabled: boolean = false;
   @Input() loading: boolean = false;
   @Input() type: "default" | "primary" | "destructive" | "outline" | "ghost" | "link" = "default";
