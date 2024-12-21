@@ -23,7 +23,7 @@ export class ButtonComponent {
   private default: string[] = [
     "py-2",
     "px-3",
-    "h-[42px]",
+    "h-10",
     "bg-neutral-950",
     "hover:bg-neutral-800",
     "dark:bg-neutral-50",
@@ -41,7 +41,7 @@ export class ButtonComponent {
   private primary: string[] = [
     "py-2",
     "px-3",
-    "h-[42px]",
+    "h-10",
     "bg-blue-800",
     "hover:bg-blue-700",
     "dark:bg-blue-600",
@@ -59,7 +59,7 @@ export class ButtonComponent {
   private destructive: string[] = [
     "py-2",
     "px-3",
-    "h-[42px]",
+    "h-10",
     "bg-red-800",
     "hover:bg-red-700",
     "dark:bg-red-600",
@@ -77,7 +77,7 @@ export class ButtonComponent {
   private outline: string[] = [
     "py-2",
     "px-3",
-    "h-[42px]",
+    "h-10",
     "bg-transparent",
     "border",
     "border-neutral-300",
@@ -100,7 +100,7 @@ export class ButtonComponent {
   private ghost: string[] = [
     "py-2",
     "px-3",
-    "h-[42px]",
+    "h-10",
     "bg-neutral-50",
     "dark:bg-neutral-950",
     "hover:bg-neutral-200",
@@ -110,9 +110,9 @@ export class ButtonComponent {
     "dark:text-neutral-300",
     "hover:dark:text-neutral-100",
     "focus-visible:ring-2",
-    "ring-neutral-950",
+    "ring-neutral-400",
     "ring-offset-neutral-50",
-    "dark:ring-neutral-50",
+    "dark:ring-neutral-800",
     "dark:ring-offset-neutral-950",
     "focus-visible:ring-offset-2",
     "focus-visible:outline-none"
@@ -130,13 +130,13 @@ export class ButtonComponent {
   ];
 
   private commonClasses: string[] = [
-    "min-w-[42px]",
+    "min-w-10",
     "cursor-pointer",
     "transition",
     "duration-300",
-    "active:scale-[.97]",
+    "active:scale-97",
     "rounded-lg",
-    "tracking-[.2px]",
+    "tracking-2px",
     "disabled:opacity-50",
     "disabled:pointer-events-none",
     "font-medium",

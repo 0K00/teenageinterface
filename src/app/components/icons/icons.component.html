@@ -1,3 +1,1 @@
-<svg [ngClass]="'icon ' + icon + ' ' + other">
-  <use [attr.href]="'icons.svg#' + icon"></use>
-</svg>
+<div [ngClass]="'icon ' + other" [innerHTML]="iconSvg"></div>
