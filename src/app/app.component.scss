@@ -1,0 +1,21 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  user-select: none; /* Désactive la sélection de texte pendant le swipe */
+}
+
+.carousel-item.active {
+  /* Styles pour l'élément actif si nécessaire */
+}
