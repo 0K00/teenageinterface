@@ -2,7 +2,7 @@
  * @Author: 0K0 <contact@oko.app>
  * @Date:   14-12-2024 20:35:50
  * @Last Modified by:   0K0 <contact@oko.app>
- * @Last Modified time: 22-12-2024 05:26:11
+ * @Last Modified time: 22-12-2024 05:58:37
  */
 import { Component, HostListener, Input } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
@@ -13,11 +13,12 @@ import { IconsComponent } from './components/icons/icons.component';
 import { InputComponent } from './components/input/input.component';
 import { CarouselComponent, SlideComponent } from 'carousel';
 import { ProgressComponent } from 'progress';
+import { SeparatorComponent } from 'separator';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderShared, CardComponent, ButtonComponent, InputComponent, CarouselComponent, SlideComponent, CommonModule, ProgressComponent],
+  imports: [RouterOutlet, HeaderShared, CardComponent, ButtonComponent, InputComponent, CarouselComponent, SlideComponent, CommonModule, ProgressComponent, SeparatorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

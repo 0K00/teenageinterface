@@ -2,16 +2,19 @@
   @Author: 0K0 <contact@oko.app>
   @Date:   14-12-2024 20:35:50
   @Last Modified by:   0K0 <contact@oko.app>
-  @Last Modified time: 22-12-2024 05:41:52
+  @Last Modified time: 22-12-2024 06:12:03
 -->
 <div>
   <aHeader />
   <router-outlet></router-outlet>
 </div>
 
-<div class="m-auto">
-  <tiProgress [value]="50" type="score" width="100%" />
+<div class="m-auto max-w-96 flex flex-col gap-2 justify-center">
+  <tiProgress [value]="50" type="score" width="200px" />
+  <tiSeparator orientation="horizontal" size="200px" />
+  <tiProgress [value]="50" type="score" width="200px" />
 </div>
+
 
 <div class="m-auto max-w-96">
   <tiCarousel [autoSlide]="false" [controls]="true" [dot]="true" [infinite]="false">
