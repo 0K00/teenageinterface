@@ -2,7 +2,7 @@
  * @Author: 0K0 <contact@oko.app>
  * @Date:   14-12-2024 20:35:50
  * @Last Modified by:   0K0 <contact@oko.app>
- * @Last Modified time: 22-12-2024 09:57:53
+ * @Last Modified time: 22-12-2024 10:32:42
  */
 import { Component, HostListener, Input } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
@@ -16,11 +16,12 @@ import { ProgressComponent } from 'progress';
 import { SeparatorComponent } from 'separator';
 import { RadioComponent } from 'radio';
 import { SwitchComponent } from 'switch';
+import { SelectComponent } from 'select';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderShared, CardComponent, SwitchComponent, ButtonComponent, InputComponent, CarouselComponent, SlideComponent, CommonModule, ProgressComponent, SeparatorComponent, RadioComponent],
+  imports: [RouterOutlet, HeaderShared, CardComponent, SelectComponent, SwitchComponent, ButtonComponent, InputComponent, CarouselComponent, SlideComponent, CommonModule, ProgressComponent, SeparatorComponent, RadioComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

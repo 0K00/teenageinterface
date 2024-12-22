@@ -27,6 +27,7 @@
     "progress": "file:dist/progress",
     "radio": "file:dist/radio",
     "rxjs": "~7.8.0",
+    "select": "file:dist/select",
     "separator": "file:dist/separator",
     "switch": "file:dist/switch",
     "tslib": "^2.3.0",
