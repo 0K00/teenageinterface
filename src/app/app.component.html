@@ -2,11 +2,17 @@
   @Author: 0K0 <contact@oko.app>
   @Date:   14-12-2024 20:35:50
   @Last Modified by:   0K0 <contact@oko.app>
-  @Last Modified time: 22-12-2024 06:12:03
+  @Last Modified time: 22-12-2024 07:14:37
 -->
 <div>
   <aHeader />
   <router-outlet></router-outlet>
+</div>
+
+<div class="flex justify-center w-full">
+  <checkbox-checkbox type="primary" (checkedChange)="valueChange($event)">
+    Hello
+  </checkbox-checkbox>
 </div>
 
 <div class="m-auto max-w-96 flex flex-col gap-2 justify-center">

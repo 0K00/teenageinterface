@@ -22,6 +22,7 @@
     "@angular/router": "^19.0.0",
     "@teenageinterface/avatar": "file:dist/avatar",
     "carousel": "file:dist/carousel",
+    "checkbox": "file:dist/checkbox",
     "ngx-highlightjs": "^12.0.0",
     "progress": "file:dist/progress",
     "rxjs": "~7.8.0",
