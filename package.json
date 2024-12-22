@@ -28,6 +28,7 @@
     "radio": "file:dist/radio",
     "rxjs": "~7.8.0",
     "separator": "file:dist/separator",
+    "switch": "file:dist/switch",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

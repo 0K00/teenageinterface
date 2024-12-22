@@ -2,11 +2,15 @@
   @Author: 0K0 <contact@oko.app>
   @Date:   14-12-2024 20:35:50
   @Last Modified by:   0K0 <contact@oko.app>
-  @Last Modified time: 22-12-2024 08:07:41
+  @Last Modified time: 22-12-2024 09:59:17
 -->
 <div>
   <aHeader />
   <router-outlet></router-outlet>
+</div>
+
+<div class="flex justify-center w-full">
+  <tiSwitch (checkedChange)="test($event)"></tiSwitch>
 </div>
 
 <div class="flex justify-center w-full">
