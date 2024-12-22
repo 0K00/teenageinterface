@@ -1,0 +1,9 @@
+<div [id]="id" [ngClass]="classes">
+  <div class="flex gap-2">
+    <tiIcon [icon]="icon" />
+    <div class="font-medium">{{title}}</div>
+  </div>
+  <div class="text-sm ml-6">
+    <ng-content></ng-content>
+  </div>
+</div>

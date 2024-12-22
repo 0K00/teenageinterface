@@ -1,0 +1,5 @@
+<button [id]="id" [ngClass]="classes" [disabled]="disabled">
+  <tiIcon *ngIf="loading" icon="load" other="spinning" />
+  <span *ngIf="loading">Please wait</span>
+  <ng-content *ngIf="!loading"></ng-content>
+</button>

@@ -1,0 +1,23 @@
+<div *ngIf="type !== 'bigFile'" class="flex flex-col gap-2">
+  <input (keyup.enter)="onEnter" [pattern]="pattern" [(ngModel)]="value" [name]="type" [id]="id" [placeholder]="placeholder" [required]="required" [type]="type" class="peer autofill:shadow-autofill autofill:dark:shadow-autofill-dark autofill:dark:text-fill-dark autofill:text-fill autofill:dark:!border-autofill-dark autofill:!border-autofill dark:text-neutral-50 text-neutral-900 invalid:not-invalid:border-red-500 invalid:not-invalid:dark:border-red-400 dark:bg-neutral-900 bg-neutral-50 border dark:border-neutral-700 border-neutral-300 hover:dark:border-neutral-500 hover:border-neutral-400 transition-colors duration-300 placeholder:dark:text-neutral-500 placeholder:text-neutral-400 disabled:cursor-not-allowed disabled:opacity-50 flex focus-visible:outline-none focus:dark:border-neutral-500 focus:border-neutral-400 h-10 px-3 py-4 rounded-lg font-medium text-sm w-full">
+  <span *ngIf="!serverError && type === 'email'" class="hidden font-geist text-xs dark:text-red-400 text-red-500 peer-placeholder-invalid:block">
+    Please enter a valid email address. Include "&#64;" and the missing part. The address "{{value}}" is incomplete.
+  </span>
+  <span *ngIf="!serverError && type === 'password'" class="hidden font-geist text-xs dark:text-red-400 text-red-500 peer-placeholder-invalid:block">
+    Please enter a valid password. Include Al least one lowercase letter, upercase letter, numeric value, special symbol. The total length should be greater than or equal to 8 and less or equal to 16.
+  </span>
+  <span *ngIf="serverError" class="font-geist text-xs text-red-400">
+    Something went wrong, try again later.
+  </span>
+</div>
+
+<div *ngIf="type === 'bigFile'" class="group flex flex-col gap-2 items-center relative justify-center p-6 w-460px h-60 border border-dashed dark:border-neutral-800 border-neutral-300 rounded-lg">
+  <input type="file" class="absolute top-0 left-0 w-full h-full cursor-pointer opacity-0 file:cursor-pointer">
+  <div class="dark:bg-neutral-900 bg-neutral-200 p-2 rounded-lg w-11 h-11 flex items-center justify-center text-neutral-500">
+    <tiIcon icon="upload" other="!w-5 !h-5" />
+  </div>
+  <div class="text-center text-sm dark:text-neutral-300 text-neutral-700">
+    <div>Drag & drop files or <span class="text-blue-600 group-hover:underline">browse files</span></div>
+    <div>{{placeholder}}</div>
+  </div>
+</div>

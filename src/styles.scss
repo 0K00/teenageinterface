@@ -5,13 +5,17 @@
  * @Last Modified time: 14-12-2024 22:51:17
  */
 
+
+
  @use "sass:meta";
 
  html[data-mode="light"] {
    @include meta.load-css("highlight.js/styles/github");
+   color-scheme: light;
  }
  html[data-mode="dark"] {
    @include meta.load-css("highlight.js/styles/github-dark-dimmed");
+   color-scheme: dark;
  }
 
  @import 'tailwindcss/base';
