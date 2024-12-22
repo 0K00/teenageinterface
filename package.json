@@ -25,6 +25,7 @@
     "checkbox": "file:dist/checkbox",
     "ngx-highlightjs": "^12.0.0",
     "progress": "file:dist/progress",
+    "radio": "file:dist/radio",
     "rxjs": "~7.8.0",
     "separator": "file:dist/separator",
     "tslib": "^2.3.0",

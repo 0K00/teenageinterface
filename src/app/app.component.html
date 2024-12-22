@@ -2,7 +2,7 @@
   @Author: 0K0 <contact@oko.app>
   @Date:   14-12-2024 20:35:50
   @Last Modified by:   0K0 <contact@oko.app>
-  @Last Modified time: 22-12-2024 07:14:37
+  @Last Modified time: 22-12-2024 08:07:41
 -->
 <div>
   <aHeader />
@@ -10,9 +10,8 @@
 </div>
 
 <div class="flex justify-center w-full">
-  <checkbox-checkbox type="primary" (checkedChange)="valueChange($event)">
-    Hello
-  </checkbox-checkbox>
+  <tiRadio [item]="{value: '1', name: 'radio', id: 'one' }" type="primary" [value]="item.value" (valuesChange)="valueChange($event)">One</tiRadio>
+  <tiRadio [item]="{value: '2', name: 'radio', id: 'two' }" type="primary" [value]="item.value" (valuesChange)="valueChange($event)">two</tiRadio>
 </div>
 
 <div class="m-auto max-w-96 flex flex-col gap-2 justify-center">

@@ -2,7 +2,7 @@
  * @Author: 0K0 <contact@oko.app>
  * @Date:   14-12-2024 20:35:50
  * @Last Modified by:   0K0 <contact@oko.app>
- * @Last Modified time: 22-12-2024 06:40:11
+ * @Last Modified time: 22-12-2024 08:04:16
  */
 import { Component, HostListener, Input } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
@@ -14,12 +14,12 @@ import { InputComponent } from './components/input/input.component';
 import { CarouselComponent, SlideComponent } from 'carousel';
 import { ProgressComponent } from 'progress';
 import { SeparatorComponent } from 'separator';
-import { CheckboxComponent } from 'checkbox';
+import { RadioComponent } from 'radio';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderShared, CardComponent, ButtonComponent, InputComponent, CarouselComponent, SlideComponent, CommonModule, ProgressComponent, SeparatorComponent, CheckboxComponent],
+  imports: [RouterOutlet, HeaderShared, CardComponent, ButtonComponent, InputComponent, CarouselComponent, SlideComponent, CommonModule, ProgressComponent, SeparatorComponent, RadioComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -30,8 +30,9 @@ export class AppComponent {
     { image: 'assets/slide2.jpg', text: 'Slide 2' },
     { image: 'assets/slide3.jpg', text: 'Slide 3' }
   ];
+  item = {value: '1', name: 'radio', id: 'one' }
 
-  valueChange(e: boolean) {
-    console.log(e)
+  valueChange(e: any) {
+    this.item = e;
   }
 }

@@ -1,0 +1,13 @@
+<!--
+  @Author: 0K0 <contact@oko.app>
+  @Date:   22-12-2024 07:28:40
+  @Last Modified by:   0K0 <contact@oko.app>
+  @Last Modified time: 22-12-2024 08:06:33
+-->
+<label class="group flex gap-2 items-center">
+  <input class="peer absolute overflow-hidden opacity-0 w-px h-px p-0" type="radio" [value]="item.value" [name]="item.name" [id]="item.id" [(ngModel)]="value" (ngModelChange)="onModelChange($event)">
+  <div [ngClass]="classes.container">
+    <div *ngIf="value === item.value" [ngClass]="classes.circle"></div>
+  </div>
+  <ng-content></ng-content>
+</label>

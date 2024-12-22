@@ -2,7 +2,7 @@
  * @Author: 0K0 <contact@oko.app>
  * @Date:   20-12-2024 21:29:37
  * @Last Modified by:   0K0 <contact@oko.app>
- * @Last Modified time: 22-12-2024 07:13:07
+ * @Last Modified time: 22-12-2024 07:20:00
  */
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IconsComponent } from '@teenageinterface/icons';
 
 @Component({
-  selector: 'checkbox-checkbox',
+  selector: 'tiCheckbox',
   imports: [CommonModule, IconsComponent, FormsModule],
   templateUrl: './checkbox.component.html',
   styleUrl: './tailwind.css'
