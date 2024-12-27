@@ -9,20 +9,19 @@
       <h2 class="text-4xl font-semibold">Button</h2>
       <p class="text-xl font-medium text-neutral-500">Trigger an action or event, such as submitting a form or displaying a dialog.</p>
     </div>
-    <aTabs>
-      <aTab tabTitle="Preview" [active]="true">
+    <tiTabs>
+      <tiTab tabTitle="Preview" [active]="true">
         <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-          <aButton type="default">
+          <tiButton type="default">
             Button
-          </aButton>
+          </tiButton>
         </div>
-      </aTab>
-      <aTab tabTitle="Code">
-        <aCode [language]="'language-typescript'" [code]="defaultCode" />
-      </aTab>
-    </aTabs>
+      </tiTab>
+      <tiTab tabTitle="Code">
+        <aCode [language]="'typescript'" [code]="defaultCode" />
+      </tiTab>
+    </tiTabs>
   </div>
-
   <div class="mb-16 flex flex-col gap-2" id="api" #attributes>
     <h3
     (click)="scrollToElement(attributes)"
@@ -58,7 +57,7 @@
             <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">id</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string | null</span>
           </aTCell>
           <aTCell><span class="dark:text-neutral-700 text-neutral-400">—</span></aTCell>
         </aTRow>
@@ -122,7 +121,7 @@
     ">
       Installation
     </h3>
-    <aCode [language]="'sh'" [code]="'npm install @alpha/button'" />
+    <aCode [language]="'sh'" [code]="'npm install @teenageinterface/button'" />
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="usage" #usage>
@@ -145,7 +144,7 @@
     ">
       Usage
     </h3>
-    <aCode [language]="'language-typescript'" [code]="defaultImports" />
+    <aCode [language]="'typescript'" [code]="defaultImports" />
     <aCode [language]="'html'" [code]="defaultSkeleton" />
   </div>
 
@@ -189,18 +188,18 @@
       ">
         Default
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default">
+            <tiButton type="default">
               Button
-            </aButton>
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="defaultCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="defaultCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="primary" #primary>
@@ -222,18 +221,18 @@
       ">
         Primary
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="primary">
+            <tiButton type="primary">
               Primary
-            </aButton>
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="primaryCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="primaryCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="destructive" #destructive>
@@ -255,18 +254,18 @@
       ">
         Destructive
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="destructive">
+            <tiButton type="destructive">
               Destructive
-            </aButton>
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="destructiveCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="destructiveCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="outline" #outline>
@@ -288,18 +287,18 @@
       ">
         Outline
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="outline">
+            <tiButton type="outline">
               Outline
-            </aButton>
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="outlineCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="outlineCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="ghost" #ghost>
@@ -321,18 +320,18 @@
       ">
         Ghost
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="ghost">
+            <tiButton type="ghost">
               Ghost
-            </aButton>
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="ghostCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="ghostCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="link" #link>
@@ -354,18 +353,18 @@
       ">
         Link
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="link">
+            <tiButton type="link">
               Link
-            </aButton>
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="linkCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="linkCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="icon" #icon>
@@ -387,18 +386,18 @@
       ">
         Icon
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="outline">
-              <aIcon icon="gear_1" />
-            </aButton>
+            <tiButton type="outline">
+              <tiIcon icon="gear_1" />
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="iconCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="iconCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="withIcon" #withIcon>
@@ -420,19 +419,19 @@
       ">
         With Icon
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default">
-              <aIcon icon="download" />
+            <tiButton type="default">
+              <tiIcon icon="download" />
               <div>Download files</div>
-            </aButton>
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="withCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="withCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="Loading" #Loading>
@@ -454,18 +453,18 @@
       ">
         Loading
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default" [loading]="true">
+            <tiButton type="default" [loading]="true">
               <div>Log in</div>
-            </aButton>
+            </tiButton>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="loadingCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="loadingCode" />
+        </tiTab>
+      </tiTabs>
     </div>
   </div>
 </section>

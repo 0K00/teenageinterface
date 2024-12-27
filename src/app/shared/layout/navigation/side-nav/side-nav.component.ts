@@ -2,16 +2,17 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { routes } from '../../../../routes.routes';
+import { BadgeComponent } from '@teenageinterface/badge';
 
 interface NavItem {
   section: string;
-  items: { title: string; path: string, order: number }[];
+  items: { title: string; path: string, order: number, soon?: boolean, alpha?: boolean }[];
 }
 
 @Component({
   selector: 'side-nav',
   templateUrl: './side-nav.component.html',
-  imports: [CommonModule, RouterModule]
+  imports: [CommonModule, RouterModule, BadgeComponent]
 })
 export class SideNavComponent {
   navItems: NavItem[] = [];
@@ -26,7 +27,7 @@ export class SideNavComponent {
       'Components'
     ];
 
-    const navMap: { [key: string]: { title: string; path: string; order: number }[] } = {};
+    const navMap: { [key: string]: { title: string; path: string; order: number, soon?: boolean, alpha?: boolean }[] } = {};
 
     const processRoutes = (currentRoutes: Routes, parentPath = '') => {
       currentRoutes.forEach(route => {
@@ -43,7 +44,9 @@ export class SideNavComponent {
           navMap[section].push({
             title,
             path: fullPath.replace(/\/+/g, '/'),
-            order
+            order,
+            soon: route.data['soon'] ? route.data['soon'] : false,
+            alpha: route.data['alpha'] ? route.data['alpha'] : false,
           });
         }
 

@@ -6,12 +6,12 @@
  */
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { HighlightAuto } from 'ngx-highlightjs';
+import { Highlight, HighlightLoader, HighlightModule } from 'ngx-highlightjs';
 import { IconsComponent } from "../../components/icons/icons.component";
 
 @Component({
   selector: 'aCode',
-  imports: [CommonModule, HighlightAuto, IconsComponent],
+  imports: [CommonModule, Highlight, IconsComponent],
   templateUrl: './code.component.html'
 })
 export class CodeComponent  {

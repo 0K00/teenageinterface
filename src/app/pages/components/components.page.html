@@ -4,8 +4,18 @@
       <side-nav />
     </div>
   </div>
-  <div class="w-1/2">
+  <div class="w-1/2 mb-8">
     <router-outlet></router-outlet>
+    <nav class="flex items-center" [ngClass]="{'justify-between': showPreviousButton && showNextButton, 'justify-end': showNextButton && !showPreviousButton}">
+      <tiButton class="self-start" *ngIf="showPreviousButton" type="outline" (click)="navigateToPreviousChild()">
+        <tiIcon icon="chevron_left" />
+        {{previousChildTitle}}
+      </tiButton>
+      <tiButton class="self-end" *ngIf="showNextButton" type="outline" (click)="navigateToNextChild()">
+        {{nextChildTitle}}
+        <tiIcon icon="chevron_right" />
+      </tiButton>
+    </nav>
   </div>
   <div class="relative">
     <anchor-nav />

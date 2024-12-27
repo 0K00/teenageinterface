@@ -9,115 +9,82 @@ import { Component } from "@angular/core";
 export class InputPreview {}
 
 export const defaultCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+import { InputComponent } from "@teenageinterface/input";
 
 @Component({
-  selector: "pages-button",
+  selector: "pages-input",
   standalone: true,
-  imports: [ButtonComponent],
-  template: \` <aButton>Button</aButton> \`,
+  imports: [InputComponent],
+  template: \` <tiInput placeholder="Search" /> \`,
 })
 
-export default class ButtonPage {}`;
+export default class InputPage {}`;
 
-export const defaultImports = `import { ButtonComponent } from '@alpha/components/button';`;
+export const defaultImports = `import { InputComponent } from '@teenageinterface/input';`;
 
-export const defaultSkeleton = `<aButton>Button</aButton>`;
+export const defaultSkeleton = `<tiInput />`;
 
-export const primaryCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+export const passwordCode = `import { CommonModule } from '@angular/common';
+import { InputComponent } from "@teenageinterface/input";
 
 @Component({
-  selector: "pages-button",
+  selector: "pages-input",
   standalone: true,
-  imports: [ButtonComponent],
-  template: \` <aButton type="primary" >Primary</aButton> \`,
+  imports: [InputComponent],
+  template: \` <tiInput type="password" placeholder="Password" /> \`,
 })
 
-export default class ButtonPage {}`;
+export default class InputPage {}`;
 
-export const destructiveCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+export const emailCode = `import { CommonModule } from '@angular/common';
+import { InputComponent } from "@teenageinterface/input";
 
 @Component({
-  selector: "pages-button",
+  selector: "pages-input",
   standalone: true,
-  imports: [ButtonComponent],
-  template: \` <aButton type="destructive" >Destructive</aButton> \`,
+  imports: [InputComponent],
+  template: \` <tiInput type="email" placeholder="Email" /> \`,
 })
 
-export default class ButtonPage {}`;
+export default class InputPage {}`;
 
-export const outlineCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+export const errorCode = `import { CommonModule } from '@angular/common';
+import { InputComponent } from "@teenageinterface/input";
 
 @Component({
-  selector: "pages-button",
+  selector: "pages-input",
   standalone: true,
-  imports: [ButtonComponent],
-  template: \` <aButton type="outline" >Outline</aButton> \`,
+  imports: [InputComponent],
+  template: \`
+    <tiInput type="password" placeholder="Error Server" [serverError]="true" />
+    <tiInput type="email" placeholder="Error Email" value="example" />
+  \`,
 })
 
-export default class ButtonPage {}`;
+export default class InputPage {}`;
 
-export const ghostCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+export const fileCode = `import { CommonModule } from '@angular/common';
+import { InputComponent } from "@teenageinterface/input";
 
 @Component({
-  selector: "pages-button",
+  selector: "pages-input",
   standalone: true,
-  imports: [ButtonComponent],
-  template: \` <aButton type="ghost" >Ghost</aButton> \`,
+  imports: [InputComponent],
+  template: \` <tiInput type="file" placeholder="File" /> \`,
 })
 
-export default class ButtonPage {}`;
+export default class InputPage {}`;
 
-export const linkCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+export const bigFileCode = `import { CommonModule } from '@angular/common';
+import { InputComponent } from "@teenageinterface/input";
 
 @Component({
-  selector: "pages-button",
+  selector: "pages-input",
   standalone: true,
-  imports: [ButtonComponent],
-  template: \` <aButton type="link" >Link</aButton> \`,
+  imports: [InputComponent],
+  template: \` <tiInput type="bigFile" placeholder="Placeholder here!" /> \`,
 })
 
-export default class ButtonPage {}`;
+export default class InputPage {}`;
 
-export const iconCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
-import { IconsComponent } from "@alpha/icons";
 
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent, IconsComponent],
-  template:\`<aButton type="outline"><aIcon icon="gear-1" /></aButton>\`,
-})
-
-export default class ButtonPage {}`;
-
-export const withCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
-import { IconsComponent } from "@alpha/icons";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent, IconsComponent],
-  template:\`<aButton type="default"><aIcon icon="download" /><div>Download files</div></aButton>\`,
-})
-
-export default class ButtonPage {}`;
-
-export const loadingCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent],
-  template: \` <aButton type="default" [loading]="true" >Log in</aButton> \`,
-})
-
-export default class ButtonPage {}`;

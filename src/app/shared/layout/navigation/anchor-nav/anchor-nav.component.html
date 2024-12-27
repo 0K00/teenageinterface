@@ -5,7 +5,7 @@
       *ngFor="let anchor of anchors"
       class="text-neutral-600 transition-colors duration-300 hover:text-neutral-950 dark:text-neutral-400 hover:dark:text-neutral-50"
       [style.paddingLeft.px]="anchor.level * 16"
-      [ngClass]="{'dark:!text-blue-600 !text-blue-800' : anchor.id === activeAnchorId}"
+      [ngClass]="{'dark:!text-blue-500 !text-blue-800' : anchor.id === activeAnchorId}"
     >
       <a href="javascript:void(0)" (click)="scrollToAnchor(anchor.id)">
         {{ anchor.title }}

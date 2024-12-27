@@ -1,29 +1,30 @@
-<div class="mb-24">
+<div class="">
   <div class="fixed top-0 p-4 dark:bg-neutral-950/60 bg-neutral-50/60 backdrop-blur-sm border-b border-neutral-300 dark:border-neutral-800 w-full z-10">
     <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between">
-      <div class="flex gap-2 items-center">
-        <div class="font-['Geist'] text-neutral-950 font-semibold text-xl dark:text-neutral-50">
-          alpha_
+      <div class="flex gap-4 items-center">
+        <div routerLink="/" class="cursor-pointer">
+          <picture>
+            <img class="hidden dark:block" src="logotype_medium_white.svg" alt="teenage interface logotype">
+            <img class="block dark:hidden" src="logotype_medium_black.svg" alt="teenage interface logotype">
+          </picture>
         </div>
-        <div class="font-['Geist'] bg-blue-100 dark:bg-blue-950 text-blue-800 font-medium dark:text-blue-200 text-xs py-1 px-2 rounded-lg">
-          v0.1.0
-        </div>
+        <tiBadge type="informative">v0.1.0</tiBadge>
       </div>
       <div class="flex gap-6 items-center">
         <div class="flex items-center gap-6 mr-3">
-          <aButton type="link" [routerLink]="['documentation']" >Docs</aButton>
-          <aButton type="link" [routerLink]="['components']" >Components</aButton>
-          <aButton type="link" [routerLink]="['components/button']" >Showcase</aButton>
+          <tiButton type="link" [routerLink]="['documentation']" >Docs</tiButton>
+          <tiButton type="link" [routerLink]="['components']" >Components</tiButton>
+          <tiButton type="link" [routerLink]="['components/button']" >Showcase</tiButton>
         </div>
-        <div class="w-px h-5 dark:bg-neutral-800 bg-neutral-200"></div>
+        <tiSeparator orientation="vertical" size="24px" />
         <div class="flex items-center gap-2">
-          <aButton type="ghost" (click)="toGithub()">
-            <aIcon icon="github" />
-          </aButton>
-          <aButton type="ghost" (click)="toggle()">
-            <aIcon *ngIf="mode === 'dark'" icon="sun_1" />
-            <aIcon *ngIf="mode === 'light'" icon="moon" />
-          </aButton>
+          <tiButton type="ghost" (click)="toGithub()">
+            <tiIcon icon="github" />
+          </tiButton>
+          <tiButton type="ghost" (click)="toggle()">
+            <tiIcon *ngIf="mode === 'dark'" icon="sun_1" />
+            <tiIcon *ngIf="mode === 'light'" icon="moon" />
+          </tiButton>
         </div>
       </div>
     </div>

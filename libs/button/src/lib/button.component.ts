@@ -137,7 +137,6 @@ export class ButtonComponent {
     "duration-300",
     "active:scale-97",
     "rounded-lg",
-    "tracking-2px",
     "disabled:opacity-50",
     "disabled:pointer-events-none",
     "font-medium",

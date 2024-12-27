@@ -8,8 +8,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tailwind.css'
 })
 export class BadgeComponent {
-  @Input() type: string = "";
-  @Input() text: "default" | "primary" | "success" | "informative" | "warn" | "destructive" = "default";
+  @Input() type: "default" | "primary" | "success" | "informative" | "warn" | "destructive" = "default";
 
   private default: string[] = [
     "dark:bg-neutral-50",

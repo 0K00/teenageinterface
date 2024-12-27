@@ -10,6 +10,9 @@
       <ng-container *ngFor="let selectedValue of selectedValues; last as last">
         {{ selectedValues.length ? last ? selectedValue?.title : selectedValue?.title + ',' : placeholder }}
       </ng-container>
+      <ng-container *ngIf="selectedValues.length > 0">
+        {{placeholder}}
+      </ng-container>
     </div>
     <tiIcon icon="chevron_down" [ngClass]="isOpen ? 'perspective preserve-3d transition-all duration-300 rotate-x-180' : 'perspective preserve-3d rotate-x-0 transition-all duration-300'" />
   </div>

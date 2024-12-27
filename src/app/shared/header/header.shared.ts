@@ -8,12 +8,14 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HighlightLoader } from 'ngx-highlightjs';
-import { ButtonComponent } from "../../components/button/button.component";
-import { IconsComponent } from '../../components/icons/icons.component';
+import { ButtonComponent } from "@teenageinterface/button";
+import { IconsComponent } from '@teenageinterface/icons';
+import { BadgeComponent } from '@teenageinterface/badge';
+import { SeparatorComponent } from '@teenageinterface/separator';
 
 @Component({
   selector: 'aHeader',
-  imports: [CommonModule, RouterModule, ButtonComponent, IconsComponent],
+  imports: [CommonModule, RouterModule, ButtonComponent, IconsComponent, BadgeComponent, SeparatorComponent],
   templateUrl: './header.shared.html'
 })
 export class HeaderShared implements OnInit {
