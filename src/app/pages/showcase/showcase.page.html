@@ -1,0 +1,32 @@
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-31 14:34:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2025-01-05 15:19:10
+-->
+
+<section class="p-8">
+  Showcase
+
+  <tiTabs type="primary">
+    <tiTab tabTitle="Map">
+      <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
+      </div>
+    </tiTab>
+    <tiTab tabTitle="Register" [active]="true">
+      <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
+        <showcase-register />
+      </div>
+    </tiTab>
+    <tiTab tabTitle="Video Editor">
+      <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
+        <showcase-video />
+      </div>
+    </tiTab>
+    <tiTab tabTitle="Todo list">
+      <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
+        <showcase-todo />
+      </div>
+    </tiTab>
+  </tiTabs>
+</section>

@@ -1,3 +1,151 @@
-<div>
-  Installation
-</div>
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-27 21:43:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2024-12-31 08:34:13
+-->
+
+<section>
+  <div class="flex flex-col gap-6 mb-8">
+    <div class="flex flex-col gap-2">
+      <div class="text-sm font-medium flex gap-2 mb-4">
+        <div [routerLink]="['/documentation']"  class="cursor-pointer transition-colors duration-300 text-neutral-500 hover:text-neutral-900 hover:dark:text-neutral-100" >Getting Started</div>
+        <div class="dark:text-neutral-800 text-neutral-300">/</div>
+        <div class="dark:text-blue-600 text-blue-800">Installation</div>
+      </div>
+      <h2 class="text-4xl font-semibold">Installation Guide</h2>
+      <p class="text-xl font-medium text-neutral-500">Installation Guide for teenage interface Angular Library with Tailwind CSS.</p>
+    </div>
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="installation" #installation>
+    <h3
+    (click)="scrollToElement(installation)"
+    class="
+      cursor-pointer
+      relative
+      text-xl
+      mb-4
+      font-medium
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+  ">
+    Installation Steps
+  </h3>
+
+  <div id="dependencies" #dependencies>
+    <h4
+    (click)="scrollToElement(dependencies)"
+    class="
+      cursor-pointer
+      relative
+      text-lg
+      mb-4
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+    ">
+      Install the Dependencies
+    </h4>
+    <div>
+      <aCode [language]="'bash'" code="npm install @teenageinterface/core tailwindcss postcss autoprefixer" />
+    </div>
+  </div>
+
+  <div id="configure" #configure>
+    <h4
+    (click)="scrollToElement(configure)"
+    class="
+      cursor-pointer
+      relative
+      text-lg
+      my-4
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+    ">
+      Configure Tailwind CSS
+    </h4>
+    <div class="flex flex-col gap-2">
+      Generate the Tailwind CSS configuration file by running:
+      <aCode [language]="'bash'" code="npx tailwindcss init" />
+    </div>
+    <div class="flex flex-col gap-2 mt-4">
+      <div>
+        Update the <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">tailwind.config.js</span> file to include your Angular project files. For example:
+      </div>
+      <aCode [language]="'typescript'" [code]="configCode" />
+    </div>
+    <div class="flex flex-col gap-2 mt-4">
+      <div>
+        Add the Tailwind directives to your global stylesheet <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">src/styles.scss</span>:
+      </div>
+      <aCode [language]="'typescript'" [code]="styleCode" />
+    </div>
+  </div>
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="angular" #angular>
+    <h3
+    (click)="scrollToElement(angular)"
+    class="
+      cursor-pointer
+      relative
+      text-xl
+      mb-4
+      font-medium
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+    ">
+      Use Components in Angular
+    </h3>
+
+    <div id="standalone" #standalone>
+      <h4
+      (click)="scrollToElement(standalone)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        For Standalone Components
+      </h4>
+      <div class="flex flex-col gap-2">
+        Import and use the components directly in your Angular files:
+        <aCode [language]="'typescript'" [code]="standaloneCode" />
+      </div>
+    </div>
+  </div>
+</section>
+

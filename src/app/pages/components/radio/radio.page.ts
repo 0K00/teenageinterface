@@ -1,3 +1,10 @@
+/******************************************************************************
+ * @Author                : 0K00<qdouvillez@gmail.com>                        *
+ * @CreatedDate           : 2024-12-27 11:20:15                               *
+ * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
+ * @LastEditDate          : 2024-12-27 11:20:15                               *
+ *****************************************************************************/
+
 import { Component } from "@angular/core";
 import { RadioComponent } from "@teenageinterface/radio";
 import { TabsComponent, TabComponent } from "@teenageinterface/tabs";
@@ -9,7 +16,6 @@ import THeaderComponent from "../../../components/table/tHeader/tHeader.componen
 import TCellComponent from "../../../components/table/tCell/tCell.component";
 import TBodyComponent from "../../../components/table/tBody/tBody.component";
 import { RouterModule } from "@angular/router";
-import { IconsComponent } from "@teenageinterface/icons";
 
 const pageInfo = {
   title: "Components / Radio",
@@ -19,7 +25,7 @@ const pageInfo = {
 @Component({
   selector: "pages-radio",
   standalone: true,
-  imports: [RouterModule, RadioComponent, TabsComponent, TabComponent, CodeComponent, TableComponent, TRowComponent, THeaderComponent, TCellComponent, TBodyComponent, IconsComponent],
+  imports: [RouterModule, RadioComponent, TabsComponent, TabComponent, CodeComponent, TableComponent, TRowComponent, THeaderComponent, TCellComponent, TBodyComponent],
   templateUrl: './radio.page.html',
 })
 

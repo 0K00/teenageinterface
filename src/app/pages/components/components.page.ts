@@ -1,9 +1,9 @@
-/**
- * @Author: 0K0 <contact@oko.app>
- * @Date:   14-12-2024 20:56:21
- * @Last Modified by:   0K0 <contact@oko.app>
- * @Last Modified time: 14-12-2024 23:21:31
- */
+/******************************************************************************
+ * @Author                : 0K00<qdouvillez@gmail.com>                        *
+ * @CreatedDate           : Invalid Date                                      *
+ * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
+ * @LastEditDate          : 2024-12-28 09:38:48                               *
+ *****************************************************************************/
 
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -13,13 +13,15 @@ import { AnchorNavComponent } from '../../shared/layout/navigation/anchor-nav/an
 import { ButtonComponent } from '@teenageinterface/button';
 import { Subscription } from 'rxjs';
 import { IconsComponent } from '@teenageinterface/icons';
+import { FooterShared } from '../../shared/footer/footer.shared';
 
 @Component({
   selector: 'componentsPage',
-  imports: [CommonModule, RouterOutlet, SideNavComponent, AnchorNavComponent, ButtonComponent, IconsComponent],
+  imports: [CommonModule, RouterOutlet, SideNavComponent, AnchorNavComponent, ButtonComponent, IconsComponent, FooterShared],
   templateUrl: './components.page.html'
 })
 export class ComponentsPage implements OnInit, OnDestroy {
+  title = '-'
   nextChildTitle: any = "";
   previousChildTitle: any = "";
   showNextButton: boolean = false;
@@ -58,8 +60,8 @@ export class ComponentsPage implements OnInit, OnDestroy {
     const nextIndex = (currentIndex + 1) % children.length;
     const previousIndex = (currentIndex - 1 + children.length) % children.length;
 
-    this.nextChildTitle = children[nextIndex]?.data?.['title']?.replace('Components /', '') || 'Next';
-    this.previousChildTitle = children[previousIndex]?.data?.['title']?.replace('Components /', '') || 'Previous';
+    this.nextChildTitle = children[nextIndex]?.data?.['title']?.replace(/(Components|Getting Started) \//g, '') || 'Next';
+    this.previousChildTitle = children[previousIndex]?.data?.['title']?.replace(/(Components|Getting Started) \//g, '') || 'Previous';
 
     this.showNextButton = currentIndex < children.length - 1;
     this.showPreviousButton = currentIndex > 0;

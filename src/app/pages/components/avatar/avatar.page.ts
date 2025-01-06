@@ -1,3 +1,10 @@
+/******************************************************************************
+ * @Author                : 0K00<qdouvillez@gmail.com>                        *
+ * @CreatedDate           : 2024-12-28 09:39:05                               *
+ * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
+ * @LastEditDate          : 2024-12-28 09:39:05                               *
+ *****************************************************************************/
+
 import { Component } from "@angular/core";
 import { AvatarComponent } from "@teenageinterface/avatar";
 import { TabsComponent, TabComponent } from "@teenageinterface/tabs";
@@ -24,6 +31,7 @@ const pageInfo = {
 })
 
 export default class AvatarPage {
+  title = "avatar"
   protected readonly defaultCode = defaultCode;
   protected readonly defaultImports = defaultImports;
   protected readonly defaultSkeleton = defaultSkeleton;

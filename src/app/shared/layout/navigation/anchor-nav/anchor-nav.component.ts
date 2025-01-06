@@ -1,5 +1,12 @@
+/******************************************************************************
+ * @Author                : 0K00<qdouvillez@gmail.com>                        *
+ * @CreatedDate           : 2024-12-31 14:14:13                               *
+ * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
+ * @LastEditDate          : 2024-12-31 14:25:27                               *
+ *****************************************************************************/
+
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, HostListener } from '@angular/core';
+import { Component, AfterViewInit, HostListener, ChangeDetectorRef } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -21,28 +28,25 @@ export class AnchorNavComponent implements AfterViewInit {
 
   private routerSubscription!: Subscription;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cdref: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.initializeAnchors();
 
     this.routerSubscription = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        setTimeout(() => this.initializeAnchors(), 100);
+        this.initializeAnchors()
+        this.cdref.detectChanges();
       }
     });
-  }
-
-  ngOnDestroy() {
-    if (this.routerSubscription) {
-      this.routerSubscription.unsubscribe();
-    }
+    this.cdref.detectChanges();
   }
 
   initializeAnchors() {
     this.findAnchorsWithHierarchy();
     this.updateAnchorOffsets();
-    this.activeAnchorId = this.anchors[0].id;
+    if(this.anchors.length > 0)
+      this.activeAnchorId = this.anchors[0].id;
   }
 
   findAnchorsWithHierarchy() {

@@ -1,0 +1,73 @@
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-27 21:43:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2024-12-31 08:49:19
+-->
+
+<section>
+  <div class="flex flex-col gap-6 mb-8">
+    <div class="flex flex-col gap-2">
+      <div class="text-sm font-medium flex gap-2 mb-4">
+        <div [routerLink]="['/documentation']"  class="cursor-pointer transition-colors duration-300 text-neutral-500 hover:text-neutral-900 hover:dark:text-neutral-100" >Getting Started</div>
+        <div class="dark:text-neutral-800 text-neutral-300">/</div>
+        <div class="dark:text-blue-600 text-blue-800">Dark Mode</div>
+      </div>
+      <h2 class="text-4xl font-semibold">Dark Mode</h2>
+      <p class="text-xl font-medium text-neutral-500">Adding dark mode to your site.</p>
+    </div>
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="tailwind" #tailwind>
+    <h3
+    (click)="scrollToElement(tailwind)"
+    class="
+      cursor-pointer
+      relative
+      text-xl
+      mb-4
+      font-medium
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+  ">
+    Tailwind Config
+  </h3>
+  <div class="flex flex-col gap-2">
+    <div>
+      Update the <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">tailwind.config.js</span> file to include your Angular project files. For example:
+    </div>
+    <aCode [language]="'typescript'" [code]="tailwindCode" />
+  </div>
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="toggle" #toggle>
+    <h3
+    (click)="scrollToElement(toggle)"
+    class="
+      cursor-pointer
+      relative
+      text-xl
+      mb-4
+      font-medium
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+  ">
+    Toggle Theme
+  </h3>
+  <aCode [language]="'typescript'" [code]="toggleCode" />
+  <aCode [language]="'html'" [code]="buttonCode" />
+</div>
+</section>
+

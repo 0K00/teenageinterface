@@ -1,10 +1,17 @@
-<div class="flex w-full gap-16 justify-center">
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-27 21:59:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2024-12-31 10:46:46
+-->
+
+<div class="flex w-full gap-8 md:gap-16 md:justify-start lg:justify-between">
   <div class="relative">
-    <div class="absolute -left-56">
+    <div class="absolute">
       <side-nav />
     </div>
   </div>
-  <div class="w-1/2 mb-8">
+  <div class="lg:w-1/2 lg:ml-0 w-full ml-0 md:ml-52 pr-8 mb-8 pt-8">
     <router-outlet></router-outlet>
     <nav class="flex items-center" [ngClass]="{'justify-between': showPreviousButton && showNextButton, 'justify-end': showNextButton && !showPreviousButton}">
       <tiButton class="self-start" *ngIf="showPreviousButton" type="outline" (click)="navigateToPreviousChild()">
@@ -16,8 +23,9 @@
         <tiIcon icon="chevron_right" />
       </tiButton>
     </nav>
+    <tiFooter />
   </div>
-  <div class="relative">
+  <div class="hidden lg:block relative pt-8">
     <anchor-nav />
   </div>
 </div>

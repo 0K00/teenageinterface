@@ -1,123 +1,32 @@
+/******************************************************************************
+ * @Author                : 0K00<qdouvillez@gmail.com>                        *
+ * @CreatedDate           : 2024-12-27 11:46:23                               *
+ * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
+ * @LastEditDate          : 2024-12-27 11:46:24                               *
+ *****************************************************************************/
+
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "preview-button",
+  selector: "preview-switch",
   standalone: true,
   template: ``
 })
 
-export class ButtonPreview {}
+export class SwitchPreview {}
 
 export const defaultCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
+import { SwitchComponent } from "@teenageinterface/switch";
 
 @Component({
-  selector: "pages-button",
+  selector: "pages-switch",
   standalone: true,
-  imports: [ButtonComponent],
-  template: \` <tiButton>Button</tiButton> \`,
+  imports: [SwitchComponent],
+  template: \` <tiSwitch>Focus mode</tiSwitch> \`,
 })
 
-export default class ButtonPage {}`;
+export default class SwitchPage {}`;
 
-export const defaultImports = `import { ButtonComponent } from '@teenageinterface/button';`;
+export const defaultImports = `import { SwitchComponent } from "@teenageinterface/switch";`;
 
-export const defaultSkeleton = `<tiButton>Button</tiButton>`;
-
-export const primaryCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent],
-  template: \` <tiButton type="primary" >Primary</tiButton> \`,
-})
-
-export default class ButtonPage {}`;
-
-export const destructiveCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent],
-  template: \` <tiButton type="destructive" >Destructive</tiButton> \`,
-})
-
-export default class ButtonPage {}`;
-
-export const outlineCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent],
-  template: \` <tiButton type="outline" >Outline</tiButton> \`,
-})
-
-export default class ButtonPage {}`;
-
-export const ghostCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent],
-  template: \` <tiButton type="ghost" >Ghost</tiButton> \`,
-})
-
-export default class ButtonPage {}`;
-
-export const linkCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent],
-  template: \` <tiButton type="link" >Link</tiButton> \`,
-})
-
-export default class ButtonPage {}`;
-
-export const iconCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
-import { IconsComponent } from "@teenageinterface/icons";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent, IconsComponent],
-  template:\`<tiButton type="outline"><tiIcon icon="gear_1" /></tiButton>\`,
-})
-
-export default class ButtonPage {}`;
-
-export const withCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
-import { IconsComponent } from "@teenageinterface/icons";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent, IconsComponent],
-  template:\`<tiButton type="default"><tiIcon icon="download" /><div>Download files</div></tiButton>\`,
-})
-
-export default class ButtonPage {}`;
-
-export const loadingCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@teenageinterface/button";
-
-@Component({
-  selector: "pages-button",
-  standalone: true,
-  imports: [ButtonComponent],
-  template: \` <tiButton type="default" [loading]="true" >Log in</tiButton> \`,
-})
-
-export default class ButtonPage {}`;
+export const defaultSkeleton = `<tiSwitch></tiSwitch>`;

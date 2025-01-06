@@ -1,7 +1,13 @@
+/******************************************************************************
+ * @Author                : 0K00<qdouvillez@gmail.com>                        *
+ * @CreatedDate           : 2024-12-27 17:00:18                               *
+ * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
+ * @LastEditDate          : 2024-12-27 17:08:38                               *
+ *****************************************************************************/
+
 import { Component } from "@angular/core";
-import { ButtonComponent } from "@teenageinterface/button";
 import { TabsComponent, TabComponent } from "@teenageinterface/tabs";
-import { defaultCode, defaultImports, defaultSkeleton, primaryCode, destructiveCode, outlineCode, ghostCode, linkCode, iconCode, withCode, loadingCode } from "./tabs.preview";
+import { defaultCode, defaultImports, defaultSkeleton, primaryCode } from "./tabs.preview";
 import { CodeComponent } from "../../../shared/code/code.component";
 import TableComponent from "../../../components/table/table.component";
 import TRowComponent from "../../../components/table/tRow/tRow.component";
@@ -9,7 +15,6 @@ import THeaderComponent from "../../../components/table/tHeader/tHeader.componen
 import TCellComponent from "../../../components/table/tCell/tCell.component";
 import TBodyComponent from "../../../components/table/tBody/tBody.component";
 import { RouterModule } from "@angular/router";
-import { IconsComponent } from "@teenageinterface/icons";
 
 const pageInfo = {
   title: "Components / Tabs",
@@ -19,7 +24,7 @@ const pageInfo = {
 @Component({
   selector: "pages-tabs",
   standalone: true,
-  imports: [RouterModule, ButtonComponent, TabsComponent, TabComponent, CodeComponent, TableComponent, TRowComponent, THeaderComponent, TCellComponent, TBodyComponent, IconsComponent],
+  imports: [RouterModule, TabsComponent, TabComponent, CodeComponent, TableComponent, TRowComponent, THeaderComponent, TCellComponent, TBodyComponent],
   templateUrl: './tabs.page.html',
 })
 
@@ -28,13 +33,6 @@ export default class TabsPage {
   protected readonly defaultImports = defaultImports;
   protected readonly defaultSkeleton = defaultSkeleton;
   protected readonly primaryCode = primaryCode;
-  protected readonly destructiveCode = destructiveCode;
-  protected readonly outlineCode = outlineCode;
-  protected readonly ghostCode = ghostCode;
-  protected readonly linkCode = linkCode;
-  protected readonly iconCode = iconCode;
-  protected readonly withCode = withCode;
-  protected readonly loadingCode = loadingCode;
 
   scrollToElement($element: HTMLElement): void {
     const currentUrl = window.location.href.split('#')[0];

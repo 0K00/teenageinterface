@@ -1,13 +1,20 @@
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-27 09:46:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2024-12-27 11:16:40
+-->
+
 <section>
   <div class="flex flex-col gap-6 mb-8">
     <div class="flex flex-col gap-2">
       <div class="text-sm font-medium flex gap-2 mb-4">
         <div [routerLink]="['/components']"  class="cursor-pointer transition-colors duration-300 text-neutral-500 hover:text-neutral-900 hover:dark:text-neutral-100" >Components</div>
         <div class="dark:text-neutral-800 text-neutral-300">/</div>
-        <div class="dark:text-blue-600 text-blue-800">Button</div>
+        <div class="dark:text-blue-600 text-blue-800">Select</div>
       </div>
-      <h2 class="text-4xl font-semibold">Button</h2>
-      <p class="text-xl font-medium text-neutral-500">Trigger an action or event, such as submitting a form or displaying a dialog.</p>
+      <h2 class="text-4xl font-semibold">Select</h2>
+      <p class="text-xl font-medium text-neutral-500">Select a value from a list of options.</p>
     </div>
     <tiTabs>
       <tiTab tabTitle="Preview" [active]="true">
@@ -56,29 +63,29 @@
       <aTBody>
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">id</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">options</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string | null</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">&lbrace; value: string | number, title: string &rbrace;&lbrack;&rbrack;</span>
           </aTCell>
           <aTCell><span class="dark:text-neutral-700 text-neutral-400">—</span></aTCell>
         </aTRow>
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">type</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">placeholder</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">"default" | "primary" | "destructive" | "outline" | "ghost" | "link"</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">"default"</span>
+            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">"Select an option"</span>
           </aTCell>
         </aTRow>
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">loading</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">multiSelect</span>
           </aTCell>
           <aTCell>
             <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
@@ -90,13 +97,25 @@
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">disabled</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">selectedIds</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">(string | number)[]</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
+            <span class="dark:text-neutral-700 text-neutral-400">—</span>
+          </aTCell>
+        </aTRow>
+
+        <aTRow>
+          <aTCell [rowHeader]="true">
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">selectionChange</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">EventEmitter&lt;&lbrace; value: string | number, title: string &rbrace;&lbrack;&rbrack;&gt;</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:text-neutral-700 text-neutral-400">—</span>
           </aTCell>
         </aTRow>
       </aTBody>
@@ -123,7 +142,7 @@
     ">
       Installation
     </h3>
-    <aCode [language]="'sh'" [code]="'npm install @teenageinterface/button'" />
+    <aCode [language]="'bash'" [code]="'npm install @teenageinterface/select'" />
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="usage" #usage>
@@ -150,5 +169,62 @@
     <aCode [language]="'html'" [code]="defaultSkeleton" />
   </div>
 
+  <div class="mb-16 flex flex-col gap-2" id="examples" #examples>
+    <h3
+      (click)="scrollToElement(examples)"
+      class="
+        cursor-pointer
+        relative
+        text-xl
+        mb-4
+        font-medium
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+    ">
+      Examples
+    </h3>
+
+    <div id="multiple" #multiple>
+      <h4
+      (click)="scrollToElement(multiple)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        Multiple
+      </h4>
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+            <tiSelect
+            [options]="[{value: 1, title: 'Unlimited'}, {value: 10, title: '10 Minutes'}, {value: 60, title: '1 Hour'}, {value: 1440, title: '1 Day'}, {value: 10080, title: '1 Week'}]"
+            placeholder="Choose an option"
+            [selectedIds]="[1]"
+            [multiSelect]="true" />
+          </div>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="multiCode" />
+        </tiTab>
+      </tiTabs>
+    </div>
+
+  </div>
 
 </section>

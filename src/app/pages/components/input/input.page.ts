@@ -1,5 +1,11 @@
+/******************************************************************************
+ * @Author                : 0K00<qdouvillez@gmail.com>                        *
+ * @CreatedDate           : 2024-12-27 11:20:53                               *
+ * @LastEditors           : 0K00<qdouvillez@gmail.com>                        *
+ * @LastEditDate          : 2024-12-27 11:20:54                               *
+ *****************************************************************************/
+
 import { Component } from "@angular/core";
-import { ButtonComponent } from "../../../components/button/button.component";
 import { TabsComponent } from "../../../components/tabs/tabs.component";
 import { TabComponent } from "../../../components/tabs/tab/tab.component";
 import { defaultCode, defaultImports, defaultSkeleton, passwordCode, emailCode, errorCode, fileCode, bigFileCode } from "./input.preview";
@@ -10,7 +16,6 @@ import THeaderComponent from "../../../components/table/tHeader/tHeader.componen
 import TCellComponent from "../../../components/table/tCell/tCell.component";
 import TBodyComponent from "../../../components/table/tBody/tBody.component";
 import { RouterModule } from "@angular/router";
-import { IconsComponent } from "../../../components/icons/icons.component";
 import { InputComponent } from "@teenageinterface/input";
 
 const pageInfo = {
@@ -21,7 +26,7 @@ const pageInfo = {
 @Component({
   selector: "pages-input",
   standalone: true,
-  imports: [RouterModule, InputComponent, TabsComponent, TabComponent, CodeComponent, TableComponent, TRowComponent, THeaderComponent, TCellComponent, TBodyComponent, IconsComponent],
+  imports: [RouterModule, InputComponent, TabsComponent, TabComponent, CodeComponent, TableComponent, TRowComponent, THeaderComponent, TCellComponent, TBodyComponent],
   templateUrl: './input.page.html',
 })
 

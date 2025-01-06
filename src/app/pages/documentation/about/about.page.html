@@ -1,0 +1,79 @@
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-27 21:43:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2024-12-31 09:09:55
+-->
+
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-27 21:43:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2024-12-31 08:49:19
+-->
+
+<section>
+  <div class="flex flex-col gap-6 mb-8">
+    <div class="flex flex-col gap-2">
+      <div class="text-sm font-medium flex gap-2 mb-4">
+        <div [routerLink]="['/documentation']"  class="cursor-pointer transition-colors duration-300 text-neutral-500 hover:text-neutral-900 hover:dark:text-neutral-100" >Getting Started</div>
+        <div class="dark:text-neutral-800 text-neutral-300">/</div>
+        <div class="dark:text-blue-600 text-blue-800">About & Credits</div>
+      </div>
+      <h2 class="text-4xl font-semibold">About</h2>
+      <p class="text-xl font-medium text-neutral-500">Project's information & license.</p>
+    </div>
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="about" #about>
+    <h3
+    (click)="scrollToElement(about)"
+    class="
+      cursor-pointer
+      relative
+      text-xl
+      mb-4
+      font-medium
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+  ">
+    About
+  </h3>
+  <div>
+    Created by <a class="cursor-pointer text-neutral-950 dark:text-neutral-50 hover:underline" href="https://x.com/0K0___" target="_blank">0K0</a>.
+  </div>
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="license" #license>
+    <h3
+    (click)="scrollToElement(license)"
+    class="
+      cursor-pointer
+      relative
+      text-xl
+      mb-4
+      font-medium
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+  ">
+    License
+  </h3>
+  <div>
+    MIT © 2025 - <a class="cursor-pointer text-neutral-950 dark:text-neutral-50 hover:underline" href="https://x.com/0K0___" target="_blank">0K0</a>.
+  </div>
+  </div>
+
+</section>
+
