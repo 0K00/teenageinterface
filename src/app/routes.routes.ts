@@ -33,6 +33,8 @@ import ShowcasePage from './pages/showcase/showcase.page';
 
 export const routes: Routes = [
 
+  { path: '', component: ShowcasePage, title: "Teenage Interface" },
+
   { path: 'components', component: ComponentsPage, title: "Teenage Interface: Components", children: [
       { path: '', redirectTo: 'avatar', pathMatch: 'full' },
       { path: 'avatar', title: "Teenage Interface: Components / Avatar", component: AvatarPage, data: { title: 'Components / Avatar', order: 1, soon: undefined, alpha: undefined } },
@@ -64,7 +66,5 @@ export const routes: Routes = [
     ]
   },
 
-  { path: 'showcase', title: 'Teenage Interface: Showcase',  component: ShowcasePage },
-
-  { path: '**', pathMatch: 'full', component: NotfoundPage }
+  { path: '**', pathMatch: 'full', title: 'Teenage Interface: Not Found', component: NotfoundPage }
 ];

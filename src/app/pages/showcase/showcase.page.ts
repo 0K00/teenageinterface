@@ -11,12 +11,16 @@ import { TabComponent, TabsComponent } from "@teenageinterface/tabs";
 import RegisterShowcase from "./register/register.showcase";
 import TodoShowcase from "./todo/todo.showcase";
 import VideoShowcase from "./video/video.showcase";
+import { ButtonComponent } from "@teenageinterface/button";
+import { RouterModule } from "@angular/router";
+import { FooterShared } from "../../shared/footer/footer.shared";
+import ExamplesShowcase from "./examples/examples.showcase";
 
 
 @Component({
   selector: "pages-showcase",
   standalone: true,
-  imports: [CommonModule, TabsComponent, TabComponent, RegisterShowcase, TodoShowcase, VideoShowcase],
+  imports: [CommonModule, TabsComponent, TabComponent, RegisterShowcase, TodoShowcase, VideoShowcase, ButtonComponent, RouterModule, FooterShared, ExamplesShowcase],
   templateUrl: "./showcase.page.html",
 })
 
@@ -27,4 +31,5 @@ export default class ShowcasePage implements OnInit {
   ngOnInit() {
 
   }
+
 }

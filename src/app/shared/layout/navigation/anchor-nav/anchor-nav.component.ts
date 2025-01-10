@@ -34,10 +34,8 @@ export class AnchorNavComponent implements AfterViewInit {
     this.initializeAnchors();
 
     this.routerSubscription = this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.initializeAnchors()
-        this.cdref.detectChanges();
-      }
+      this.initializeAnchors()
+      this.cdref.detectChanges();
     });
     this.cdref.detectChanges();
   }

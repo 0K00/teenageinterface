@@ -7,16 +7,22 @@
 
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
+import { AvatarComponent } from "@teenageinterface/avatar";
 import { ButtonComponent } from "@teenageinterface/button";
+import { CardComponent } from "@teenageinterface/card";
+import { IconsComponent } from "@teenageinterface/icons";
 import { InputComponent } from "@teenageinterface/input";
+import { SelectComponent } from "@teenageinterface/select";
+import { SeparatorComponent } from "@teenageinterface/separator";
+import { SwitchComponent } from "@teenageinterface/switch";
 
 @Component({
-  selector: "showcase-register",
+  selector: "showcase-examples",
   standalone: true,
-  imports: [CommonModule, ButtonComponent, InputComponent],
-  templateUrl: './register.showcase.html',
+  imports: [CommonModule, ButtonComponent, InputComponent, CardComponent, AvatarComponent, SelectComponent, IconsComponent, SeparatorComponent, SwitchComponent],
+  templateUrl: './examples.showcase.html',
 })
 
-export default class RegisterShowcase {
+export default class ExamplesShowcase {
 
 }

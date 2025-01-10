@@ -6,14 +6,30 @@
 -->
 
 <section class="p-8">
-  Showcase
+  <div class="flex flex-col gap-2 mb-16">
+    <div class="text-3xl font-semibold">
+      Bold UI for the Next-Gen Developer
+    </div>
+    <div class="font-semibold text-neutral-500 max-w-screen-md">
+      A lightweight, customizable library of reusable Angular components designed for rapid development. It features responsive design, theming support, and seamless integration with modern tools to deliver consistent and scalable UI/UX.
+    </div>
+    <div class="flex items-center gap-2 mt-4">
+      <tiButton type="default" [routerLink]="['/documentation']" >
+        Get Started
+      </tiButton>
+      <tiButton type="outline" [routerLink]="['/components']">
+        Browse Components
+      </tiButton>
+    </div>
+  </div>
 
-  <tiTabs type="primary">
-    <tiTab tabTitle="Map">
-      <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
+  <tiTabs type="ghost">
+    <tiTab tabTitle="Examples" [active]="true">
+      <div class="">
+        <showcase-examples />
       </div>
     </tiTab>
-    <tiTab tabTitle="Register" [active]="true">
+    <tiTab tabTitle="Register">
       <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
         <showcase-register />
       </div>
@@ -29,4 +45,6 @@
       </div>
     </tiTab>
   </tiTabs>
+
+  <tiFooter />
 </section>

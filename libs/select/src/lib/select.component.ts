@@ -39,6 +39,7 @@ export class SelectComponent implements AfterViewChecked {
   highlightedIndex: number = -1;
   dropdownPosition: 'top' | 'bottom' = 'bottom';
   private dropdownReady = false;
+  public showPlaceholder = true;
 
   constructor(private cdRef: ChangeDetectorRef) {}
 
@@ -51,6 +52,8 @@ export class SelectComponent implements AfterViewChecked {
       const singleValue = this.options.find((option) => option.value === this.selectedIds[0]);
       this.selectedValues = singleValue ? [singleValue] : [];
     }
+
+    this.showPlaceholder = this.selectedValues.length > 0 ? false : true;
   }
 
   toggleDropdown(event: Event) {

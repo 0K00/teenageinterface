@@ -20,8 +20,18 @@ import { InputComponent } from "@teenageinterface/input";
 })
 
 export default class TodoShowcase {
-  public list: { id: number, name: string, state: boolean }[] = []
+  public list: { id: number, name: string, state: boolean }[] = [
+    { id: 1, name: "Jogging 💪", state: false },
+    { id: 2, name: "Read a book 📚", state: true },
+    { id: 3, name: "Wireframing new product", state: false }
+  ]
   public value: string = "";
+  public date: Date = new Date();
+
+  public getTimeOfDay(): string {
+    const currentHour = new Date().getHours();
+    return currentHour >= 12 ? 'Afternoon' : 'Morning';
+  }
 
   public add(): void {
     if(!this.value || this.value.trim() === "") return;

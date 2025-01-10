@@ -17,17 +17,14 @@ import { RouterModule } from '@angular/router';
 import { HighlightLoader } from 'ngx-highlightjs';
 import { ButtonComponent } from "@teenageinterface/button";
 import { IconsComponent } from '@teenageinterface/icons';
-import { BadgeComponent } from '@teenageinterface/badge';
-import { SeparatorComponent } from '@teenageinterface/separator';
 import { SearchService } from '../../services/search.services';
 import { FormsModule } from '@angular/forms';
-import { CardComponent } from '@teenageinterface/card';
 import { InputComponent } from '@teenageinterface/input';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'aHeader',
-  imports: [CommonModule, RouterModule, ButtonComponent, IconsComponent, BadgeComponent, SeparatorComponent, FormsModule, CardComponent, IconsComponent, InputComponent],
+  imports: [CommonModule, RouterModule, ButtonComponent, IconsComponent, FormsModule, IconsComponent, InputComponent],
   templateUrl: './header.shared.html',
   animations: [
     trigger('slideIn', [

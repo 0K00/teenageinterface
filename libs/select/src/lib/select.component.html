@@ -8,9 +8,9 @@
   <div class="flex items-center gap-1 justify-between w-full">
     <div class="truncate text-ellipsis w-full">
       <ng-container *ngFor="let selectedValue of selectedValues; last as last">
-        {{ selectedValues.length ? last ? selectedValue?.title : selectedValue?.title + ',' : placeholder }}
+        {{ last ? selectedValue?.title : selectedValue?.title + ',' }}
       </ng-container>
-      <ng-container *ngIf="selectedValues.length > 0">
+      <ng-container *ngIf="showPlaceholder">
         {{placeholder}}
       </ng-container>
     </div>
