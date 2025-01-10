@@ -1,63 +1,91 @@
-# Input
+# Input Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Input` component is a customizable input field for various types of data in your Angular application. It supports different input types, including text, password, email, and file inputs, and emits events on value changes and when the enter key is pressed.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `@teenageinterface/input` library and included `FormsModule` in your Angular application. If not, you can add them using:
 
 ```bash
-ng generate --help
+npm install @teenageinterface/input
 ```
 
-## Building
-
-To build the library, run:
-
-```bash
-ng build input
+```typescript
+import { FormsModule } from '@angular/forms';
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+## Usage
 
-### Publishing the Library
+Import the `InputComponent` into your Angular application:
 
-Once the project is built, you can publish your library by following these steps:
+```typescript
+import { InputComponent } from '@teenageinterface/input';
 
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/input
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+@Component({
+  selector: 'app-input-example',
+  template: `
+    <tiInput [(value)]="inputValue" (onEnter)="onSubmit($event)"></tiInput>
+  `,
+})
+export class InputExampleComponent {
+  inputValue: string = '';
+  onSubmit(value: string) {
+    console.log('Entered value:', value);
+  }
+}
 ```
 
-## Running end-to-end tests
+### Example
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```html
+<tiInput [value]="inputValue" [placeholder]="'Enter text'" (valueChange)="onValueChange($event)"></tiInput>
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Properties
 
-## Additional Resources
+| Property      | Type                | Default     | Description                                               |
+|---------------|---------------------|-------------|-----------------------------------------------------------|
+| `id`          | `string`            | `null`      | The ID of the input field.                                |
+| `disabled`    | `boolean`           | `false`     | If `true`, the input field will be disabled.              |
+| `serverError` | `boolean`           | `false`     | If `true`, the input will visually indicate a server error.|
+| `value`       | `string`            | `""`        | The value of the input field.                             |
+| `placeholder` | `string`            | `""`        | Placeholder text for the input field.                     |
+| `required`    | `boolean`           | `false`     | If `true`, the input will be required.                    |
+| `type`        | `"text" \| "password" \| "email" \| "file" \| "bigFile"` | `"text"` | The input type. Supports text, password, email, file, and bigFile. |
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Events
+
+| Event        | Description                                                |
+|--------------|------------------------------------------------------------|
+| `valueChange` | Emitted when the value of the input field changes.         |
+| `onEnter`     | Emitted when the enter key is pressed in the input field.  |
+
+## Methods
+
+### `enter()`
+- Emits the `onEnter` event when the enter key is pressed.
+
+## Patterns
+
+The input field has different patterns based on the `type`:
+
+- `text`, `password`, `file`, `bigFile`: Accepts any string.
+- `email`: Matches a valid email pattern using a regular expression.
+
+### Example Pattern (email)
+
+```text
+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$
+```
+
+## Documentation
+
+For more information, visit the [official documentation]().
+
+## Repository
+
+The source code is available on [GitHub](https://github.com/0K00/teenageinterface).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).

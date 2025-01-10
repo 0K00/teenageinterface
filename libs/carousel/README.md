@@ -1,63 +1,75 @@
-# Carousel
+# Carousel Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Carousel` component allows you to create a sliding carousel with configurable options such as auto-sliding, controls, and dot indicators.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `@teenageinterface/carousel` library in your Angular project. If not, you can add it using:
 
 ```bash
-ng generate --help
+npm install @teenageinterface/carousel
 ```
 
-## Building
+## Usage
 
-To build the library, run:
+Import the `Carousel` component module into your Angular application:
 
-```bash
-ng build carousel
+```typescript
+import { CarouselComponent, SlideComponent } from '@teenageinterface/carousel';
+
+@Component({
+  selector: 'pages-carousel',
+  template: `
+    <tiCarousel [autoSlide]="true" [autoSlideTime]="3000">
+      <tiSlide>Slide 1 Content</tiSlide>
+      <tiSlide>Slide 2 Content</tiSlide>
+      <tiSlide>Slide 3 Content</tiSlide>
+    </tiCarousel>
+  `,
+})
+export default class CarouselPage {}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+### Example
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/carousel
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```html
+<tiCarousel [autoSlide]="true" [autoSlideTime]="3000">
+  <tiSlide>Slide 1 Content</tiSlide>
+  <tiSlide>Slide 2 Content</tiSlide>
+  <tiSlide>Slide 3 Content</tiSlide>
+</tiCarousel>
 ```
 
-## Running end-to-end tests
+## Properties
 
-For end-to-end (e2e) testing, run:
+| Property            | Type            | Default        | Description                                                            |
+|---------------------|-----------------|----------------|------------------------------------------------------------------------|
+| `autoSlideTime`     | `number`        | `3000`         | Time in milliseconds between automatic slide transitions.              |
+| `autoSlide`         | `boolean`       | `true`         | Enables or disables auto-sliding.                                      |
+| `dot`               | `boolean`       | `true`         | Controls whether dots (indicators) are displayed.                      |
+| `controls`          | `boolean`       | `true`         | Controls whether the next/prev slide controls are displayed.           |
+| `width`             | `number`        | `320`          | Sets the width of the carousel.                                        |
+| `infinite`          | `boolean`       | `true`         | Enables infinite scrolling of slides.                                  |
+| `type`              | `"classic" | "modern"` | `"modern"` | Sets the type of carousel design. Can be either "classic" or "modern". |
 
-```bash
-ng e2e
-```
+## Methods
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `nextSlide()`: Moves to the next slide.
+- `prevSlide()`: Moves to the previous slide.
+- `goToSlide(index: number)`: Goes to a specific slide by index.
+- `pauseAutoSlide()`: Pauses the auto-slide feature.
+- `resumeAutoSlide()`: Resumes the auto-slide feature.
 
-## Additional Resources
+## Events
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `onDragStart(event: MouseEvent)`: Triggered when the drag starts.
+- `onDrag(event: MouseEvent)`: Triggered during the drag event.
+- `onDragEnd(event: MouseEvent)`: Triggered when the drag ends.
+
+## Documentation
+
+For more information, visit the [official documentation](https://github.com/0K00/teenageinterface).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).

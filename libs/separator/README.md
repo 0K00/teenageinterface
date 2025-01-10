@@ -1,63 +1,67 @@
-# Separator
+# Separator Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Separator` component is a versatile UI element used to create visual separation between sections or components in a layout. It supports both horizontal and vertical orientations and is fully customizable in size.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `@teenageinterface/separator` library in your Angular project. If not, you can add it using:
 
 ```bash
-ng generate --help
+npm install @teenageinterface/separator
 ```
 
-## Building
+## Usage
 
-To build the library, run:
+Import the `SeparatorComponent` into your Angular application:
 
-```bash
-ng build separator
+```typescript
+import { SeparatorComponent } from '@teenageinterface/separator';
+
+@Component({
+  selector: 'app-separator-example',
+  template: `
+    <tiSeparator [orientation]="'horizontal'" [size]="'50%'"></tiSeparator>
+  `,
+})
+export class SeparatorExampleComponent {}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+### Example
 
-### Publishing the Library
+```html
+<!-- Horizontal Separator -->
+<tiSeparator [orientation]="'horizontal'" [size]="'80%'"></tiSeparator>
 
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/separator
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+<!-- Vertical Separator -->
+<tiSeparator [orientation]="'vertical'" [size]="'100px'"></tiSeparator>
 ```
 
-## Running end-to-end tests
+## Properties
 
-For end-to-end (e2e) testing, run:
+| Property       | Type                          | Default       | Description                                                     |
+|----------------|-------------------------------|---------------|-----------------------------------------------------------------|
+| `orientation`  | `"vertical" \| "horizontal"` | `"horizontal"`| Defines the orientation of the separator (vertical or horizontal). |
+| `size`         | `string`                     | `"100%"`      | Sets the length of the separator. Supports values like `50%`, `100px`, etc. |
 
-```bash
-ng e2e
-```
+## Features
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Orientation
 
-## Additional Resources
+- **Horizontal**: The separator is displayed as a thin horizontal line.
+- **Vertical**: The separator is displayed as a thin vertical line.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Customizable Size
+
+The `size` property allows you to adjust the separator's length dynamically based on your layout requirements.
+
+## Documentation
+
+For more details, visit the [official documentation]().  
+
+## Repository
+
+The source code is available on [GitHub](https://github.com/0K00/teenageinterface).  
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).  

@@ -1,63 +1,83 @@
-# Badge
+# Badge Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Badge` component is part of the `@teenageinterface` Angular component library. It provides a versatile badge element with support for different types, ensuring visual consistency and customization.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `@teenageinterface/badge` library in your Angular project. If not, you can add it using:
 
 ```bash
-ng generate --help
+npm install @teenageinterface/badge
 ```
 
-## Building
+## Usage
 
-To build the library, run:
+Import the `Badge` component module into your Angular application:
 
-```bash
-ng build badge
+```typescript
+import { CommonModule } from '@angular/common';
+import { BadgeComponent } from '@teenageinterface/badge';
+
+@Component({
+  selector: 'pages-badge',
+  standalone: true,
+  imports: [BadgeComponent],
+  template: `
+    <tiBadge [type]="'success'">Success Badge</tiBadge>
+  `,
+})
+export default class BadgePage {}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+### Example
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/badge
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```html
+<tiBadge [type]="'primary'">Primary Badge</tiBadge>
+<tiBadge [type]="'warn'">Warning Badge</tiBadge>
+<tiBadge [type]="'destructive'">Destructive Badge</tiBadge>
 ```
 
-## Running end-to-end tests
+## Properties
 
-For end-to-end (e2e) testing, run:
+| Property  | Type                                                             | Default    | Description                                   |
+|-----------|------------------------------------------------------------------|------------|-----------------------------------------------|
+| `type`    | `'default' \| 'primary' \| 'success' \| 'informative' \| 'warn' \| 'destructive'` | `'default'` | Determines the style of the badge.            |
 
-```bash
-ng e2e
-```
+## Types
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### `type`
 
-## Additional Resources
+- `default`: Neutral style for general use.
+- `primary`: Emphasized badge for primary actions or statuses.
+- `success`: Indicates successful outcomes or statuses.
+- `informative`: Used for informational messages or indicators.
+- `warn`: Alerts users to warnings or non-critical issues.
+- `destructive`: Highlights destructive actions or critical errors.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Styling
+
+Each `type` applies additional color schemes:
+
+- `default`: Neutral background with contrasting text.
+- `primary`: Blue background with white text.
+- `success`: Green background with dark text for better visibility.
+- `informative`: Light blue background with darker text.
+- `warn`: Yellow background with bold text.
+- `destructive`: Red background with bold, attention-grabbing text.
+
+## Accessibility
+
+- Use `type` properties appropriately to ensure clear communication of the badge's purpose.
+- Ensure badges are visually distinct and provide sufficient contrast for readability.
+
+## Documentation
+
+For more information, visit the [official documentation]().
+
+## Repository
+
+The source code is available on [GitHub](https://github.com/0K00/teenageinterface).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).

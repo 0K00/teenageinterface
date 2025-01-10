@@ -1,6 +1,26 @@
 {
   "name": "@teenageinterface/avatar",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "The `Avatar` component is part of the `@teenageinterface` Angular component library. It provides a customizable avatar component with support for images, fallback initials, and size variations.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0K00/teenageinterface.git"
+  },
+  "homepage": "https://github.com/0K00/teenageinterface.git",
+  "author": "0K0",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "components",
+    "UI",
+    "UX",
+    "teenageinterface",
+    "teenage",
+    "interface",
+    "avatar",
+    "MIT",
+    "Design System"
+  ],
   "peerDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0"

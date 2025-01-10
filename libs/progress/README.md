@@ -1,63 +1,67 @@
-# Progress
+# Progress Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Progress` component is a progress bar that allows you to display the progress of a task or process. You can customize its appearance based on different types and control whether the value is shown or not.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `@teenageinterface/progress` library in your Angular project. If not, you can add it using:
 
 ```bash
-ng generate --help
+npm install @teenageinterface/progress
 ```
 
-## Building
+## Usage
 
-To build the library, run:
+Import the `ProgressComponent` into your Angular application:
 
-```bash
-ng build progress
+```typescript
+import { ProgressComponent } from '@teenageinterface/progress';
+
+@Component({
+  selector: 'app-progress-example',
+  template: `
+    <tiProgress [value]="progressValue" [showValue]="true" [type]="'primary'"></tiProgress>
+  `,
+})
+export class ProgressExampleComponent {
+  progressValue: number = 75;
+}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+### Example
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/progress
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```html
+<tiProgress [value]="progressValue" [showValue]="true" [type]="'score'"></tiProgress>
 ```
 
-## Running end-to-end tests
+## Properties
 
-For end-to-end (e2e) testing, run:
+| Property     | Type                 | Default     | Description                                               |
+|--------------|----------------------|-------------|-----------------------------------------------------------|
+| `value`      | `number`             | `0`         | The progress value (between 0 and 100).                   |
+| `showValue`  | `boolean`            | `true`      | If `true`, the progress value is displayed inside the bar. |
+| `width`      | `string`             | `"300px"`   | The width of the progress bar.                            |
+| `type`       | `"default" \| "primary" \| "score"` | `"default"` | The type of the progress bar, determining its appearance. |
 
-```bash
-ng e2e
-```
+## Types
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The `type` property can be one of the following values:
 
-## Additional Resources
+- `default`: A neutral progress bar.
+- `primary`: A blue progress bar.
+- `score`: A progress bar that changes color based on the value, where:
+  - Green if the value is greater than or equal to 70.
+  - Yellow if the value is between 50 and 69.
+  - Red if the value is less than 50.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Documentation
+
+For more information, visit the [official documentation]().
+
+## Repository
+
+The source code is available on [GitHub](https://github.com/0K00/teenageinterface).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).

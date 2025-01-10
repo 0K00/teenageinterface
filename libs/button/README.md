@@ -1,13 +1,13 @@
 # Button Component
 
-The `Button` component is part of the `teenageinterface` Angular component library. It is a versatile button element with customizable properties for various use cases.
+The `Button` component is part of the `@teenageinterface` Angular component library. It is a versatile button element with customizable properties for various use cases.
 
 ## Installation
 
-Ensure that you have installed the `teenageinterface` library in your Angular project. If not, you can add it using:
+Ensure that you have installed the `@teenageinterface/button` library in your Angular project. If not, you can add it using:
 
 ```bash
-npm install teenageinterface
+npm install @teenageinterface/button
 ```
 
 ## Usage
@@ -15,30 +15,30 @@ npm install teenageinterface
 Import the `Button` component module into your Angular application:
 
 ```typescript
-import { ButtonModule } from 'teenageinterface';
+import { CommonModule } from '@angular/common';
+import { ButtonComponent } from "@teenageinterface/button";
 
-@NgModule({
-  declarations: [
-    // your components
-  ],
-  imports: [
-    ButtonModule,
-  ],
+@Component({
+  selector: "pages-button",
+  standalone: true,
+  imports: [ButtonComponent],
+  template: ` <tiButton>Button</tiButton> `,
 })
-export class AppModule {}
+
+export default class ButtonPage {}
 ```
 
 ### Example
 
 ```html
-<tgi-button
+<tiButton
   [id]="'unique-button-id'"
   [disabled]="false"
   [loading]="true"
   [type]="'primary'"
 >
   Click Me
-</tgi-button>
+</tiButton>
 ```
 
 ## Properties
@@ -76,4 +76,4 @@ The source code is available on [GitHub](https://github.com/0K00/teenageinterfac
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).
