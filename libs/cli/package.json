@@ -1,0 +1,39 @@
+{
+  "name": "@teenageinterface/cli",
+  "version": "0.1.0",
+  "description": "The `Cli` commands line for `teenageinterface` library.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0K00/teenageinterface.git"
+  },
+  "homepage": "https://github.com/0K00/teenageinterface.git",
+  "author": "0K0",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "components",
+    "UI",
+    "UX",
+    "teenageinterface",
+    "teenage",
+    "interface",
+    "cli",
+    "MIT",
+    "design system"
+  ],
+  "type": "module",
+  "main": ".index.js",
+  "bin": {
+    "tgi": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^13.0.0",
+    "fast-levenshtein": "^3.0.0",
+    "inquirer": "^12.3.0",
+    "ora": "^8.1.1"
+  }
+}
