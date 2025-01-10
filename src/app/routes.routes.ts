@@ -25,11 +25,11 @@ import TabsPage from './pages/components/tabs/tabs.page';
 import InstallationPage from './pages/documentation/installation/installation.page';
 import DarkmodePage from './pages/documentation/darkmode/darkmode.page';
 import AboutPage from './pages/documentation/about/about.page';
-import ChangelogPage from './pages/documentation/changelog/changelog.page';
 import NotfoundPage from './pages/utils/notfound/notfound.page';
 import { RedirectGuard } from './guards/redirect.guards';
 import RedirectPage from './pages/utils/redirect/redirect.page';
 import ShowcasePage from './pages/showcase/showcase.page';
+import CliPage from './pages/documentation/cli/cli.page';
 
 export const routes: Routes = [
 
@@ -58,11 +58,11 @@ export const routes: Routes = [
   { path: 'documentation', component: ComponentsPage, children: [
       { path: '', redirectTo: 'installation', pathMatch: 'full' },
       { path: 'installation', title: 'Teenage Interface: Getting Started / Installation', component: InstallationPage, data: { title: 'Getting Started / Installation', order: 1, soon: undefined, alpha: undefined } },
-      { path: 'darkmode', title: 'Teenage Interface: Getting Started / Installation',  component: DarkmodePage, data: { title: 'Getting Started / Dark Mode', order: 2, soon: undefined, alpha: undefined } },
-      { path: 'about', title: 'Teenage Interface: Getting Started / Installation',  component: AboutPage, data: { title: 'Getting Started / About & Credits', order: 3, soon: undefined, alpha: undefined } },
-      { path: 'changelog', title: 'Teenage Interface: Getting Started / Installation',  component: ChangelogPage, data: { title: 'Getting Started / Changelog', order: 4, soon: undefined, alpha: undefined } },
-      { path: 'figma', title: 'Teenage Interface: Getting Started / Installation',  canActivate: [RedirectGuard], component: RedirectPage, data: { title: 'Getting Started / Figma', order: 5, soon: undefined, alpha: undefined, external: true, externalUrl: 'https://www.youtube.com/' } },
-      { path: 'storybook', title: 'Teenage Interface: Getting Started / Installation',  canActivate: [RedirectGuard], component: RedirectPage, data: { title: 'Getting Started / Storybook', order: 6, soon: undefined, alpha: undefined, external: true, externalUrl: 'https://www.youtube.com/' } }
+      { path: 'darkmode', title: 'Teenage Interface: Getting Started / Dark Mode',  component: DarkmodePage, data: { title: 'Getting Started / Dark Mode', order: 2, soon: undefined, alpha: undefined } },
+      { path: 'about', title: 'Teenage Interface: Getting Started / About & Credits',  component: AboutPage, data: { title: 'Getting Started / About & Credits', order: 3, soon: undefined, alpha: undefined } },
+      { path: 'cli', title: 'Teenage Interface: Getting Started / CLI',  component: CliPage, data: { title: 'Getting Started / CLI', order: 4, soon: undefined, alpha: undefined } },
+      { path: 'figma', title: 'Teenage Interface: Getting Started / Figma',  canActivate: [RedirectGuard], component: RedirectPage, data: { title: 'Getting Started / Figma', order: 5, soon: undefined, alpha: undefined, external: true, externalUrl: 'https://www.youtube.com/' } },
+      { path: 'storybook', title: 'Teenage Interface: Getting Started / Storybook',  canActivate: [RedirectGuard], component: RedirectPage, data: { title: 'Getting Started / Storybook', order: 6, soon: undefined, alpha: undefined, external: true, externalUrl: 'https://www.youtube.com/' } }
     ]
   },
 

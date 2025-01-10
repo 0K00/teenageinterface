@@ -5,8 +5,8 @@
 * @LastEditDate          : 2024-12-31 14:35:08
 -->
 
-<div class="">
-  <div class="fixed top-0 p-4 dark:bg-neutral-950/60 bg-neutral-50/60 backdrop-blur-sm border-b border-neutral-300 dark:border-neutral-800 w-full z-10">
+<header>
+  <div class="fixed top-0 p-4 dark:bg-neutral-950/60 bg-neutral-50/60 backdrop-blur-sm border-b border-neutral-300 dark:border-neutral-800 w-full z-20">
     <div class="mx-auto flex w-full gap-4 max-w-screen-2xl items-center justify-between">
       <div class="flex md:gap-8 gap-2 items-center">
         <tiButton type="ghost" class="md:hidden" (click)="showMenu = !showMenu">
@@ -49,7 +49,7 @@
       </div>
     </div>
   </div>
-</div>
+</header>
 
 
 <div *ngIf="modal" class="fixed top-0 flex items-center justify-center w-screen h-screen bg-neutral-950/60 backdrop-blur-sm z-40">
