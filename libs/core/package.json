@@ -1,11 +1,28 @@
 {
   "name": "@teenageinterface/core",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "description": "The `Core` styling for `teenageinterface` library.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0K00/teenageinterface.git"
+  },
+  "homepage": "https://github.com/0K00/teenageinterface.git",
+  "author": "0K0",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "components",
+    "UI",
+    "UX",
+    "teenageinterface",
+    "teenage",
+    "interface",
+    "core",
+    "MIT",
+    "design system"
+  ],
   "main": "index.min.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }

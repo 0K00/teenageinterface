@@ -1,63 +1,65 @@
-# Icons
+# Icons Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Icons` component allows you to render inline SVG icons in your Angular application. It supports dynamic icon selection based on input and offers styling for different states.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `@teenageinterface/icons` library in your Angular project. If not, you can add it using:
 
 ```bash
-ng generate --help
+npm install @teenageinterface/icons
 ```
 
-## Building
+## Usage
 
-To build the library, run:
+Import the `IconsComponent` into your Angular application:
 
-```bash
-ng build icons
+```typescript
+import { IconsComponent } from '@teenageinterface/icons';
+
+@Component({
+  selector: 'pages-icon',
+  template: `
+    <tiIcon [icon]="iconName"></tiIcon>
+  `,
+})
+export default class IconPage {
+  iconName = 'accessibility_circled';
+}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+### Example
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/icons
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```html
+<tiIcon [icon]="'accessibility_circled'"></tiIcon>
 ```
 
-## Running end-to-end tests
+## Properties
 
-For end-to-end (e2e) testing, run:
+| Property    | Type    | Default  | Description                              |
+|-------------|---------|----------|------------------------------------------|
+| `icon`      | `string`| `""`     | The name of the icon to display.         |
+| `other`     | `string`| `""`     | Additional classes or properties.        |
 
-```bash
-ng e2e
-```
+## Icon Definitions
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Each icon is an inline SVG that is sanitized using Angular's `DomSanitizer` for security purposes.
 
-## Additional Resources
+## Styling
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The component uses CSS for the following styles:
+
+- Icons are displayed with `inline-flex` for proper alignment.
+- A spinning animation (`spinning`) is available when an icon needs to rotate.
+
+## Documentation
+
+For more information, visit the [official documentation]().
+
+## Repository
+
+The source code is available on [GitHub](https://github.com/0K00/teenageinterface).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).

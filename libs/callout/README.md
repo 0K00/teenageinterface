@@ -1,63 +1,103 @@
-# Callout
+# Callout Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Callout` component is part of the `@teenageinterface` Angular component library. It provides a styled container for displaying important messages with customizable icons, titles, and types.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `@teenageinterface/callout` library in your Angular project. If not, you can add it using:
 
 ```bash
-ng generate --help
+npm install @teenageinterface/callout
 ```
 
-## Building
+## Usage
 
-To build the library, run:
+Import the `Callout` component module into your Angular application:
 
-```bash
-ng build callout
+```typescript
+import { CommonModule } from '@angular/common';
+import { CalloutComponent } from '@teenageinterface/callout';
+
+@Component({
+  selector: 'pages-callout',
+  standalone: true,
+  imports: [CalloutComponent],
+  template: `
+    <tiCallout
+      [id]="'callout-id'"
+      [title]="'Success Message'"
+      [icon]="'check_circled'"
+      [type]="'success'"
+    >
+      Your operation was successful!
+    </tiCallout>
+  `,
+})
+export default class CalloutPage {}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+### Example
 
-### Publishing the Library
+```html
+<tiCallout
+  [title]="'Informative Message'"
+  [icon]="'info-circle'"
+  [type]="'informative'"
+>
+  This is an informative message.
+</tiCallout>
 
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/callout
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+<tiCallout
+  [title]="'Warning Message'"
+  [icon]="'warning'"
+  [type]="'warn'"
+>
+  Be careful about proceeding further.
+</tiCallout>
 ```
 
-## Running end-to-end tests
+## Properties
 
-For end-to-end (e2e) testing, run:
+| Property   | Type                                                             | Default      | Description                                                      |
+|------------|------------------------------------------------------------------|--------------|------------------------------------------------------------------|
+| `id`       | `string \| null`                                                | `null`       | Unique identifier for the callout.                              |
+| `title`    | `string`                                                        | `""`         | Title of the callout.                                            |
+| `icon`     | `string`                                                        | `""`         | Name of the icon to display in the callout.                     |
+| `type`     | `'default' \| 'success' \| 'informative' \| 'warn' \| 'destructive'` | `'default'` | Determines the style of the callout.                            |
 
-```bash
-ng e2e
-```
+## Types
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### `type`
 
-## Additional Resources
+- `default`: Neutral style for general use.
+- `success`: Indicates successful outcomes or statuses.
+- `informative`: Used for informational messages.
+- `warn`: Alerts users to warnings or non-critical issues.
+- `destructive`: Highlights destructive actions or critical errors.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Styling
+
+Each `type` applies additional color schemes:
+
+- `default`: Neutral background and border with contrasting text.
+- `success`: Green background and border with bold, positive text.
+- `informative`: Light blue background and border with clear text.
+- `warn`: Yellow background and border with attention-grabbing text.
+- `destructive`: Red background and border for critical messages.
+
+## Accessibility
+
+- Provide meaningful `title` and `icon` properties for better understanding.
+- Use `type` properties appropriately to ensure clear communication of the callout's purpose.
+
+## Documentation
+
+For more information, visit the [official documentation]().
+
+## Repository
+
+The source code is available on [GitHub](https://github.com/0K00/teenageinterface).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).
