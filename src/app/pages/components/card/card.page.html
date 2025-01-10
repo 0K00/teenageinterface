@@ -7,13 +7,13 @@
         <div class="dark:text-blue-600 text-blue-800">Card</div>
       </div>
       <h2 class="text-4xl font-semibold">Card</h2>
-      <p class="text-xl font-medium text-neutral-500">Trigger an action or event, such as submitting a form or displaying a dialog.</p>
+      <p class="text-xl font-medium text-neutral-500">Container that groups related content and actions.</p>
     </div>
-    <aTabs>
-      <aTab tabTitle="Preview" [active]="true">
+    <tiTabs>
+      <tiTab tabTitle="Preview" [active]="true">
         <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
           <div class="my-10 w-[512px]">
-            <aCard>
+            <tiCard>
               <div title>
                 Upload image
               </div>
@@ -21,25 +21,25 @@
                 Change your profile picture
               </div>
               <div content>
-                <aInput type="bigFile" placeholder="JPG, PNG, or GIF - Max file size 2MB" />
+                <tiInput type="bigFile" placeholder="JPG, PNG, or GIF - Max file size 2MB" />
                 <div class="flex w-full mt-6 gap-4 text-xs text-neutral-600 justify-between items-center">
-                  <hr class="w-full dark:border-neutral-800 border-neutral-300" /> OR <hr class="w-full dark:border-neutral-800 border-neutral-300" />
+                <tiSeparator orientation="horizontal" /> OR <tiSeparator orientation="horizontal" />
                 </div>
               </div>
               <div footer>
                 <div class="flex gap-2">
-                  <aInput type="email" [value]="''" placeholder="Add from URL" />
-                  <aButton type="primary">Add</aButton>
+                  <tiInput type="text" placeholder="Add from URL" />
+                  <tiButton type="primary">Add</tiButton>
                 </div>
               </div>
-            </aCard>
+            </tiCard>
           </div>
         </div>
-      </aTab>
-      <aTab tabTitle="Code">
-        <aCode [language]="'language-typescript'" [code]="defaultCode" />
-      </aTab>
-    </aTabs>
+      </tiTab>
+      <tiTab tabTitle="Code">
+        <aCode language="typescript" [code]="defaultCode" />
+      </tiTab>
+    </tiTabs>
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="api" #attributes>
@@ -84,38 +84,32 @@
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">type</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">description</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">"default" | "primary" | "destructive" | "outline" | "ghost" | "link"</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">&#60;div description&#62;&#60;/div&#62;</span>
           </aTCell>
-          <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">"default"</span>
-          </aTCell>
+          <aTCell><span class="dark:text-neutral-700 text-neutral-400">—</span></aTCell>
         </aTRow>
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">loading</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">content</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">&#60;div content&#62;&#60;/div&#62;</span>
           </aTCell>
-          <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
-          </aTCell>
+          <aTCell><span class="dark:text-neutral-700 text-neutral-400">—</span></aTCell>
         </aTRow>
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">disabled</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">footer</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">&#60;div footer&#62;&#60;/div&#62;</span>
           </aTCell>
-          <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
-          </aTCell>
+          <aTCell><span class="dark:text-neutral-700 text-neutral-400">—</span></aTCell>
         </aTRow>
       </aTBody>
     </aTable>
@@ -141,7 +135,7 @@
     ">
       Installation
     </h3>
-    <aCode [language]="'sh'" [code]="'npm install @alpha/card'" />
+    <aCode language="bash" [code]="'npm install @teenageinterface/card'" />
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="usage" #usage>
@@ -164,7 +158,7 @@
     ">
       Usage
     </h3>
-    <aCode [language]="'language-typescript'" [code]="defaultImports" />
+    <aCode [language]="'typescript'" [code]="defaultImports" />
     <aCode [language]="'html'" [code]="defaultSkeleton" />
   </div>
 
@@ -190,18 +184,57 @@
     </h3>
 
     <div>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default">
-              Button
-            </aButton>
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg py-12">
+            <tiCard>
+              <div class="flex flex-col" content>
+                <div class="dark:text-blue-500 text-blue-800 mb-2 font-medium">Team</div>
+                <div class="flex gap-1 items-end mb-8">
+                  <div class="text-6xl font-semibold">$99</div>
+                  <div class="dark:text-neutral-500 text-neutral-700">/month</div>
+                </div>
+                <div class="mb-8 font-medium dark:text-neutral-500 text-neutral-700">
+                  The perfect plan if you're just getting started with our product.
+                </div>
+                <div class="flex flex-col gap-2 mb-4 text-sm">
+                  <div class="flex gap-2 items-center">
+                    <tiIcon icon="check" other="dark:text-blue-500 text-blue-800 !w-6 !h-6"/>
+                    25 products
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <tiIcon icon="check" other="dark:text-blue-500 text-blue-800 !w-6 !h-6"/>
+                    Up to 10,000 subscribers
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <tiIcon icon="check" other="dark:text-blue-500 text-blue-800 !w-6 !h-6"/>
+                    Audience segmentation
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <tiIcon icon="check" other="dark:text-blue-500 text-blue-800 !w-6 !h-6"/>
+                    Advanced analytics
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <tiIcon icon="check" other="dark:text-blue-500 text-blue-800 !w-6 !h-6"/>
+                    Email support
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <tiIcon icon="check" other="dark:text-blue-500 text-blue-800 !w-6 !h-6"/>
+                    Marketing automations
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-2" footer>
+                <tiButton type="primary">Get started today</tiButton>
+                <tiButton type="ghost">Return to Personal plan</tiButton>
+              </div>
+            </tiCard>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="defaultCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="exampleCode" />
+        </tiTab>
+      </tiTabs>
     </div>
   </div>
 </section>

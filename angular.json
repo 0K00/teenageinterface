@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "alpha": {
+    "teenageinterface": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/alpha",
+            "outputPath": "dist/teenageinterface",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "alpha:build:production"
+              "buildTarget": "teenageinterface:build:production"
             },
             "development": {
-              "buildTarget": "alpha:build:development"
+              "buildTarget": "teenageinterface:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +101,7 @@
           "options": {
             "configDir": ".storybook",
             "styles": ["src/styles.scss"],
-            "browserTarget": "alpha:build",
+            "browserTarget": "teenageinterface:build",
             "compodoc": true,
             "compodocArgs": [
               "-e",
@@ -116,7 +116,7 @@
           "builder": "@storybook/angular:build-storybook",
           "options": {
             "configDir": ".storybook",
-            "browserTarget": "alpha:build",
+            "browserTarget": "teenageinterface:build",
             "compodoc": true,
             "compodocArgs": [
               "-e",

@@ -9,115 +9,115 @@ import { Component } from "@angular/core";
 export class ButtonPreview {}
 
 export const defaultCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+import { ButtonComponent } from "@teenageinterface/button";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent],
-  template: \` <aButton>Button</aButton> \`,
+  template: \` <tiButton>Button</tiButton> \`,
 })
 
 export default class ButtonPage {}`;
 
-export const defaultImports = `import { ButtonComponent } from '@alpha/components/button';`;
+export const defaultImports = `import { ButtonComponent } from '@teenageinterface/button';`;
 
-export const defaultSkeleton = `<aButton>Button</aButton>`;
+export const defaultSkeleton = `<tiButton>Button</tiButton>`;
 
 export const primaryCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+import { ButtonComponent } from "@teenageinterface/button";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent],
-  template: \` <aButton type="primary" >Primary</aButton> \`,
+  template: \` <tiButton type="primary" >Primary</tiButton> \`,
 })
 
 export default class ButtonPage {}`;
 
 export const destructiveCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+import { ButtonComponent } from "@teenageinterface/button";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent],
-  template: \` <aButton type="destructive" >Destructive</aButton> \`,
+  template: \` <tiButton type="destructive" >Destructive</tiButton> \`,
 })
 
 export default class ButtonPage {}`;
 
 export const outlineCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+import { ButtonComponent } from "@teenageinterface/button";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent],
-  template: \` <aButton type="outline" >Outline</aButton> \`,
+  template: \` <tiButton type="outline" >Outline</tiButton> \`,
 })
 
 export default class ButtonPage {}`;
 
 export const ghostCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+import { ButtonComponent } from "@teenageinterface/button";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent],
-  template: \` <aButton type="ghost" >Ghost</aButton> \`,
+  template: \` <tiButton type="ghost" >Ghost</tiButton> \`,
 })
 
 export default class ButtonPage {}`;
 
 export const linkCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+import { ButtonComponent } from "@teenageinterface/button";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent],
-  template: \` <aButton type="link" >Link</aButton> \`,
+  template: \` <tiButton type="link" >Link</tiButton> \`,
 })
 
 export default class ButtonPage {}`;
 
 export const iconCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
-import { IconsComponent } from "@alpha/icons";
+import { ButtonComponent } from "@teenageinterface/button";
+import { IconsComponent } from "@teenageinterface/icons";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent, IconsComponent],
-  template:\`<aButton type="outline"><aIcon icon="gear-1" /></aButton>\`,
+  template:\`<tiButton type="outline"><tiIcon icon="gear_1" /></tiButton>\`,
 })
 
 export default class ButtonPage {}`;
 
 export const withCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
-import { IconsComponent } from "@alpha/icons";
+import { ButtonComponent } from "@teenageinterface/button";
+import { IconsComponent } from "@teenageinterface/icons";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent, IconsComponent],
-  template:\`<aButton type="default"><aIcon icon="download" /><div>Download files</div></aButton>\`,
+  template:\`<tiButton type="default"><tiIcon icon="download" /><div>Download files</div></tiButton>\`,
 })
 
 export default class ButtonPage {}`;
 
 export const loadingCode = `import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "@alpha/button";
+import { ButtonComponent } from "@teenageinterface/button";
 
 @Component({
   selector: "pages-button",
   standalone: true,
   imports: [ButtonComponent],
-  template: \` <aButton type="default" [loading]="true" >Log in</aButton> \`,
+  template: \` <tiButton type="default" [loading]="true" >Log in</tiButton> \`,
 })
 
 export default class ButtonPage {}`;

@@ -6,8 +6,42 @@
  */
 
 
-
  @use "sass:meta";
+ @use '@teenageinterface/core';
+
+ body *::-webkit-scrollbar {
+  width: 14px;
+  height: 18px;
+}
+
+ body *::-webkit-scrollbar-thumb {
+  height: 6px;
+  background-clip: padding-box;
+  background-color: #262626;
+  -webkit-border-radius: 7px;
+}
+
+ body *::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(255, 255, 255, 0);
+ }
+
+ html[data-mode="light"] body *::-webkit-scrollbar-thumb {
+  background-color: #a5a5a5;
+ }
+
+ html[data-mode="dark"] body *::-webkit-scrollbar-thumb {
+  background-color: #262626;
+ }
+
+ body *::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+ body *::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 
  html[data-mode="light"] {
    @include meta.load-css("highlight.js/styles/github");
@@ -18,9 +52,9 @@
    color-scheme: dark;
  }
 
- @import 'tailwindcss/base';
- @import 'tailwindcss/components';
- @import 'tailwindcss/utilities';
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
 
  @font-face {
   font-family: 'Inter';
@@ -171,3 +205,5 @@
   Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
 }
+
+

@@ -9,18 +9,18 @@
       <h2 class="text-4xl font-semibold">Callout</h2>
       <p class="text-xl font-medium text-neutral-500">Short message to attract user's attention.</p>
     </div>
-    <aTabs>
-      <aTab tabTitle="Preview" [active]="true">
+    <tiTabs>
+      <tiTab tabTitle="Preview" [active]="true">
         <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-          <aCallout type="default" title="Default" icon="person">
+          <tiCallout type="default" title="Default" icon="person">
             Indicates a neutral action.
-          </aCallout>
+          </tiCallout>
         </div>
-      </aTab>
-      <aTab tabTitle="Code">
-        <aCode [language]="'language-typescript'" [code]="defaultCode" />
-      </aTab>
-    </aTabs>
+      </tiTab>
+      <tiTab tabTitle="Code">
+        <aCode [language]="'typescript'" [code]="defaultCode" />
+      </tiTab>
+    </tiTabs>
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="api" #attributes>
@@ -118,7 +118,7 @@
     ">
       Installation
     </h3>
-    <aCode [language]="'sh'" [code]="'npm install @alpha/callout'" />
+    <aCode [language]="'sh'" [code]="'npm install @teenageinterface/callout'" />
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="usage" #usage>
@@ -141,7 +141,7 @@
     ">
       Usage
     </h3>
-    <aCode [language]="'language-typescript'" [code]="defaultImports" />
+    <aCode [language]="'typescript'" [code]="defaultImports" />
     <aCode [language]="'html'" [code]="defaultSkeleton" />
   </div>
 
@@ -185,18 +185,18 @@
       ">
         Default
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aCallout type="default" title="Default" icon="person">
+            <tiCallout type="default" title="Default" icon="person">
               Indicates a neutral action.
-            </aCallout>
+            </tiCallout>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="defaultCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="defaultCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="success" #success>
@@ -218,18 +218,18 @@
       ">
         Success
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aCallout type="success" title="Success" icon="check-circled">
+            <tiCallout type="success" title="Success" icon="check_circled">
               Indicates a successful or positive action.
-            </aCallout>
+            </tiCallout>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="successCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="successCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="informative" #informative>
@@ -251,18 +251,18 @@
       ">
         Informative
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aCallout type="informative" title="Informative" icon="information-circled-2">
+            <tiCallout type="informative" title="Informative" icon="information_circled_2">
               Indicates a neutral informative change or action.
-            </aCallout>
+            </tiCallout>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="inforativeCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="inforativeCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="warn" #warn>
@@ -284,18 +284,18 @@
       ">
         Warning
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aCallout type="warn" title="You sure?" icon="information-circled-2-1">
+            <tiCallout type="warn" title="You sure?" icon="information_circled_2_1">
               Indicates neutral information to ald in understanding.
-            </aCallout>
+            </tiCallout>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="warnCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="warnCode" />
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="destructive" #destructive>
@@ -317,18 +317,18 @@
       ">
         Destructive
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aCallout type="destructive" title="Unexpected Error" icon="warning">
+            <tiCallout type="destructive" title="Unexpected Error" icon="warning">
               Indicates a warning that might need attention.
-            </aCallout>
+            </tiCallout>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="destructiveCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="destructiveCode" />
+        </tiTab>
+      </tiTabs>
     </div>
   </div>
 </section>

@@ -1,0 +1,230 @@
+<section>
+  <div class="flex flex-col gap-6 mb-8">
+    <div class="flex flex-col gap-2">
+      <div class="text-sm font-medium flex gap-2 mb-4">
+        <div [routerLink]="['/components']"  class="cursor-pointer transition-colors duration-300 text-neutral-500 hover:text-neutral-900 hover:dark:text-neutral-100" >Components</div>
+        <div class="dark:text-neutral-800 text-neutral-300">/</div>
+        <div class="dark:text-blue-600 text-blue-800">Checkbox</div>
+      </div>
+      <h2 class="text-4xl font-semibold">Checkbox</h2>
+      <p class="text-xl font-medium text-neutral-500">A control that allows the user to toggle between checked and not checked.</p>
+    </div>
+    <tiTabs>
+      <tiTab tabTitle="Preview" [active]="true">
+        <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+          <tiCheckbox>
+            Checkbox
+          </tiCheckbox>
+        </div>
+      </tiTab>
+      <tiTab tabTitle="Code">
+        <aCode [language]="'typescript'" [code]="defaultCode" />
+      </tiTab>
+    </tiTabs>
+  </div>
+  <div class="mb-16 flex flex-col gap-2" id="api" #attributes>
+    <h3
+    (click)="scrollToElement(attributes)"
+    class="
+      cursor-pointer
+      relative
+      text-xl
+      mb-4
+      font-medium
+      text-neutral-900
+      dark:text-neutral-100
+      hover:before:content-['#']
+      before:absolute
+      before:-left-6
+      before:text-2xl
+      before:dark:text-blue-950
+      before:text-blue-300
+  ">
+    Attributes Reference
+  </h3>
+    <aTable>
+      <aTHeader>
+        <aTRow [isHeader]="true">
+          <aTCell [colHeader]="true">Prop</aTCell>
+          <aTCell [colHeader]="true">Type</aTCell>
+          <aTCell [colHeader]="true">Default</aTCell>
+        </aTRow>
+      </aTHeader>
+
+      <aTBody>
+        <aTRow>
+          <aTCell [rowHeader]="true">
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">checked</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
+          </aTCell>
+        </aTRow>
+
+        <aTRow>
+          <aTCell [rowHeader]="true">
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">type</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">"default" | "primary"</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">"default"</span>
+          </aTCell>
+        </aTRow>
+
+        <aTRow>
+          <aTCell [rowHeader]="true">
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">checkedChange</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">EventEmitter&lt;boolean&gt;</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:text-neutral-700 text-neutral-400">—</span>
+          </aTCell>
+        </aTRow>
+
+      </aTBody>
+    </aTable>
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="installation" #installation>
+    <h3
+      (click)="scrollToElement(installation)"
+      class="
+        cursor-pointer
+        relative
+        text-xl
+        mb-4
+        font-medium
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+    ">
+      Installation
+    </h3>
+    <aCode [language]="'bash'" [code]="'npm install @teenageinterface/checkbox'" />
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="usage" #usage>
+    <h3
+      (click)="scrollToElement(usage)"
+      class="
+        cursor-pointer
+        relative
+        text-xl
+        mb-4
+        font-medium
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+    ">
+      Usage
+    </h3>
+    <aCode [language]="'typescript'" [code]="defaultImports" />
+    <aCode [language]="'html'" [code]="defaultSkeleton" />
+  </div>
+
+  <div class="mb-16 flex flex-col gap-2" id="examples" #examples>
+    <h3
+      (click)="scrollToElement(examples)"
+      class="
+        cursor-pointer
+        relative
+        text-xl
+        mb-4
+        font-medium
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+    ">
+      Examples
+    </h3>
+
+    <div id="default" #default>
+      <h4
+      (click)="scrollToElement(default)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        Default
+      </h4>
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+            <tiCheckbox type="default">
+              Default
+            </tiCheckbox>
+          </div>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="defaultCode" />
+        </tiTab>
+      </tiTabs>
+    </div>
+
+    <div id="primary" #primary>
+      <h4
+      (click)="scrollToElement(primary)"
+      class="
+        cursor-pointer
+        relative
+        text-lg
+        mb-4
+        text-neutral-900
+        dark:text-neutral-100
+        hover:before:content-['#']
+        before:absolute
+        before:-left-6
+        before:text-2xl
+        before:dark:text-blue-950
+        before:text-blue-300
+      ">
+        Primary
+      </h4>
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
+          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
+            <tiCheckbox type="primary">
+              Primary
+            </tiCheckbox>
+          </div>
+        </tiTab>
+        <tiTab tabTitle="Code">
+          <aCode [language]="'typescript'" [code]="primaryCode" />
+        </tiTab>
+      </tiTabs>
+    </div>
+
+  </div>
+</section>

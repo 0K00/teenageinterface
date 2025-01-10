@@ -12,13 +12,13 @@
     <aTabs>
       <aTab tabTitle="Preview" [active]="true">
         <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-          <aButton type="default">
-            Button
-          </aButton>
+          <div class="flex items-center justify-center w-[384px]">
+            <tiInput placeholder="Search" />
+          </div>
         </div>
       </aTab>
       <aTab tabTitle="Code">
-        <aCode [language]="'language-typescript'" [code]="defaultCode" />
+        <aCode [language]="'typescript'" [code]="defaultCode" />
       </aTab>
     </aTabs>
   </div>
@@ -58,7 +58,7 @@
             <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">id</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string | null</span>
           </aTCell>
           <aTCell><span class="dark:text-neutral-700 text-neutral-400">—</span></aTCell>
         </aTRow>
@@ -68,22 +68,22 @@
             <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">type</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">"default" | "primary" | "destructive" | "outline" | "ghost" | "link"</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">"text" | "password" | "email" | "file" | "bigFile"</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">"default"</span>
+            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">"text"</span>
           </aTCell>
         </aTRow>
 
         <aTRow>
           <aTCell [rowHeader]="true">
-            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">loading</span>
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">placeholder</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">string</span>
           </aTCell>
           <aTCell>
-            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
+            <span class="dark:text-neutral-700 text-neutral-400">—</span>
           </aTCell>
         </aTRow>
 
@@ -96,6 +96,54 @@
           </aTCell>
           <aTCell>
             <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
+          </aTCell>
+        </aTRow>
+
+        <aTRow>
+          <aTCell [rowHeader]="true">
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">serverError</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
+          </aTCell>
+        </aTRow>
+
+        <aTRow>
+          <aTCell [rowHeader]="true">
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">required</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">boolean</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">false</span>
+          </aTCell>
+        </aTRow>
+
+        <aTRow>
+          <aTCell [rowHeader]="true">
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">valueChange</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">EventEmitter&lt;string&gt;</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:text-neutral-700 text-neutral-400">—</span>
+          </aTCell>
+        </aTRow>
+
+        <aTRow>
+          <aTCell [rowHeader]="true">
+            <span class="dark:bg-blue-950 dark:text-blue-200 bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-md">onEnter</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:bg-yellow-900 dark:text-yellow-200 bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-md">EventEmitter&lt;string&gt;</span>
+          </aTCell>
+          <aTCell>
+            <span class="dark:text-neutral-700 text-neutral-400">—</span>
           </aTCell>
         </aTRow>
       </aTBody>
@@ -122,7 +170,7 @@
     ">
       Installation
     </h3>
-    <aCode [language]="'sh'" [code]="'npm install @alpha/button'" />
+    <aCode [language]="'bash'" [code]="'npm install @teenageinterface/input'" />
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="usage" #usage>
@@ -145,7 +193,7 @@
     ">
       Usage
     </h3>
-    <aCode [language]="'language-typescript'" [code]="defaultImports" />
+    <aCode [language]="'typescript'" [code]="defaultImports" />
     <aCode [language]="'html'" [code]="defaultSkeleton" />
   </div>
 
@@ -192,20 +240,20 @@
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default">
-              Button
-            </aButton>
+            <div class="flex items-center justify-center w-[384px]">
+              <tiInput type="text" placeholder="Default" />
+            </div>
           </div>
         </aTab>
         <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="defaultCode" />
+          <aCode [language]="'typescript'" [code]="defaultCode" />
         </aTab>
       </aTabs>
     </div>
 
-    <div id="primary" #primary>
+    <div id="password" #password>
       <h4
-      (click)="scrollToElement(primary)"
+      (click)="scrollToElement(password)"
       class="
         cursor-pointer
         relative
@@ -220,25 +268,25 @@
         before:dark:text-blue-950
         before:text-blue-300
       ">
-        Primary
+        Password
       </h4>
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="primary">
-              Primary
-            </aButton>
+            <div class="flex items-center justify-center w-[384px]">
+              <tiInput type="password" placeholder="Password" />
+            </div>
           </div>
         </aTab>
         <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="primaryCode" />
+          <aCode [language]="'typescript'" [code]="passwordCode" />
         </aTab>
       </aTabs>
     </div>
 
-    <div id="destructive" #destructive>
+    <div id="email" #email>
       <h4
-      (click)="scrollToElement(destructive)"
+      (click)="scrollToElement(email)"
       class="
         cursor-pointer
         relative
@@ -253,25 +301,25 @@
         before:dark:text-blue-950
         before:text-blue-300
       ">
-        Destructive
+        Email
       </h4>
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="destructive">
-              Destructive
-            </aButton>
+            <div class="flex items-center justify-center w-[384px]">
+              <tiInput type="email" placeholder="Email" />
+            </div>
           </div>
         </aTab>
         <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="destructiveCode" />
+          <aCode [language]="'typescript'" [code]="emailCode" />
         </aTab>
       </aTabs>
     </div>
 
-    <div id="outline" #outline>
+    <div id="error" #error>
       <h4
-      (click)="scrollToElement(outline)"
+      (click)="scrollToElement(error)"
       class="
         cursor-pointer
         relative
@@ -286,25 +334,28 @@
         before:dark:text-blue-950
         before:text-blue-300
       ">
-        Outline
+        Error
       </h4>
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="outline">
-              Outline
-            </aButton>
+            <div class="flex items-center justify-center">
+              <div class="flex flex-col gap-6 w-[384px]">
+                <tiInput type="password" placeholder="Error Server" [serverError]="true" />
+                <tiInput type="email" placeholder="Error Email" value="example" />
+              </div>
+            </div>
           </div>
         </aTab>
         <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="outlineCode" />
+          <aCode [language]="'typescript'" [code]="errorCode" />
         </aTab>
       </aTabs>
     </div>
 
-    <div id="ghost" #ghost>
+    <div id="file" #file>
       <h4
-      (click)="scrollToElement(ghost)"
+      (click)="scrollToElement(file)"
       class="
         cursor-pointer
         relative
@@ -319,25 +370,26 @@
         before:dark:text-blue-950
         before:text-blue-300
       ">
-        Ghost
+        File
       </h4>
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="ghost">
-              Ghost
-            </aButton>
+            <div class="flex items-center justify-center w-[384px]">
+              <tiInput type="file" placeholder="File" />
+            </div>
           </div>
         </aTab>
         <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="ghostCode" />
+          <aCode [language]="'typescript'" [code]="fileCode" />
         </aTab>
       </aTabs>
     </div>
 
-    <div id="link" #link>
+
+    <div id="bigFile" #bigFile>
       <h4
-      (click)="scrollToElement(link)"
+      (click)="scrollToElement(bigFile)"
       class="
         cursor-pointer
         relative
@@ -352,118 +404,18 @@
         before:dark:text-blue-950
         before:text-blue-300
       ">
-        Link
+        Big File
       </h4>
       <aTabs>
         <aTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="link">
-              Link
-            </aButton>
+            <div class="flex items-center justify-center w-[384px]">
+              <tiInput type="bigFile" placeholder="Placeholder here!" />
+            </div>
           </div>
         </aTab>
         <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="linkCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="icon" #icon>
-      <h4
-      (click)="scrollToElement(icon)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        Icon
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="outline">
-              <aIcon icon="gear-1" />
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="iconCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="withIcon" #withIcon>
-      <h4
-      (click)="scrollToElement(withIcon)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        With Icon
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default">
-              <aIcon icon="download" />
-              <div>Download files</div>
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="withCode" />
-        </aTab>
-      </aTabs>
-    </div>
-
-    <div id="Loading" #Loading>
-      <h4
-      (click)="scrollToElement(Loading)"
-      class="
-        cursor-pointer
-        relative
-        text-lg
-        mb-4
-        text-neutral-900
-        dark:text-neutral-100
-        hover:before:content-['#']
-        before:absolute
-        before:-left-6
-        before:text-2xl
-        before:dark:text-blue-950
-        before:text-blue-300
-      ">
-        Loading
-      </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
-          <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
-            <aButton type="default" [loading]="true">
-              <div>Log in</div>
-            </aButton>
-          </div>
-        </aTab>
-        <aTab tabTitle="Code">
-          <aCode [language]="'language-typescript'" [code]="loadingCode" />
+          <aCode [language]="'typescript'" [code]="bigFileCode" />
         </aTab>
       </aTabs>
     </div>

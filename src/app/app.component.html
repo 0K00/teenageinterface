@@ -1,15 +1,25 @@
 <!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-27 17:20:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2024-12-28 11:02:57
+-->
+
+<!--
   @Author: 0K0 <contact@oko.app>
   @Date:   14-12-2024 20:35:50
   @Last Modified by:   0K0 <contact@oko.app>
-  @Last Modified time: 22-12-2024 11:28:19
+  @Last Modified time: 22-12-2024 14:34:51
 -->
-<div>
+<div class="h-screen">
   <aHeader />
-  <router-outlet></router-outlet>
+  <div id="window" class="relative mt-[73px]">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
-<div class="flex justify-center w-full">
+
+<!-- <div class="flex justify-center w-full">
   <tiSelect
   [options]="[{value: 1, title: 'Unlimited'}, {value: 10, title: '10 Minutes'}, {value: 60, title: '1 Hour'}, {value: 1440, title: '1 Day'}, {value: 10080, title: '1 Week'}]"
   placeholder="Choose an option"
@@ -22,99 +32,4 @@
   <tiRadio [item]="{value: '1', name: 'radio', id: 'one' }" type="primary" [value]="item.value" (valuesChange)="valueChange($event)">One</tiRadio>
   <tiRadio [item]="{value: '2', name: 'radio', id: 'two' }" type="primary" [value]="item.value" (valuesChange)="valueChange($event)">two</tiRadio>
 </div>
-
-<div class="m-auto max-w-96 flex flex-col gap-2 justify-center">
-  <tiProgress [value]="50" type="score" width="200px" />
-  <tiSeparator orientation="horizontal" size="200px" />
-  <tiProgress [value]="50" type="score" width="200px" />
-</div>
-
-
-<div class="m-auto max-w-96">
-  <tiCarousel [autoSlide]="false" [controls]="true" [dot]="true" [infinite]="false">
-    <tiSlide>
-      <div class="flex items-center justify-center text-8xl border dark:border-neutral-700 dark:bg-neutral-950 border-neutral-300 bg-neutral-50 h-96 rounded-2xl">
-        1
-      </div>
-    </tiSlide>
-    <tiSlide>
-      <div class="flex items-center justify-center text-8xl border dark:border-neutral-700 dark:bg-neutral-950 border-neutral-300 bg-neutral-50 h-96 rounded-2xl">
-        2
-      </div>
-    </tiSlide>
-    <tiSlide>
-      <div class="flex items-center justify-center text-8xl border dark:border-neutral-700 dark:bg-neutral-950 border-neutral-300 bg-neutral-50 h-96 rounded-2xl">
-        3
-      </div>
-    </tiSlide>
-    <tiSlide>
-      <div class="flex items-center justify-center text-8xl border dark:border-neutral-700 dark:bg-neutral-950 border-neutral-300 bg-neutral-50 h-96 rounded-2xl">
-        4
-      </div>
-    </tiSlide>
-  </tiCarousel>
-</div>
-
-<div class="m-auto max-w-96">
-  <tiCarousel [autoSlide]="false" [controls]="true" [dot]="true" type="classic">
-    <tiSlide>
-      <div class="flex items-center justify-center text-8xl border dark:border-neutral-700 dark:bg-neutral-950 border-neutral-300 bg-neutral-50 h-96 rounded-2xl">
-        1
-      </div>
-    </tiSlide>
-    <tiSlide>
-      <div class="flex items-center justify-center text-8xl border dark:border-neutral-700 dark:bg-neutral-950 border-neutral-300 bg-neutral-50 h-96 rounded-2xl">
-        2
-      </div>
-    </tiSlide>
-    <tiSlide>
-      <div class="flex items-center justify-center text-8xl border dark:border-neutral-700 dark:bg-neutral-950 border-neutral-300 bg-neutral-50 h-96 rounded-2xl">
-        3
-      </div>
-    </tiSlide>
-    <tiSlide>
-      <div class="flex items-center justify-center text-8xl border dark:border-neutral-700 dark:bg-neutral-950 border-neutral-300 bg-neutral-50 h-96 rounded-2xl">
-        4
-      </div>
-    </tiSlide>
-  </tiCarousel>
-</div>
-
-<div class="flex gap-2">
-  <div class="flex items-center justify-center px-1.5 py-1 text-xs font-medium rounded-lg w-fit dark:bg-neutral-50 bg-neutral-950 dark:text-neutral-950 text-neutral-50">
-    Hi! I'm a badge.
-  </div>
-  <div class="flex items-center justify-center px-1.5 py-1 text-xs font-medium rounded-lg w-fit dark:bg-blue-600 bg-blue-800 text-neutral-50">
-    Hi! I'm a badge.
-  </div>
-  <div class="flex items-center justify-center px-1.5 py-1 text-xs font-medium rounded-lg w-fit dark:bg-green-950 bg-green-100 dark:text-green-200 text-green-700">
-    Hi! I'm a badge.
-  </div>
-  <div class="flex items-center justify-center px-1.5 py-1 text-xs font-medium rounded-lg w-fit dark:bg-blue-950 bg-blue-100 dark:text-blue-200 text-blue-700">
-    Hi! I'm a badge.
-  </div>
-  <div class="flex items-center justify-center px-1.5 py-1 text-xs font-medium rounded-lg w-fit dark:bg-yellow-950 bg-yellow-100 dark:text-yellow-200 text-yellow-700">
-    Hi! I'm a badge.
-  </div>
-  <div class="flex items-center justify-center px-1.5 py-1 text-xs font-medium rounded-lg w-fit dark:bg-red-950 bg-red-100 dark:text-red-200 text-red-700">
-    Hi! I'm a badge.
-  </div>
-</div>
-
-<div class="flex items-center gap-2">
-  <div class="overflow-hidden rounded-full w-6 h-6">
-    <!-- <img class="w-full h-full" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar" /> -->
-    <span class="w-full h-full flex items-center justify-center dark:bg-blue-600 bg-blue-800 text-neutral-50 text-xs font-normal">Ab</span>
-  </div>
-  <div class="overflow-hidden rounded-full w-12 h-12">
-    <!-- <img class="w-full h-full" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar" /> -->
-    <span class="w-full h-full flex items-center justify-center dark:bg-blue-600 bg-blue-800 text-neutral-50 text-xl font-medium">Ab</span>
-  </div>
-  <div class="overflow-hidden rounded-full w-20 h-20">
-    <!-- <img class="w-full h-full" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar" /> -->
-    <span class="w-full h-full flex items-center justify-center dark:bg-blue-600 bg-blue-800 text-neutral-50 text-4xl font-semibold">Ab</span>
-  </div>
-</div>
-
-
-
+-->

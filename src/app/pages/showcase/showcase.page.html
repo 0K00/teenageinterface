@@ -1,0 +1,50 @@
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-31 14:34:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2025-01-05 15:19:10
+-->
+
+<section class="p-8">
+  <div class="flex flex-col gap-2 mb-16">
+    <div class="text-3xl font-semibold">
+      Bold UI for the Next-Gen Developer
+    </div>
+    <div class="font-semibold text-neutral-500 max-w-screen-md">
+      A lightweight, customizable library of reusable Angular components designed for rapid development. It features responsive design, theming support, and seamless integration with modern tools to deliver consistent and scalable UI/UX.
+    </div>
+    <div class="flex items-center gap-2 mt-4">
+      <tiButton type="default" [routerLink]="['/documentation']" >
+        Get Started
+      </tiButton>
+      <tiButton type="outline" [routerLink]="['/components']">
+        Browse Components
+      </tiButton>
+    </div>
+  </div>
+
+  <tiTabs type="ghost">
+    <tiTab tabTitle="Examples" [active]="true">
+      <div class="">
+        <showcase-examples />
+      </div>
+    </tiTab>
+    <tiTab tabTitle="Register">
+      <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
+        <showcase-register />
+      </div>
+    </tiTab>
+    <tiTab tabTitle="Video Editor">
+      <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
+        <showcase-video />
+      </div>
+    </tiTab>
+    <tiTab tabTitle="Todo list">
+      <div class="rounded-xl border border-neutral-300 dark:border-neutral-800 h-screen overflow-hidden">
+        <showcase-todo />
+      </div>
+    </tiTab>
+  </tiTabs>
+
+  <tiFooter />
+</section>

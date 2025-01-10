@@ -5,10 +5,10 @@
  * @Last Modified time: 30-11-2024 00:08:08
  */
 import { CommonModule } from "@angular/common";
-import { AfterContentInit, HostBinding, Component, ContentChildren, Input, HostListener, QueryList, ElementRef } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, HostBinding, Component, ContentChildren, Input, HostListener, QueryList, ElementRef } from '@angular/core';
 import { SlideComponent } from './slide.component';
 import { IconsComponent } from '@teenageinterface/icons'
-import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
+import { SafeStyle } from "@angular/platform-browser";
 
 @Component({
   selector: 'tiCarousel',
@@ -17,7 +17,7 @@ import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
   styleUrl: './tailwind.css',
   styles: [`:host{ display: block; }`]
 })
-export class CarouselComponent implements AfterContentInit {
+export class CarouselComponent implements AfterContentInit, AfterViewChecked {
   @ContentChildren(SlideComponent) slides!: QueryList<SlideComponent>;
   public slideList: SlideComponent[] = [];
   public currentIndex: number = 0;
@@ -26,6 +26,7 @@ export class CarouselComponent implements AfterContentInit {
   private startX: number = 0;
   private currentTranslate: number = 0;
   private prevTranslate: number = 0;
+  private isInitialized = false;
 
   @Input() autoSlideTime = 3000;
   @Input() autoSlide: boolean = true;
@@ -44,25 +45,33 @@ export class CarouselComponent implements AfterContentInit {
   setWidth: SafeStyle = this.type === 'modern' ? (this.width + (this.width / 2)) + 'px' : this.width + 'px';
 
 
-  constructor(private hostRef: ElementRef, private sanitizer: DomSanitizer) {}
+  constructor(private hostRef: ElementRef) {}
+
+  ngAfterViewChecked(): void {
+    if (!this.isInitialized && this.hostRef.nativeElement.offsetWidth > 0) {
+      this.updateSlideWidths();
+      this.slides.forEach((slide: SlideComponent, i) => {
+        slide.width = this.width;
+        slide.index = i;
+        slide.currentIndex = this.currentIndex;
+        slide.type = this.type;
+        if(i === this.currentIndex) slide.active = true;
+        else slide.active = false;
+      });
+      this.slideList = this.slides.toArray();
+      if(this.autoSlide)
+        this.startAutoSlide();
+      this.isInitialized = true;
+    }
+  }
 
   public ngAfterContentInit(): void {
     this.updateSlideWidths();
-    this.slides.forEach((slide: SlideComponent, i) => {
-      slide.width = this.width;
-      slide.index = i;
-      slide.currentIndex = this.currentIndex;
-      slide.type = this.type;
-      if(i === this.currentIndex) slide.active = true;
-      else slide.active = false;
-    });
-    this.slideList = this.slides.toArray();
-    if(this.autoSlide)
-      this.startAutoSlide();
   }
 
   private updateSlideWidths(): void {
     this.width = this.hostRef.nativeElement.offsetWidth;
+    if (this.width === 0) return;
     this.setWidth = this.type === 'modern' ? (this.width + (this.width / 2)) + 'px' : this.width + 'px';
     this.slides.forEach((slide: SlideComponent) => {
       slide.width = this.width;

@@ -21,26 +21,37 @@ export class InputComponent {
   @Input() id: string | null = null;
   @Input() disabled: boolean = false;
   @Input() serverError: boolean = false;
-  @Input() value: string = "";
+  _value: string = "";
+  @Input()
+  set value(val: string) {
+    this.valueChange.emit(val);
+    this._value = val
+  }
+  get value() {
+    return this._value;
+  }
   @Input() placeholder: string = "";
   @Input() required: boolean = false;
   @Input() type: "text" | "password" | "email" | "file" | "bigFile" = "text";
 
-  private patternPassword: string = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$";
   private patternEmail: string = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 
-  @Output()
-  onEnter = new EventEmitter<Event>();
+  @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onEnter: EventEmitter<string> = new EventEmitter<string>();
 
   public get pattern(): string {
     const classMap: { [key in typeof this.type]: string } = {
       text: ".*",
-      password: this.patternPassword,
+      password: ".*",
       email: this.patternEmail,
       file: ".*",
       bigFile: ".*",
     };
 
     return classMap[this.type] || classMap.text;
+  }
+
+  public enter() {
+    this.onEnter.emit(this.value);
   }
 }

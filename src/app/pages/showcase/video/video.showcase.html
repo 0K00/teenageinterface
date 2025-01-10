@@ -1,0 +1,309 @@
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2025-01-05 15:23:00
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2025-01-05 15:44:53
+-->
+
+<div class="flex flex-col justify-between h-full">
+  <header class="flex items-center justify-between w-full py-2 px-4 border-b border-neutral-300 dark:border-neutral-800">
+    <div class="flex gap-4 items-center">
+      <tiButton type="outline">
+        <tiIcon icon="chevron_left" />
+      </tiButton>
+      <div>
+        My 2024 Journey
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <tiButton type="ghost">
+        File
+      </tiButton>
+      <tiSeparator size="24px" orientation="vertical" />
+      <tiButton type="ghost">
+        Edit
+      </tiButton>
+      <tiSeparator size="24px" orientation="vertical" />
+      <tiButton type="ghost">
+        Trim
+      </tiButton>
+      <tiSeparator size="24px" orientation="vertical" />
+      <tiButton type="ghost">
+        Clip
+      </tiButton>
+      <tiSeparator size="24px" orientation="vertical" />
+      <tiButton type="ghost">
+        Mark
+      </tiButton>
+      <tiSeparator size="24px" orientation="vertical" />
+      <tiButton type="ghost">
+        View
+      </tiButton>
+    </div>
+
+    <div>
+      <tiButton type="outline">
+        <tiIcon icon="dots_horizontal" />
+      </tiButton>
+    </div>
+  </header>
+
+  <section class="h-[calc(100%-114px)] w-full flex flex-col">
+
+    <div class="flex h-full max-h-[500px]">
+      <div class="h-full flex flex-col justify-between flex-[1_5_53%] dark:border-none border-r border-neutral-300" #leftPanel>
+        <div class="flex dark:bg-neutral-900 bg-neutral-50 dark:border-none border-b border-neutral-300 items-center justify-between gap-2 pl-4 pr-2 py-2">
+          <tiButton type="outline">
+            <tiIcon icon="transform" />
+          </tiButton>
+          <div class="text-sm flex items-center gap-2">
+            Timeline 1 - Travel
+            <div class="flex items-center gap-1 text-xs text-neutral-500">
+              <span>4k - 60 fps </span>
+              <tiIcon icon="triangle_down" />
+            </div>
+          </div>
+          <div class="flex items-center gap-1">
+            <tiButton type="outline">
+              <tiIcon icon="pen" />
+            </tiButton>
+            <tiButton type="outline">
+              <tiIcon icon="wand" />
+            </tiButton>
+            <tiButton type="outline">
+              <tiIcon icon="image" />
+            </tiButton>
+          </div>
+        </div>
+        <div class="relative overflow-hidden">
+          <div class="absolute cursor-pointer transition duration-300 active:scale-95 flex items-center justify-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-16 w-16 rounded-full dark:bg-neutral-950/60 bg-neutral-50/60 backdrop-blur-sm">
+            <tiIcon icon="play" other="!w-8 !h-8" />
+          </div>
+          <img class="aspect-video select-none" src="philipp-dusel-vNVwg35VZrg-unsplash.jpg" alt="" />
+        </div>
+        <div class="flex dark:bg-neutral-900 bg-neutral-50 dark:border-none border-t border-neutral-300 items-center justify-between gap-2 pl-4 pr-2 py-2">
+          <div class="flex items-center gap-1">
+            <tiButton type="outline">
+              <tiIcon icon="chevron_left" />
+            </tiButton>
+            <div class="rounded-lg border flex items-center justify-center text-sm h-10 border-neutral-300 dark:border-neutral-800 p-2">
+              00:00:2:24
+            </div>
+            <tiButton type="outline">
+              <tiIcon icon="chevron_right" />
+            </tiButton>
+          </div>
+          <div class="flex items-center gap-1">
+            <tiButton type="outline">
+              <tiIcon icon="track_previous" />
+            </tiButton>
+            <tiButton type="outline">
+              <tiIcon icon="stop" />
+            </tiButton>
+            <tiButton type="outline">
+              <tiIcon icon="play" />
+            </tiButton>
+            <tiButton type="outline">
+              <tiIcon icon="track_next" />
+            </tiButton>
+          </div>
+          <div class="flex items-center gap-1">
+            <tiButton type="outline">
+              Fit to screen
+              <tiIcon icon="triangle_down" />
+            </tiButton>
+            <tiButton type="outline">
+              <tiIcon icon="enter_full_screen" />
+            </tiButton>
+          </div>
+        </div>
+      </div>
+      <div class="group w-1 cursor-grab active:w-4 hover:w-3 transition-all duration-150 flex items-center justify-center bg-neutral-50 dark:bg-neutral-950" appResize [leftResize]="leftPanel" [rightResize]="rightPanel">
+        <div class="group-hover:opacity-100 w-1 h-1/6 rounded-full dark:bg-neutral-800 bg-neutral-400 transition-all duration-150 opacity-0 group-active:opacity-100"></div>
+      </div>
+      <aside class="dark:bg-neutral-900 flex flex-col dark:border-none border-l border-neutral-300 bg-neutral-50 h-full flex-[1_5_47%]" #rightPanel>
+        <div class="flex items-center border-b dark:border-neutral-950 border-neutral-300 justify-between gap-2 pr-4 pl-2 py-2">
+          <tiButton type="outline">
+            <tiIcon icon="straw" />
+            Filters
+          </tiButton>
+          <div>
+            Media
+          </div>
+          <div class="flex items-center gap-1">
+            <tiButton type="outline">
+              <tiIcon icon="dropdown" />
+            </tiButton>
+            <tiButton type="outline">
+              <tiIcon icon="grid" />
+            </tiButton>
+            <tiButton type="outline">
+              <tiIcon icon="magnifying_glass" />
+            </tiButton>
+          </div>
+        </div>
+        <div class="h-[calc(100%-57px)] p-2 flex gap-2 flex-wrap overflow-y-auto">
+          <div class="group flex flex-col gap-1 cursor-pointer select-none" *ngFor="let media of medias">
+            <div class="relative h-48 w-48 overflow-hidden rounded">
+              <div class="absolute bottom-0 z-20 text-neutral-50 flex w-full px-2 py-1 items-center justify-between">
+                <tiIcon [icon]="media.type === 'video' ? 'video' : 'disc'" />
+                <div>{{media.time}}</div>
+              </div>
+              <div class="absolute h-full z-10 w-full bg-gradient-to-t from-black to-transparent"></div>
+              <img class="group-hover:scale-125 h-48 transition-all duration-150" [src]="'img/' + media.url" alt="" />
+            </div>
+            <div class="text-sm">
+              {{media.title}}
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center border-t dark:border-neutral-950 border-neutral-300 justify-between gap-2 pr-4 pl-2 py-2">
+          <tiButton type="outline">
+            <tiIcon icon="drawpin" />
+            Markers
+          </tiButton>
+          <div>
+
+          </div>
+          <tiButton type="outline">
+            <tiIcon icon="check_circled" />
+            Select
+          </tiButton>
+        </div>
+      </aside>
+    </div>
+    <div class="flex flex-col h-3/4">
+      <div class="flex border-y dark:border-neutral-950 border-neutral-300 dark:bg-neutral-900 bg-neutral-50 items-center justify-between gap-2 px-4 py-2">
+        <div class="flex items-center gap-1">
+          <tiButton type="outline">
+            <tiIcon icon="stack" />
+            Clip
+            <tiIcon icon="open" />
+          </tiButton>
+          <tiButton type="outline">
+            <tiIcon icon="camera" />
+            Multicam
+          </tiButton>
+          <tiButton type="outline">
+            <tiIcon icon="bar_chart" />
+            Volume
+          </tiButton>
+          <tiButton type="outline">
+            <tiIcon icon="filmroll" />
+            Animation
+          </tiButton>
+        </div>
+      </div>
+      <div class="overflow-hidden cursor-grab active:cursor-grabbing select-none" appDragScroll>
+        <div class="w-screen h-[5000px] relative">
+          <div class="absolute top-24 left-16 flex flex-col gap-1">
+            <div class="dark:bg-indigo-800 bg-indigo-200 rounded-lg p-1 pr-2 flex items-center gap-4 z-10 w-[772px]">
+              <div class="flex items-center gap-2 text-sm">
+                <div class="flex items-center dark:bg-indigo-950 bg-indigo-400 dark:text-indigo-400 text-indigo-100 rounded-lg justify-center p-1">
+                  <tiIcon icon="spraypaint" />
+                </div>
+                Batch color correction
+              </div>
+            </div>
+            <div class="flex items-center gap-1">
+              <div class="dark:bg-fuchsia-900 bg-fuchsia-200 rounded-lg p-1 pr-2 flex items-center gap-4 z-10 w-96">
+                <img class="h-8 rounded-lg" src="philipp-dusel-vNVwg35VZrg-unsplash.jpg" alt="" />
+                <div class="flex items-center gap-2 text-sm">
+                  <div class="flex items-center dark:bg-fuchsia-950 bg-fuchsia-400 dark:text-fuchsia-400 text-fuchsia-100 rounded-lg justify-center p-1">
+                    <tiIcon icon="filmroll" />
+                  </div>
+                  Fields of Switzerland
+                </div>
+              </div>
+              <div class="dark:bg-fuchsia-900 bg-fuchsia-200 rounded-lg p-1 pr-2 flex items-center gap-4 z-10 w-96">
+                <img class="h-8 rounded-lg" src="philipp-dusel-vNVwg35VZrg-unsplash.jpg" alt="" />
+                <div class="flex items-center gap-2 text-sm">
+                  <div class="flex items-center dark:bg-fuchsia-950 bg-fuchsia-400 dark:text-fuchsia-400 text-fuchsia-100 rounded-lg justify-center p-1">
+                    <tiIcon icon="filmroll" />
+                  </div>
+                  Fields of Switzerland
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-16">
+              <div class="dark:bg-teal-800 bg-teal-200 rounded-lg p-1 pr-2 flex items-center gap-4 z-10 w-96 ml-16">
+                <div class="flex items-center gap-2 text-sm">
+                  <div class="flex items-center dark:bg-teal-950 bg-teal-400 dark:text-teal-400 text-teal-100 rounded-lg justify-center p-1">
+                    <tiIcon icon="speaker_loud" />
+                  </div>
+                  Sound of water
+                </div>
+              </div>
+              <div class="dark:bg-teal-800 bg-teal-200 rounded-lg p-1 pr-2 flex items-center gap-4 z-10 w-40">
+                <div class="flex items-center gap-2 text-sm">
+                  <div class="flex items-center dark:bg-teal-950 bg-teal-400 dark:text-teal-400 text-teal-100 rounded-lg justify-center p-1">
+                    <tiIcon icon="speaker_loud" />
+                  </div>
+                  Sound of birds
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-full relative h-full">
+            <div class="relative mr-32 flex flex-col items-center justify-center" [ngClass]="{'!h-full' : second % 1 === 0}"  *ngFor="let second of timeline; let i = index">
+              <div *ngIf="i != 0" class="w-px dark:bg-neutral-800 bg-neutral-400 h-full mt-16"></div>
+              <div *ngIf="i != 0" class="w-px dark:bg-neutral-400 bg-neutral-600 h-8 absolute top-1"></div>
+              <div *ngFor="let ms of [].constructor(10); let i = index" class="w-px dark:bg-neutral-800 bg-neutral-400 h-1 absolute top-1 ml-px" [style.left]="(i * 12 + 10) + 'px'"></div>
+              <div *ngIf="i != 0 && second % 1 === 0" class="absolute top-8">
+                <div class="text-xs text-nowrap mt-3">{{ formatTime(second) }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="flex items-center justify-between py-2 px-4 border-t dark:bg-neutral-950 bg-neutral-50 border-neutral-300 dark:border-neutral-800 z-10">
+    <div class="flex items-center gap-2">
+      <tiButton type="outline">
+        <tiIcon icon="home" />
+      </tiButton>
+      <tiButton type="outline">
+        <tiIcon icon="gear_1" />
+      </tiButton>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <tiButton type="ghost">
+        <tiIcon icon="cissor" />
+        Cut
+      </tiButton>
+      <tiSeparator size="24px" orientation="vertical" />
+      <tiButton type="ghost">
+        <tiIcon icon="mixer" />
+        Edit
+      </tiButton>
+      <tiSeparator size="24px" orientation="vertical" />
+      <tiButton type="ghost">
+        <tiIcon icon="spraypaint" />
+        Color
+      </tiButton>
+      <tiSeparator size="24px" orientation="vertical" />
+      <tiButton type="ghost">
+        <tiIcon icon="speaker_loud" />
+        Sound
+      </tiButton>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <tiButton type="outline">
+        <tiIcon icon="conter_clock" />
+        History
+        <tiIcon icon="triangle_down" />
+      </tiButton>
+      <tiButton type="outline">
+        <tiIcon icon="arrow_left" />
+      </tiButton>
+      <tiButton type="outline">
+        <tiIcon icon="arrow_right" />
+      </tiButton>
+    </div>
+  </footer>
+</div>

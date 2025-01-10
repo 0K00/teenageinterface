@@ -1,10 +1,17 @@
-<div class="group border relative border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 max-h-[640px] overflow-auto whitespace-nowrap py-4 px-6 rounded-lg">
-  <div (click)="copy()" [ngClass]="{'hover:dark:bg-neutral-800 dark:text-neutral-400 hover:dark:text-neutral-200 hover:bg-neutral-200 text-neutral-600 hover:text-neutral-800': !isCopied, 'dark:bg-green-950 dark:text-green-200 bg-green-200 text-green-900': isCopied}" class="group-hover:opacity-100 opacity-0 absolute cursor-pointer transition duration-300 flex items-center justify-center p-1 rounded-md right-2 top-2">
+<!--
+* @Author                : 0K00<qdouvillez@gmail.com>
+* @CreatedDate           : 2024-12-31 14:27:48
+* @LastEditors           : 0K00<qdouvillez@gmail.com>
+* @LastEditDate          : 2024-12-31 14:27:48
+-->
+
+<div class="group border relative border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 max-h-[640px] overflow-auto whitespace-nowrap py-4 pb-0 px-6 pr-4 rounded-lg">
+  <div (click)="copy()" [ngClass]="{'hover:dark:bg-neutral-800 dark:text-neutral-400 hover:dark:text-neutral-200 hover:bg-neutral-200 text-neutral-600 hover:text-neutral-800': !isCopied, 'dark:bg-green-950 dark:text-green-200 bg-green-200 text-green-900': isCopied}" class="group-hover:opacity-100 opacity-0 sticky cursor-pointer transition duration-300 flex items-center justify-center p-1 rounded-md left-full w-fit top-0 z-10">
     <aIcon *ngIf="!isCopied" icon="copy" />
     <aIcon *ngIf="isCopied" icon="check" />
   </div>
-  <pre class="inline-grid whitespace-pre-wrap m-0 p-0">
-    <code  [highlightAuto]="code" class="{{language}} text-sm dark:font-normal font-medium font-['Geist'] !bg-transparent !p-0" [innerHTML]="code">
+  <pre class="{{language}} inline-grid whitespace-pre-wrap -top-5 relative m-0 p-0">
+    <code  [highlight]="code" language="{{language}}" class="text-sm dark:font-normal font-medium font-['Geist'] !bg-transparent !p-0" [innerHTML]="code">
     </code>
   </pre>
 </div>

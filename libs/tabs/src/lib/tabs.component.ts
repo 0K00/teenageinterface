@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent> = new QueryList<TabComponent>();
 
-  @Input() type: "default" | "primary" = "default";
+  @Input() type: "default" | "primary" | "ghost" = "default";
 
   private default: { container: string[], tab: string[] } = {
     container: [
@@ -43,6 +43,22 @@ export class TabsComponent implements AfterContentInit {
       "hover:dark:text-neutral-50",
       "dark:text-neutral-400",
       "text-neutral-700",
+      "rounded-lg"
+    ]
+  };
+  private ghost: { container: string[], tab: string[] } = {
+    container: [
+      "gap-1",
+      "pb-4",
+      "border-b"
+    ],
+    tab: [
+      "flex",
+      "justify-center",
+      "hover:dark:text-neutral-50",
+      "dark:text-neutral-400",
+      "text-neutral-700",
+      "hover:text-neutral-950",
       "rounded-lg"
     ]
   };
@@ -81,7 +97,17 @@ export class TabsComponent implements AfterContentInit {
         tab: this.primary.tab,
         activeTab: [
           'dark:!bg-blue-600',
-          '!bg-blue-600',
+          '!bg-blue-800',
+          '!text-neutral-50',
+          'cursor-default',
+        ],
+      },
+      ghost: {
+        container: this.ghost.container,
+        tab: this.ghost.tab,
+        activeTab: [
+          'dark:!bg-blue-600',
+          '!bg-blue-800',
           '!text-neutral-50',
           'cursor-default',
         ],

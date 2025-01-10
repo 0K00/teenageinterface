@@ -1,63 +1,79 @@
-# Button
+# Button Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Button` component is part of the `teenageinterface` Angular component library. It is a versatile button element with customizable properties for various use cases.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `teenageinterface` library in your Angular project. If not, you can add it using:
 
 ```bash
-ng generate --help
+npm install teenageinterface
 ```
 
-## Building
+## Usage
 
-To build the library, run:
+Import the `Button` component module into your Angular application:
 
-```bash
-ng build button
+```typescript
+import { ButtonModule } from 'teenageinterface';
+
+@NgModule({
+  declarations: [
+    // your components
+  ],
+  imports: [
+    ButtonModule,
+  ],
+})
+export class AppModule {}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+### Example
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/button
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```html
+<tgi-button
+  [id]="'unique-button-id'"
+  [disabled]="false"
+  [loading]="true"
+  [type]="'primary'"
+>
+  Click Me
+</tgi-button>
 ```
 
-## Running end-to-end tests
+## Properties
 
-For end-to-end (e2e) testing, run:
+| Property  | Type                                                                                  | Default    | Description                                                                 |
+|-----------|---------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------------------|
+| `id`      | `string \| null`                                                                      | `null`     | The unique identifier for the button element.                              |
+| `disabled`| `boolean`                                                                            | `false`    | Determines if the button is disabled.                                      |
+| `loading` | `boolean`                                                                            | `false`    | Displays a loading spinner when set to `true`.                             |
+| `type`    | `'default' \| 'primary' \| 'destructive' \| 'outline' \| 'ghost' \| 'link'` | `'default'`| Specifies the button's style variant.                                      |
 
-```bash
-ng e2e
-```
+## Types
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### `type`
 
-## Additional Resources
+- `default`: Standard button with no special styling.
+- `primary`: Emphasized button for primary actions.
+- `destructive`: Button for destructive actions (e.g., delete).
+- `outline`: Button with an outline style.
+- `ghost`: Minimalist button without borders or background.
+- `link`: Styled as a hyperlink.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Accessibility
+
+- Ensure the `id` property is set for proper identification when integrating with forms or testing frameworks.
+- Use `disabled` to indicate non-interactive buttons to users and assistive technologies.
+
+## Documentation
+
+For more information, visit the [official documentation]().
+
+## Repository
+
+The source code is available on [GitHub](https://github.com/0K00/teenageinterface).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

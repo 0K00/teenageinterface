@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
-import { ButtonComponent } from "../../../components/button/button.component";
-import { TabsComponent } from "../../../components/tabs/tabs.component";
-import { TabComponent } from "../../../components/tabs/tab/tab.component";
+import { ButtonComponent } from "@teenageinterface/button";
+import { TabsComponent, TabComponent } from "@teenageinterface/tabs";
 import { defaultCode, defaultImports, defaultSkeleton, primaryCode, destructiveCode, outlineCode, ghostCode, linkCode, iconCode, withCode, loadingCode } from "./button.preview";
 import { CodeComponent } from "../../../shared/code/code.component";
 import TableComponent from "../../../components/table/table.component";
@@ -10,11 +9,11 @@ import THeaderComponent from "../../../components/table/tHeader/tHeader.componen
 import TCellComponent from "../../../components/table/tCell/tCell.component";
 import TBodyComponent from "../../../components/table/tBody/tBody.component";
 import { RouterModule } from "@angular/router";
-import { IconsComponent } from "../../../components/icons/icons.component";
+import { IconsComponent } from "@teenageinterface/icons";
 
 const pageInfo = {
   title: "Components / Button",
-  order: 1
+  order: 3
 }
 
 @Component({

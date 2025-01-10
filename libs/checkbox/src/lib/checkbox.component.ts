@@ -17,6 +17,7 @@ import { IconsComponent } from '@teenageinterface/icons';
 })
 export class CheckboxComponent {
   @Input() checked: boolean = false;
+  @Input() id: string = "";
   @Input() type: "default" | "primary" = "default";
   @Output() checkedChange = new EventEmitter<boolean>();
 

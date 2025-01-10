@@ -5,7 +5,7 @@
   @Last Modified time: 22-12-2024 07:09:35
 -->
 <label class="group flex gap-2 items-center">
-  <input class="peer absolute overflow-hidden opacity-0 w-px h-px p-0" type="checkbox" [ngModel]="checked" (ngModelChange)="onModelChange($event)">
+  <input [id]="id" class="peer absolute overflow-hidden opacity-0 w-px h-px p-0" type="checkbox" [ngModel]="checked" (ngModelChange)="onModelChange($event)">
   <div [ngClass]="classes">
     <tiIcon *ngIf="checked" icon="check" />
   </div>

@@ -8,7 +8,10 @@
   <div class="flex items-center gap-1 justify-between w-full">
     <div class="truncate text-ellipsis w-full">
       <ng-container *ngFor="let selectedValue of selectedValues; last as last">
-        {{ selectedValues.length ? last ? selectedValue?.title : selectedValue?.title + ',' : placeholder }}
+        {{ last ? selectedValue?.title : selectedValue?.title + ',' }}
+      </ng-container>
+      <ng-container *ngIf="showPlaceholder">
+        {{placeholder}}
       </ng-container>
     </div>
     <tiIcon icon="chevron_down" [ngClass]="isOpen ? 'perspective preserve-3d transition-all duration-300 rotate-x-180' : 'perspective preserve-3d rotate-x-0 transition-all duration-300'" />

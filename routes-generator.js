@@ -25,15 +25,17 @@ function findPageFiles(dir) {
 function extractPageData(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
 
-  const pageInfoMatch = content.match(/const\s+pageInfo\s*=\s*{\s*title:\s*['"](.+?)['"]\s*,\s*order:\s*(\d+)\s*}/);
+  const pageInfoMatch = content.match(/const\s+pageInfo\s*=\s*{\s*title:\s*['"](.+?)['"]\s*,\s*order:\s*(\d+)\s*(?:,\s*alpha:\s*(true|false))?\s*(?:,\s*soon:\s*(true|false))?\s*}/);
 
   const pageTitle = pageInfoMatch ? pageInfoMatch[1] : null;
   const order = pageInfoMatch ? parseInt(pageInfoMatch[2], 10) : 999;
+  const alpha = pageInfoMatch ? pageInfoMatch[3] : false;
+  const soon = pageInfoMatch ? pageInfoMatch[4] : false;
 
   const classMatch = content.match(/export\s+(default\s+class|class)\s+(\w+)\s*{/);
   const className = classMatch ? classMatch[2] : null;
 
-  return { pageTitle, order, className };
+  return { pageTitle, order, className, alpha, soon };
 }
 
 function groupByParentDirectory(routes) {
@@ -60,7 +62,7 @@ function generateRoutes() {
     const relativePath = path.relative(PAGES_DIR, filePath);
     const importPath = relativePath.replace(/\\/g, '/').replace('.ts', '');
 
-    const { pageTitle, order, className } = extractPageData(filePath);
+    const { pageTitle, order, className, alpha, soon } = extractPageData(filePath);
 
     if (!pageTitle || !className) {
       console.warn(`⚠️  Missing data in ${filePath}`);
@@ -76,6 +78,8 @@ function generateRoutes() {
       component: className,
       title: pageTitle,
       order: order,
+      alpha: alpha,
+      soon: soon,
       importPath: importPath,
     });
   }
@@ -95,7 +99,7 @@ function generateRoutes() {
     });
 
     const childrenRoutes = children
-      .map(route => `{ path: '${route.fileName}', component: ${route.component}, data: { title: '${route.title}', order: ${route.order} } }`)
+      .map(route => `{ path: '${route.fileName}', component: ${route.component}, data: { title: '${route.title}', order: ${route.order}, soon: ${route.soon}, alpha: ${route.alpha} } }`)
       .join(',\n      ');
 
     routeDefinitions.push(`

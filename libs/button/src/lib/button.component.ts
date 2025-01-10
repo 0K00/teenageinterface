@@ -37,7 +37,8 @@ export class ButtonComponent {
     "dark:ring-neutral-50",
     "dark:ring-offset-neutral-950",
     "focus-visible:ring-offset-2",
-    "focus-visible:outline-none"
+    "focus-visible:outline-none",
+    "min-w-10"
   ];
   private primary: string[] = [
     "py-2",
@@ -55,7 +56,8 @@ export class ButtonComponent {
     "dark:ring-blue-600",
     "dark:ring-offset-neutral-950",
     "focus-visible:ring-offset-2",
-    "focus-visible:outline-none"
+    "focus-visible:outline-none",
+    "min-w-10"
   ];
   private destructive: string[] = [
     "py-2",
@@ -73,7 +75,8 @@ export class ButtonComponent {
     "dark:ring-red-600",
     "dark:ring-offset-neutral-950",
     "focus-visible:ring-offset-2",
-    "focus-visible:outline-none"
+    "focus-visible:outline-none",
+    "min-w-10"
   ];
   private outline: string[] = [
     "py-2",
@@ -96,14 +99,14 @@ export class ButtonComponent {
     "dark:ring-neutral-50",
     "dark:ring-offset-neutral-950",
     "focus-visible:ring-offset-2",
-    "focus-visible:outline-none"
+    "focus-visible:outline-none",
+    "min-w-10"
   ];
   private ghost: string[] = [
     "py-2",
     "px-3",
     "h-10",
-    "bg-neutral-50",
-    "dark:bg-neutral-950",
+    "bg-transparent",
     "hover:bg-neutral-200",
     "hover:dark:bg-neutral-900",
     "text-neutral-600",
@@ -116,7 +119,8 @@ export class ButtonComponent {
     "dark:ring-neutral-800",
     "dark:ring-offset-neutral-950",
     "focus-visible:ring-offset-2",
-    "focus-visible:outline-none"
+    "focus-visible:outline-none",
+    "min-w-10"
   ];
   private link: string[] = [
     "rounded-none",
@@ -127,17 +131,15 @@ export class ButtonComponent {
     "hover:dark:border-neutral-50",
     "text-neutral-900",
     "dark:text-neutral-50",
-    "focus-visible:outline-none"
+    "focus-visible:outline-none",
   ];
 
   private commonClasses: string[] = [
-    "min-w-10",
     "cursor-pointer",
     "transition",
     "duration-300",
     "active:scale-97",
     "rounded-lg",
-    "tracking-2px",
     "disabled:opacity-50",
     "disabled:pointer-events-none",
     "font-medium",
