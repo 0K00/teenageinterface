@@ -1,63 +1,82 @@
-# Radio
+# Radio Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+The `Radio` component is a reusable radio button component that allows users to select one option from a group. It supports customizable styles and emits events when the selected option changes.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ensure that you have installed the `@teenageinterface/radio` library in your Angular project. If not, you can add it using:
 
 ```bash
-ng generate --help
+npm install @teenageinterface/radio
 ```
 
-## Building
+## Usage
 
-To build the library, run:
+Import the `RadioComponent` into your Angular application:
 
-```bash
-ng build radio
+```typescript
+import { RadioComponent } from '@teenageinterface/radio';
+
+@Component({
+  selector: 'app-radio-example',
+  template: `
+    <tiRadio 
+      [item]="option" 
+      [value]="selectedValue" 
+      [type]="'primary'" 
+      (valuesChange)="onValueChange($event)">
+    </tiRadio>
+  `,
+})
+export class RadioExampleComponent {
+  option = { value: 'option1', name: 'Option 1', id: '1' };
+  selectedValue: string = 'option1';
+
+  onValueChange(event: { value: string, name: string, id: string }) {
+    console.log('Selected option:', event);
+  }
+}
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+### Example
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/radio
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```html
+<tiRadio 
+  [item]="{ value: 'option2', name: 'Option 2', id: '2' }" 
+  [value]="selectedValue" 
+  [type]="'default'" 
+  (valuesChange)="onRadioChange($event)">
+</tiRadio>
 ```
 
-## Running end-to-end tests
+## Properties
 
-For end-to-end (e2e) testing, run:
+| Property      | Type                                      | Default               | Description                                                |
+|---------------|------------------------------------------|-----------------------|------------------------------------------------------------|
+| `item`        | `{ value: string, name: string, id: string }` | `{ value: "", name: "", id: "" }` | The option associated with the radio button.              |
+| `value`       | `string`                                 | `""`                  | The currently selected value.                              |
+| `type`        | `"default" \| "primary"`                 | `"default"`           | The style type of the radio button (default or primary).   |
 
-```bash
-ng e2e
-```
+## Output Events
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `valuesChange`: Emits an object `{ value, name, id }` when the selected value changes.
 
-## Additional Resources
+## Types
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The `type` property can be one of the following values:
+
+- `default`: Standard radio with no special styling.
+- `primary`: Emphasized radio for primary actions.
+
+
+## Documentation
+
+For more information, visit the [official documentation]().  
+
+## Repository
+
+The source code is available on [GitHub](https://github.com/0K00/teenageinterface).  
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/0K00/teenageinterface/blob/main/LICENSE.MD).  
