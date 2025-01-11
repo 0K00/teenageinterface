@@ -20,8 +20,7 @@ import { SearchService } from './services/search.services';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HeaderShared, CommonModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   title = 'teenage interface';

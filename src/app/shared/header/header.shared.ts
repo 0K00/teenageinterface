@@ -23,7 +23,7 @@ import { InputComponent } from '@teenageinterface/input';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
-  selector: 'aHeader',
+  selector: 'tiHeader',
   imports: [CommonModule, RouterModule, ButtonComponent, IconsComponent, FormsModule, IconsComponent, InputComponent],
   templateUrl: './header.shared.html',
   animations: [
