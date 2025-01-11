@@ -36,10 +36,10 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#run-project">Run project</a></li>
+        <li><a href="#build-project">Build project</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -54,8 +54,6 @@ Teenage Interface is a lightweight, customizable library of reusable Angular com
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Angular](https://angular.io/ "Angular") - A typescript framework, is a platform for building mobile and desktop web applications
 * [Typescript](https://www.typescriptlang.org/ "Typescript") - A typed superset of JavaScript that compiles to plain JavaScript
