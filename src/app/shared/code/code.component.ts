@@ -10,7 +10,7 @@ import { Highlight, HighlightLoader, HighlightModule } from 'ngx-highlightjs';
 import { IconsComponent } from "../../components/icons/icons.component";
 
 @Component({
-  selector: 'aCode',
+  selector: 'tiCode',
   imports: [CommonModule, Highlight, IconsComponent],
   templateUrl: './code.component.html'
 })

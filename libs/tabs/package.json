@@ -1,6 +1,6 @@
 {
   "name": "@teenageinterface/tabs",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "The `Tabs` component provides a customizable tab navigation system to organize content. It includes an optional `Tab` component for defining individual tabs.",
   "repository": {
     "type": "git",

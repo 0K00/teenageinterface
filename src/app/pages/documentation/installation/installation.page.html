@@ -59,7 +59,7 @@
       Install the Dependencies
     </h4>
     <div>
-      <aCode [language]="'bash'" code="npm install @teenageinterface/core tailwindcss postcss autoprefixer" />
+      <tiCode [language]="'bash'" code="npm install @teenageinterface/core tailwindcss postcss autoprefixer" />
     </div>
   </div>
 
@@ -84,19 +84,19 @@
     </h4>
     <div class="flex flex-col gap-2">
       Generate the Tailwind CSS configuration file by running:
-      <aCode [language]="'bash'" code="npx tailwindcss init" />
+      <tiCode [language]="'bash'" code="npx tailwindcss init" />
     </div>
     <div class="flex flex-col gap-2 mt-4">
       <div>
         Update the <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">tailwind.config.js</span> file to include your Angular project files. For example:
       </div>
-      <aCode [language]="'typescript'" [code]="configCode" />
+      <tiCode [language]="'typescript'" [code]="configCode" />
     </div>
     <div class="flex flex-col gap-2 mt-4">
       <div>
         Add the Tailwind directives to your global stylesheet <span class="dark:bg-neutral-800 dark:text-neutral-300 bg-neutral-200 text-neutral-800 px-1.5 py-0.5 rounded-md">src/styles.scss</span>:
       </div>
-      <aCode [language]="'typescript'" [code]="styleCode" />
+      <tiCode [language]="'typescript'" [code]="styleCode" />
     </div>
   </div>
   </div>
@@ -143,7 +143,7 @@
       </h4>
       <div class="flex flex-col gap-2">
         Import and use the components directly in your Angular files:
-        <aCode [language]="'typescript'" [code]="standaloneCode" />
+        <tiCode [language]="'typescript'" [code]="standaloneCode" />
       </div>
     </div>
   </div>

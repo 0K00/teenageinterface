@@ -1,5 +1,5 @@
 <section class="flex flex-wrap gap-4 w-full">
-  <div class="grid md:grid-cols-2 gap-4 lg:grid-cols-10 xl:grid-cols-11">
+  <div class="grid gap-4 lg:grid-cols-10 xl:grid-cols-11">
     <div class="space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
       <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
         <div class="space-y-6 xl:space-y-4 flex flex-col gap-1">
@@ -17,7 +17,7 @@
                 </div>
               </div>
               <div class="flex flex-col gap-4">
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between flex-wrap gap-4">
                   <div class="flex items-center gap-4">
                     <tiAvatar size="medium" [fallback]="'Sd'" />
                     <div class="flex flex-col text-sm font-medium">
@@ -28,7 +28,7 @@
                   <tiSelect placeholder="Choose an option" [multiSelect]="false" [options]="[{value: 'viewer', title: 'Viewer'}, {value: 'developer', title: 'Developer'}, {value: 'owner', title: 'Owner'}]" [selectedIds]="['owner']" />
                 </div>
 
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between flex-wrap gap-4">
                   <div class="flex items-center gap-4">
                     <tiAvatar size="medium" [fallback]="'Jl'" />
                     <div class="flex flex-col text-sm font-medium">
@@ -39,7 +39,7 @@
                   <tiSelect placeholder="Choose an option" [multiSelect]="false" [options]="[{value: 'viewer', title: 'Viewer'}, {value: 'developer', title: 'Developer'}, {value: 'owner', title: 'Owner'}]" [selectedIds]="['viewer']" />
                 </div>
 
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between flex-wrap gap-4">
                   <div class="flex items-center gap-4">
                     <tiAvatar size="medium" [fallback]="'In'" />
                     <div class="flex flex-col text-sm font-medium">
@@ -154,7 +154,7 @@
       </div>
     </div>
 
-    <div class="space-y-4 lg:col-span-6 xl:col-span-5 xl:space-y-4">
+    <div class="flex flex-col gap-1 space-y-4 lg:col-span-6 xl:col-span-5 xl:space-y-4">
       <tiCard>
         <div class="flex flex-col gap-4" content>
           <div class="flex flex-col">
@@ -204,6 +204,22 @@
               </div>
               <tiSelect placeholder="Choose an option" [multiSelect]="false" [options]="[{value: 'edit', title: 'Can edit'}, {value: 'view', title: 'Can view'}]" [selectedIds]="['view']" />
             </div>
+          </div>
+        </div>
+      </tiCard>
+      <tiCard>
+        <div class="flex flex-col gap-4" content>
+          <div>
+            <tiInput placeholder="Search icons..." [(value)]="searchTerm" />
+          </div>
+          <div class="grid grid-cols-[repeat(auto-fill,minmax(144px,1fr))] gap-2 border dark:border-neutral-800 border-neutral-300 p-4 rounded-xl max-h-[640px] overflow-y-auto overflow-x-hidden">
+            <div class="group cursor-pointer relative flex flex-col py-4 px-2 items-center w-36 justify-center hover:dark:bg-neutral-900 hover:bg-neutral-200 rounded-lg gap-2" (click)="copyIcon(icon)" *ngFor="let icon of searchIcons()">
+              <tiIcon [icon]="icon" other="!w-8 !h-8"/>
+              <span class="text-xs font-medium dark:text-neutral-400 text-neutral-700">
+                {{icon}}
+              </span>
+            </div>
+            <p class="text-xs w-full text-nowrap dark:text-neutral-400 text-neutral-700" *ngIf="searchIcons().length === 0 && searchTerm.length > 0">There are no results you are looking for.</p>
           </div>
         </div>
       </tiCard>
