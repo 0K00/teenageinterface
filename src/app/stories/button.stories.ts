@@ -1,23 +1,33 @@
-/**
- * @Author: 0K0 <contact@oko.app>
- * @Date:   14-12-2024 20:56:51
- * @Last Modified by:   0K0 <contact@oko.app>
- * @Last Modified time: 14-12-2024 22:46:29
- */
 import { type Meta, type StoryObj } from '@storybook/angular';
 
-import { ButtonComponent } from './button.component';
+
+import { ButtonComponent } from '../../../libs/button/src/lib/button.component'
+import readme from '../../../libs/button/README.md';
+
+function removeFirstTitle(content: string): string {
+  if (!content) return '';
+  return content.replace(/^(.*)$/m, '');
+}
+
+const updatedReadme = removeFirstTitle(readme);
 
 const meta: Meta<ButtonComponent> = {
-  title: 'Primitives/Button',
+  title: 'Components/Button',
   component: ButtonComponent,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: updatedReadme
+      }
+    }
+  },
   argTypes: {
     id: {
-      description: "Unique identifier for the button.",
+      description: "The unique identifier for the button element.",
     },
     loading: {
-      description: "Indicates if the button is in a loading state.",
+      description: "Displays a loading spinner when set to true.",
       control: { type: "boolean" },
       table: {
         defaultValue: { summary: "false" },
@@ -25,7 +35,7 @@ const meta: Meta<ButtonComponent> = {
       }
     },
     disabled: {
-      description: "Disables the button, preventing user interaction.",
+      description: "Determines if the button is disabled.",
       control: { type: "boolean" },
       table: {
         defaultValue: { summary: "false" },
@@ -33,7 +43,7 @@ const meta: Meta<ButtonComponent> = {
       }
     },
     type: {
-      description: "Defines the style variant of the button.",
+      description: "Specifies the button's style variant.",
       table: {
         defaultValue: { summary: "default" },
         type: { summary: "string" }
@@ -57,7 +67,7 @@ export const Default: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
+    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Default</tiButton>`
   })
 };
 
@@ -71,7 +81,7 @@ export const Primary: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
+    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Primary</tiButton>`
   })
 };
 
@@ -85,7 +95,7 @@ export const Destructive: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
+    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Destructive</tiButton>`
   })
 };
 
@@ -99,7 +109,7 @@ export const Outline: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
+    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Outline</tiButton>`
   })
 };
 
@@ -114,7 +124,7 @@ export const Ghost: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
+    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Ghost</tiButton>`
   })
 };
 
@@ -128,6 +138,6 @@ export const Link: Story = {
   render: (args: any) => ({
     component: ButtonComponent,
     props: args,
-    template: `<aButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled"><span class="inline-flex items-center justify-center" >0</span>Default</aButton>`
+    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Link</tiButton>`
   })
 };

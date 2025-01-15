@@ -45,10 +45,10 @@ export default class ButtonPage {}
 
 | Property  | Type                                                                                  | Default    | Description                                                                 |
 |-----------|---------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------------------|
-| `id`      | `string \| null`                                                                      | `null`     | The unique identifier for the button element.                              |
+| `id`      | `string | null`                                                                      | `null`     | The unique identifier for the button element.                              |
 | `disabled`| `boolean`                                                                            | `false`    | Determines if the button is disabled.                                      |
 | `loading` | `boolean`                                                                            | `false`    | Displays a loading spinner when set to `true`.                             |
-| `type`    | `'default' \| 'primary' \| 'destructive' \| 'outline' \| 'ghost' \| 'link'` | `'default'`| Specifies the button's style variant.                                      |
+| `type`    | `'default' | 'primary' | 'destructive' | 'outline' | 'ghost' | 'link'` | `'default'`| Specifies the button's style variant.                                      |
 
 ## Types
 

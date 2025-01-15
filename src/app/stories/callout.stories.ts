@@ -1,17 +1,26 @@
-/**
- * @Author: 0K0 <contact@oko.app>
- * @Date:   14-12-2024 20:56:51
- * @Last Modified by:   0K0 <contact@oko.app>
- * @Last Modified time: 14-12-2024 22:46:29
- */
 import { type Meta, type StoryObj } from '@storybook/angular';
 
-import { CalloutComponent } from './callout.component';
+import { CalloutComponent } from '../../../libs/callout/src/lib/callout.component'
+import readme from '../../../libs/callout/README.md';
+
+function removeFirstTitle(content: string): string {
+  if (!content) return '';
+  return content.replace(/^(.*)$/m, '');
+}
+
+const updatedReadme = removeFirstTitle(readme);
 
 const meta: Meta<CalloutComponent> = {
-  title: 'Primitives/Callout',
+  title: 'Components/Callout',
   component: CalloutComponent,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: updatedReadme
+      }
+    }
+  },
   argTypes: {
     id: {
       description: "Unique identifier for the Callout.",
@@ -36,12 +45,12 @@ export const Default: Story = {
     id: "default",
     type: "default",
     title: "Default",
-    icon: "O"
+    icon: "person"
   },
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a neutral action.</aCallout>`
+    template: `<tiCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a neutral action.</tiCallout>`
   })
 };
 
@@ -50,12 +59,12 @@ export const Success: Story = {
     id: "success",
     type: "success",
     title: "Success",
-    icon: "V"
+    icon: "check_circled"
   },
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a successful or positive action.</aCallout>`
+    template: `<tiCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a successful or positive action.</tiCallout>`
   })
 };
 
@@ -64,12 +73,12 @@ export const Informative: Story = {
     id: "informative",
     type: "informative",
     title: "Head's up",
-    icon: "I"
+    icon: "information_circled_2"
   },
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a neutral informative change or action</aCallout>`
+    template: `<tiCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a neutral informative change or action</tiCallout>`
   })
 };
 
@@ -78,12 +87,12 @@ export const Warn: Story = {
     id: "warn",
     type: "warn",
     title: "You sure?",
-    icon: "!"
+    icon: "information_circled_2_1"
   },
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates neutral information to ald in understanding.</aCallout>`
+    template: `<tiCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates neutral information to ald in understanding.</tiCallout>`
   })
 };
 
@@ -92,12 +101,12 @@ export const Destructive: Story = {
     id: "destructive",
     type: "destructive",
     title: "Unexpected Error",
-    icon: "/!/"
+    icon: "warning"
   },
   render: (args: any) => ({
     component: CalloutComponent,
     props: args,
-    template: `<aCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a warning that might need attention.</aCallout>`
+    template: `<tiCallout [id]="id" [type]="type" [title]="title" [icon]="icon">Indicates a warning that might need attention.</tiCallout>`
   })
 };
 
