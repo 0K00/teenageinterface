@@ -46,7 +46,7 @@ const meta: Meta<ButtonComponent> = {
       description: "Specifies the button's style variant.",
       table: {
         defaultValue: { summary: "default" },
-        type: { summary: "string" }
+        type: { summary: "'default' | 'primary' | 'destructive' | 'outline' | 'ghost' | 'link'" }
       },
       options: ["default", "primary", "destructive", "outline", "ghost", "link"],
       control: { type: "select" }

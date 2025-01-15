@@ -6,8 +6,7 @@
  *****************************************************************************/
 
 import { Component } from "@angular/core";
-import { TabsComponent } from "../../../components/tabs/tabs.component";
-import { TabComponent } from "../../../components/tabs/tab/tab.component";
+import { TabsComponent, TabComponent } from "@teenageinterface/tabs";
 import { defaultCode, defaultImports, defaultSkeleton, passwordCode, emailCode, errorCode, fileCode, bigFileCode } from "./input.preview";
 import { CodeComponent } from "../../../shared/code/code.component";
 import TableComponent from "../../../components/table/table.component";

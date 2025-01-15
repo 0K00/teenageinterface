@@ -40,7 +40,7 @@ export class SeparatorExampleComponent {}
 
 | Property       | Type                          | Default       | Description                                                     |
 |----------------|-------------------------------|---------------|-----------------------------------------------------------------|
-| `orientation`  | `"vertical" \| "horizontal"` | `"horizontal"`| Defines the orientation of the separator (vertical or horizontal). |
+| `orientation`  | `"vertical" | "horizontal"` | `"horizontal"`| Defines the orientation of the separator (vertical or horizontal). |
 | `size`         | `string`                     | `"100%"`      | Sets the length of the separator. Supports values like `50%`, `100px`, etc. |
 
 ## Features

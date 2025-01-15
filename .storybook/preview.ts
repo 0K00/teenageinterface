@@ -11,6 +11,7 @@ import { withThemeByDataAttribute, withThemeByClassName } from "@storybook/addon
 
 const preview: Preview = {
   parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
     backgrounds: {
       values: [],
     },
