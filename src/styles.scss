@@ -9,6 +9,14 @@
  @use "sass:meta";
  @use '@teenageinterface/core';
 
+ html[data-mode="light"] .docs-story {
+  background: #FAFAFA!important;
+}
+
+ html[data-mode="dark"] .docs-story {
+  background: #0A0A0A!important;
+}
+
  body *::-webkit-scrollbar {
   width: 14px;
   height: 18px;
