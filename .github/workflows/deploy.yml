@@ -1,4 +1,4 @@
-name: Deploy Angular & Storybook to GitHub Pages
+name: Deploy Angular & Storybook to GitHub Pages for Teenage Interface
 
 on:
   push:
