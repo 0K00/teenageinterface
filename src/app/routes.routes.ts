@@ -61,7 +61,7 @@ export const routes: Routes = [
       { path: 'darkmode', title: 'Teenage Interface: Getting Started / Dark Mode',  component: DarkmodePage, data: { title: 'Getting Started / Dark Mode', order: 2, soon: undefined, alpha: undefined } },
       { path: 'about', title: 'Teenage Interface: Getting Started / About & Credits',  component: AboutPage, data: { title: 'Getting Started / About & Credits', order: 3, soon: undefined, alpha: undefined } },
       { path: 'cli', title: 'Teenage Interface: Getting Started / CLI',  component: CliPage, data: { title: 'Getting Started / CLI', order: 4, soon: undefined, alpha: undefined } },
-      { path: 'figma', title: 'Teenage Interface: Getting Started / Figma',  canActivate: [RedirectGuard], component: RedirectPage, data: { title: 'Getting Started / Figma', order: 5, soon: undefined, alpha: undefined, external: true, externalUrl: 'https://www.youtube.com/' } },
+      { path: 'figma', title: 'Teenage Interface: Getting Started / Figma',  canActivate: [RedirectGuard], component: RedirectPage, data: { title: 'Getting Started / Figma', order: 5, soon: undefined, alpha: undefined, external: true, externalUrl: 'https://www.figma.com/community/file/1460950311029212213/teenage-interface-design-system' } },
       { path: 'storybook', title: 'Teenage Interface: Getting Started / Storybook',  canActivate: [RedirectGuard], component: RedirectPage, data: { title: 'Getting Started / Storybook', order: 6, soon: undefined, alpha: undefined, external: true, externalUrl: 'https://www.youtube.com/' } }
     ]
   },

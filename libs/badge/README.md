@@ -41,7 +41,7 @@ export default class BadgePage {}
 
 | Property  | Type                                                             | Default    | Description                                   |
 |-----------|------------------------------------------------------------------|------------|-----------------------------------------------|
-| `type`    | `'default' \| 'primary' \| 'success' \| 'informative' \| 'warn' \| 'destructive'` | `'default'` | Determines the style of the badge.            |
+| `type`    | `'default' | 'primary' | 'success' | 'informative' | 'warn' | 'destructive'` | `'default'` | Determines the style of the badge.            |
 
 ## Types
 

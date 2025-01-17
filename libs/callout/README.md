@@ -60,10 +60,10 @@ export default class CalloutPage {}
 
 | Property   | Type                                                             | Default      | Description                                                      |
 |------------|------------------------------------------------------------------|--------------|------------------------------------------------------------------|
-| `id`       | `string \| null`                                                | `null`       | Unique identifier for the callout.                              |
+| `id`       | `string | null`                                                | `null`       | Unique identifier for the callout.                              |
 | `title`    | `string`                                                        | `""`         | Title of the callout.                                            |
 | `icon`     | `string`                                                        | `""`         | Name of the icon to display in the callout.                     |
-| `type`     | `'default' \| 'success' \| 'informative' \| 'warn' \| 'destructive'` | `'default'` | Determines the style of the callout.                            |
+| `type`     | `'default' | 'success' | 'informative' | 'warn' | 'destructive'` | `'default'` | Determines the style of the callout.                            |
 
 ## Types
 

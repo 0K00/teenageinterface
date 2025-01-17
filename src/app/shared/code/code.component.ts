@@ -7,7 +7,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Highlight, HighlightLoader, HighlightModule } from 'ngx-highlightjs';
-import { IconsComponent } from "../../components/icons/icons.component";
+import { IconsComponent } from "@teenageinterface/icons";
 
 @Component({
   selector: 'tiCode',

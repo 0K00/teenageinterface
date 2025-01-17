@@ -59,10 +59,10 @@ export class SelectExampleComponent {
 
 | Property       | Type                                         | Default                | Description                                                               |
 |----------------|---------------------------------------------|------------------------|---------------------------------------------------------------------------|
-| `options`      | `{ value: string \| number; title: string }[]` | `[]`                   | The list of options available in the dropdown.                           |
+| `options`      | `{ value: string | number; title: string }[]` | `[]`                   | The list of options available in the dropdown.                           |
 | `placeholder`  | `string`                                    | `'Select an option'`   | The placeholder text when no option is selected.                         |
 | `multiSelect`  | `boolean`                                   | `false`                | Allows multiple selections when set to `true`.                           |
-| `selectedIds`  | `(string \| number)[]`                      | `[]`                   | The IDs of the currently selected options.                               |
+| `selectedIds`  | `(string | number)[]`                      | `[]`                   | The IDs of the currently selected options.                               |
 
 ## Events
 

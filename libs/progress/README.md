@@ -41,7 +41,7 @@ export class ProgressExampleComponent {
 | `value`      | `number`             | `0`         | The progress value (between 0 and 100).                   |
 | `showValue`  | `boolean`            | `true`      | If `true`, the progress value is displayed inside the bar. |
 | `width`      | `string`             | `"300px"`   | The width of the progress bar.                            |
-| `type`       | `"default" \| "primary" \| "score"` | `"default"` | The type of the progress bar, determining its appearance. |
+| `type`       | `"default" | "primary" | "score"` | `"default"` | The type of the progress bar, determining its appearance. |
 
 ## Types
 

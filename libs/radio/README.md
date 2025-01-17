@@ -55,7 +55,7 @@ export class RadioExampleComponent {
 |---------------|------------------------------------------|-----------------------|------------------------------------------------------------|
 | `item`        | `{ value: string, name: string, id: string }` | `{ value: "", name: "", id: "" }` | The option associated with the radio button.              |
 | `value`       | `string`                                 | `""`                  | The currently selected value.                              |
-| `type`        | `"default" \| "primary"`                 | `"default"`           | The style type of the radio button (default or primary).   |
+| `type`        | `"default" | "primary"`                 | `"default"`           | The style type of the radio button (default or primary).   |
 
 ## Output Events
 

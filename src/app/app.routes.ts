@@ -5,7 +5,7 @@ const staticRoutes: Routes = [
 
 ];
 
-const fallbackRoute: Routes = [{ path: "**", redirectTo: "home" }];
+const fallbackRoute: Routes = [{ path: "**", redirectTo: "" }];
 
 export const routes: Routes = [
   ...dynamicRoutes,

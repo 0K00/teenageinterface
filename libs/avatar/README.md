@@ -49,9 +49,9 @@ export default class AvatarPage {}
 
 | Property     | Type                           | Default   | Description                                                                 |
 |--------------|--------------------------------|-----------|-----------------------------------------------------------------------------|
-| `imageUrl`   | `string \| null`              | `null`    | URL of the image to display. If invalid, the fallback is shown.            |
+| `imageUrl`   | `string | null`              | `null`    | URL of the image to display. If invalid, the fallback is shown.            |
 | `fallback`   | `string`                      | `'A'`     | Text displayed as a fallback when the image fails to load.                 |
-| `size`       | `'small' \| 'medium' \| 'large'` | `'medium'`| Controls the size of the avatar (small, medium, or large).                 |
+| `size`       | `'small' | 'medium' | 'large'` | `'medium'`| Controls the size of the avatar (small, medium, or large).                 |
 
 ## Size Classes
 

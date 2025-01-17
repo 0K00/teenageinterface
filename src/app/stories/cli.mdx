@@ -1,0 +1,57 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Getting Started/CLI" />
+
+# CLI
+
+Effortlessly manage and install packages from the Teenage Interface library with an interactive, command-line experience.
+
+## Installation
+
+To install the CLI globally, run the following command:
+```bash
+npm install -g @teenageinterface/cli
+```
+
+Alternatively, you can add it to your project as a development dependency:
+```bash
+npm install --save-dev @teenageinterface/cli
+```
+
+## Usage
+
+Once installed, you can use the tgi command in your terminal to install packages.
+
+### Install a single package
+
+To install a specific package, run the following command:
+```bash
+tgi install [name]
+```
+
+### Install all packages
+
+To install all available packages, use the --all option or the -a alias:
+```bash
+tgi install --all
+# or
+tgi install -a
+```
+
+### Interactive installation
+
+If you don't specify a package, the CLI will prompt you to select one or more packages interactively. Use the following command:
+```bash
+tgi install
+```
+
+You will be presented with a list of available packages to choose from.
+
+### Help
+
+For more information on the available commands, run:
+```bash
+tgi --help
+```
+
+This will display all available commands, descriptions, and options.

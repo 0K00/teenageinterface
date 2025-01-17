@@ -9,18 +9,18 @@
       <h2 class="text-4xl font-semibold">Input</h2>
       <p class="text-xl font-medium text-neutral-500">Trigger an action or event, such as submitting a form or displaying a dialog.</p>
     </div>
-    <aTabs>
-      <aTab tabTitle="Preview" [active]="true">
+    <tiTabs>
+      <tiTab tabTitle="Preview" [active]="true">
         <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
           <div class="flex items-center justify-center w-[384px]">
             <tiInput placeholder="Search" />
           </div>
         </div>
-      </aTab>
-      <aTab tabTitle="Code">
+      </tiTab>
+      <tiTab tabTitle="Code">
         <tiCode [language]="'typescript'" [code]="defaultCode" />
-      </aTab>
-    </aTabs>
+      </tiTab>
+    </tiTabs>
   </div>
 
   <div class="mb-16 flex flex-col gap-2" id="api" #attributes>
@@ -237,18 +237,18 @@
       ">
         Default
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
             <div class="flex items-center justify-center w-[384px]">
               <tiInput type="text" placeholder="Default" />
             </div>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
+        </tiTab>
+        <tiTab tabTitle="Code">
           <tiCode [language]="'typescript'" [code]="defaultCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="password" #password>
@@ -270,18 +270,18 @@
       ">
         Password
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
             <div class="flex items-center justify-center w-[384px]">
               <tiInput type="password" placeholder="Password" />
             </div>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
+        </tiTab>
+        <tiTab tabTitle="Code">
           <tiCode [language]="'typescript'" [code]="passwordCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="email" #email>
@@ -303,18 +303,18 @@
       ">
         Email
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
             <div class="flex items-center justify-center w-[384px]">
               <tiInput type="email" placeholder="Email" />
             </div>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
+        </tiTab>
+        <tiTab tabTitle="Code">
           <tiCode [language]="'typescript'" [code]="emailCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="error" #error>
@@ -336,8 +336,8 @@
       ">
         Error
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
             <div class="flex items-center justify-center">
               <div class="flex flex-col gap-6 w-[384px]">
@@ -346,11 +346,11 @@
               </div>
             </div>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
+        </tiTab>
+        <tiTab tabTitle="Code">
           <tiCode [language]="'typescript'" [code]="errorCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+      </tiTabs>
     </div>
 
     <div id="file" #file>
@@ -372,18 +372,18 @@
       ">
         File
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
             <div class="flex items-center justify-center w-[384px]">
               <tiInput type="file" placeholder="File" />
             </div>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
+        </tiTab>
+        <tiTab tabTitle="Code">
           <tiCode [language]="'typescript'" [code]="fileCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+      </tiTabs>
     </div>
 
 
@@ -406,18 +406,18 @@
       ">
         Big File
       </h4>
-      <aTabs>
-        <aTab tabTitle="Preview" [active]="true">
+      <tiTabs>
+        <tiTab tabTitle="Preview" [active]="true">
           <div class="border border-neutral-300 dark:border-neutral-800 min-h-80 flex items-center justify-center rounded-lg">
             <div class="flex items-center justify-center w-[384px]">
               <tiInput type="bigFile" placeholder="Placeholder here!" />
             </div>
           </div>
-        </aTab>
-        <aTab tabTitle="Code">
+        </tiTab>
+        <tiTab tabTitle="Code">
           <tiCode [language]="'typescript'" [code]="bigFileCode" />
-        </aTab>
-      </aTabs>
+        </tiTab>
+      </tiTabs>
     </div>
   </div>
 </section>

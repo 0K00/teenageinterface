@@ -51,7 +51,7 @@ export class InputExampleComponent {
 | `value`       | `string`            | `""`        | The value of the input field.                             |
 | `placeholder` | `string`            | `""`        | Placeholder text for the input field.                     |
 | `required`    | `boolean`           | `false`     | If `true`, the input will be required.                    |
-| `type`        | `"text" \| "password" \| "email" \| "file" \| "bigFile"` | `"text"` | The input type. Supports text, password, email, file, and bigFile. |
+| `type`        | `"text" | "password" | "email" | "file" | "bigFile"` | `"text"` | The input type. Supports text, password, email, file, and bigFile. |
 
 ## Events
 
