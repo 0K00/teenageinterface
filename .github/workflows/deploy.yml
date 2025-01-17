@@ -3,7 +3,7 @@ name: Deploy Angular & Storybook to GitHub Pages
 on:
   push:
     branches:
-      - main  # ou la branche de votre choix
+      - main
 
 jobs:
   deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22.12.0'  # utilisez la version de Node.js appropriée
+          node-version: '22.12.0'
 
       - name: Install dependencies
         run: |
@@ -38,18 +38,18 @@ jobs:
           mkdir -p ./docs
           cp -r ./dist/your-angular-app/* ./docs
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
       - name: Deploy Storybook to GitHub Pages (docs/)
         run: |
           mkdir -p ./docs/storybook
           cp -r ./storybook-static/* ./docs/storybook
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
       - name: Push to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_branch: gh-pages  # Utilisez la branche `gh-pages` ou une autre branche
-          publish_dir: ./docs        # Répertoire à publier
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./docs
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
