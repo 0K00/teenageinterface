@@ -37,7 +37,7 @@ const meta: Meta<AvatarComponent> = {
       description: "Controls the size of the avatar (small, medium, or large).",
       table: {
         defaultValue: { summary: "small" },
-        type: { summary: "string" }
+        type: { summary: "'small' | 'medium' | 'large'" }
       },
       options: ["small", "medium", "large"],
       control: { type: "select" }

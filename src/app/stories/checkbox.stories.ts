@@ -3,7 +3,6 @@ import { action } from '@storybook/addon-actions';
 
 import { CheckboxComponent } from '../../../libs/checkbox/src/lib/checkbox.component'
 import readme from '../../../libs/checkbox/README.md';
-import { userEvent, within } from '@storybook/test';
 
 function removeFirstTitle(content: string): string {
   if (!content) return '';
@@ -25,10 +24,10 @@ const meta: Meta<CheckboxComponent> = {
   },
   argTypes: {
     id: {
-      description: "The unique identifier for the button element.",
+      description: "An optional ID for the checkbox.",
     },
     checked: {
-      description: "Displays a loading spinner when set to true.",
+      description: "Sets the initial checked state of the checkbox.",
       control: { type: "boolean" },
       table: {
         defaultValue: { summary: "false" },
@@ -36,18 +35,21 @@ const meta: Meta<CheckboxComponent> = {
       }
     },
     checkedChange: {
-      description: "Determines if the button is disabled.",
+      description: "Emits when the checked state of the checkbox changes.",
       type: "function",
       control: false,
-      action: 'checkedChange'
+      action: 'checkedChange',
+      table: {
+        type: { summary: "EventEmitter<boolean>()" }
+      }
     },
     type: {
-      description: "Specifies the button's style variant.",
+      description: "Determines the style of the checkbox.",
       table: {
         defaultValue: { summary: "default" },
-        type: { summary: "string" }
+        type: { summary: "'default' | 'primary'" }
       },
-      options: ["default", "primary", "destructive", "outline", "ghost", "link"],
+      options: ["default", "primary"],
       control: { type: "select" }
     }
   }

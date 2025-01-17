@@ -60,7 +60,7 @@ const meta: Meta<InputComponent> = {
       description: "The input type. Supports text, password, email, file, and bigFile.",
       table: {
         defaultValue: { summary: "text" },
-        type: { summary: "string" }
+        type: { summary: "'text' | 'password' | 'email' | 'file' | 'bigFile'" }
       },
       options: ["text", "password", "email", "file", "bigFile"],
       control: { type: "select" }
@@ -69,13 +69,19 @@ const meta: Meta<InputComponent> = {
       description: "Emitted when the value of the input field changes.",
       type: "function",
       control: false,
-      action: 'valueChange'
+      action: 'valueChange',
+      table: {
+        type: { summary: "EventEmitter<string>()" }
+      }
     },
     onEnter: {
       description: "Emitted when the enter key is pressed in the input field.",
       type: "function",
       control: false,
-      action: 'onEnter'
+      action: 'onEnter',
+      table: {
+        type: { summary: "EventEmitter<string>()" }
+      }
     }
   }
 };

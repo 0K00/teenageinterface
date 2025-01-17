@@ -1,8 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
+import { action } from '@storybook/addon-actions';
 
-
-import { ButtonComponent } from '../../../libs/button/src/lib/button.component'
-import readme from '../../../libs/button/README.md';
+import { RadioComponent } from '../../../libs/radio/src/lib/radio.component'
+import readme from '../../../libs/radio/README.md';
 
 function removeFirstTitle(content: string): string {
   if (!content) return '';
@@ -11,133 +11,81 @@ function removeFirstTitle(content: string): string {
 
 const updatedReadme = removeFirstTitle(readme);
 
-const meta: Meta<ButtonComponent> = {
+const meta: Meta<RadioComponent> = {
   title: 'Components/Radio',
-  component: ButtonComponent,
+  component: RadioComponent,
   tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
         component: updatedReadme
       }
-    }
+    },
   },
   argTypes: {
-    id: {
-      description: "The unique identifier for the button element.",
-    },
-    loading: {
-      description: "Displays a loading spinner when set to true.",
-      control: { type: "boolean" },
+    item: {
+      description: "The option associated with the radio button.",
       table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" }
-      }
+        defaultValue: { summary: "{ value: '', name: '', id: '' }" },
+        type: { summary: "{ value: string, name: string, id: string }"}
+      },
+      control: "object"
     },
-    disabled: {
-      description: "Determines if the button is disabled.",
-      control: { type: "boolean" },
+    value: {
+      description: "The currently selected value.",
+    },
+    valuesChange: {
+      description: "Emits an object `{ value, name, id }` when the selected value changes.",
+      type: "function",
+      control: false,
+      action: 'valuesChange',
       table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" }
+        type: { summary: "EventEmitter<{ value: string, name: string, id: string }>()" }
       }
     },
     type: {
-      description: "Specifies the button's style variant.",
+      description: "The style type of the radio button (default or primary).",
       table: {
         defaultValue: { summary: "default" },
-        type: { summary: "string" }
+        type: { summary: "'default' | 'primary'" }
       },
-      options: ["default", "primary", "destructive", "outline", "ghost", "link"],
+      options: ["default", "primary"],
       control: { type: "select" }
     }
   }
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<RadioComponent>;
 
 export const Default: Story = {
   args: {
-    id: "default",
-    loading: false,
-    disabled: false,
+    item: { value: 'default', name: 'radio', id: 'default' },
+    value: "",
     type: "default"
   },
   render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Default</tiButton>`
+    component: RadioComponent,
+    props: {
+      ...args,
+      valuesChange: (e: boolean) => { action(`Value`)(e) }
+    },
+    template: `<tiRadio [type]="type" [item]="item" [value]="value" (valuesChange)="valuesChange($event)">Default</tiRadio>`
   })
 };
 
 export const Primary: Story = {
   args: {
-    id: "primary",
-    loading: false,
-    disabled: false,
+    item: { value: 'primary', name: 'radio', id: 'primary' },
+    value: "",
     type: "primary"
   },
   render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Primary</tiButton>`
-  })
-};
-
-export const Destructive: Story = {
-  args: {
-    id: "destructive",
-    loading: false,
-    disabled: false,
-    type: "destructive"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Destructive</tiButton>`
-  })
-};
-
-export const Outline: Story = {
-  args: {
-    id: "outline",
-    loading: false,
-    disabled: false,
-    type: "outline"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Outline</tiButton>`
-  })
-};
-
-
-export const Ghost: Story = {
-  args: {
-    id: "ghost",
-    loading: false,
-    disabled: false,
-    type: "ghost"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Ghost</tiButton>`
-  })
-};
-
-export const Link: Story = {
-  args: {
-    id: "link",
-    loading: false,
-    disabled: false,
-    type: "link"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Link</tiButton>`
+    component: RadioComponent,
+    props: {
+      ...args,
+      valuesChange: (e: boolean) => { action(`Value`)(e) }
+    },
+    template: `<tiRadio [type]="type" [item]="item" [value]="value" (valuesChange)="valuesChange($event)">Primary</tiRadio>`
   })
 };

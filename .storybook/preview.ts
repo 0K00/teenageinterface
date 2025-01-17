@@ -11,6 +11,22 @@ import { withThemeByDataAttribute, withThemeByClassName } from "@storybook/addon
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        method: 'configure',
+        includeName: true,
+        order: [
+          'Getting Started',
+          [
+            'Installation',
+            'Dark Mode',
+            'CLI',
+            'About'
+          ],
+          'Components'
+        ]
+      }
+    },
     actions: { argTypesRegex: '^on[A-Z].*' },
     backgrounds: {
       values: [],

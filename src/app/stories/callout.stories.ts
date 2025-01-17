@@ -3,6 +3,8 @@ import { type Meta, type StoryObj } from '@storybook/angular';
 import { CalloutComponent } from '../../../libs/callout/src/lib/callout.component'
 import readme from '../../../libs/callout/README.md';
 
+import { iconsList } from '../pages/components/icons/icons.preview';
+
 function removeFirstTitle(content: string): string {
   if (!content) return '';
   return content.replace(/^(.*)$/m, '');
@@ -25,15 +27,26 @@ const meta: Meta<CalloutComponent> = {
     id: {
       description: "Unique identifier for the Callout.",
     },
+    title: {
+      description: "Title of the callout."
+    },
     type: {
       description: "Defines the style variant of the Callout.",
       table: {
         defaultValue: { summary: "default" },
-        type: { summary: "string" }
+        type: { summary: "'default' | 'primary' | 'success' | 'informative' | 'warn' | 'destructive'" }
       },
       options: ["default", "success", "informative", "warn", "destructive"],
       control: { type: "select" }
-    }
+    },
+    icon: {
+      description: "Name of the icon to display in the callout.",
+      table: {
+        type: { summary: "string" }
+      },
+      options: iconsList,
+      control: { type: "select" }
+    },
   }
 };
 

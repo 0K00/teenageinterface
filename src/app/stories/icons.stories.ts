@@ -25,7 +25,7 @@ const meta: Meta<IconsComponent> = {
   },
   argTypes: {
     icon: {
-      description: "Specifies the button's style variant.",
+      description: "The name of the icon to display.",
       table: {
         type: { summary: "string" }
       },
@@ -33,7 +33,7 @@ const meta: Meta<IconsComponent> = {
       control: { type: "select" }
     },
     other: {
-      description: "The unique identifier for the button element.",
+      description: "Additional classes or properties.",
     }
   }
 };

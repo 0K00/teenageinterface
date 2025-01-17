@@ -1,8 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
 
 
-import { ButtonComponent } from '../../../libs/button/src/lib/button.component'
-import readme from '../../../libs/button/README.md';
+import { ProgressComponent } from '../../../libs/progress/src/lib/progress.component'
+import readme from '../../../libs/progress/README.md';
+import { max, min } from 'rxjs';
 
 function removeFirstTitle(content: string): string {
   if (!content) return '';
@@ -11,9 +12,9 @@ function removeFirstTitle(content: string): string {
 
 const updatedReadme = removeFirstTitle(readme);
 
-const meta: Meta<ButtonComponent> = {
+const meta: Meta<ProgressComponent> = {
   title: 'Components/Progress',
-  component: ButtonComponent,
+  component: ProgressComponent,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -23,121 +24,82 @@ const meta: Meta<ButtonComponent> = {
     }
   },
   argTypes: {
-    id: {
-      description: "The unique identifier for the button element.",
+    value: {
+      description: "The progress value (between 0 and 100).",
+      control: { type: "number", min: 0, max: 100 },
+      table: {
+        defaultValue: { summary: "0" },
+        type: { summary: "number" }
+      }
     },
-    loading: {
-      description: "Displays a loading spinner when set to true.",
+    showValue: {
+      description: "If `true`, the progress value is displayed inside the bar.",
       control: { type: "boolean" },
       table: {
         defaultValue: { summary: "false" },
         type: { summary: "boolean" }
       }
     },
-    disabled: {
-      description: "Determines if the button is disabled.",
-      control: { type: "boolean" },
+    width: {
+      description: "The width of the progress bar.",
       table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" }
+        defaultValue: { summary: "300px" },
+        type: { summary: "string" }
       }
     },
     type: {
-      description: "Specifies the button's style variant.",
+      description: "The type of the progress bar, determining its appearance.",
       table: {
         defaultValue: { summary: "default" },
-        type: { summary: "string" }
+        type: { summary: "'default' | 'primary' | 'score'" }
       },
-      options: ["default", "primary", "destructive", "outline", "ghost", "link"],
+      options: ["default", "primary", "score"],
       control: { type: "select" }
     }
   }
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<ProgressComponent>;
 
 export const Default: Story = {
   args: {
-    id: "default",
-    loading: false,
-    disabled: false,
+    value: 50,
+    showValue: true,
+    width: "100%",
     type: "default"
   },
   render: (args: any) => ({
-    component: ButtonComponent,
+    component: ProgressComponent,
     props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Default</tiButton>`
+    template: `<tiProgress [value]="value" [showValue]="showValue" [width]="width" [type]="type" />`
   })
 };
 
 export const Primary: Story = {
   args: {
-    id: "primary",
-    loading: false,
-    disabled: false,
+    value: 50,
+    showValue: true,
+    width: "100%",
     type: "primary"
   },
   render: (args: any) => ({
-    component: ButtonComponent,
+    component: ProgressComponent,
     props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Primary</tiButton>`
+    template: `<tiProgress [value]="value" [showValue]="showValue" [width]="width" [type]="type" />`
   })
 };
 
-export const Destructive: Story = {
+export const Score: Story = {
   args: {
-    id: "destructive",
-    loading: false,
-    disabled: false,
-    type: "destructive"
+    value: 50,
+    showValue: true,
+    width: "100%",
+    type: "score"
   },
   render: (args: any) => ({
-    component: ButtonComponent,
+    component: ProgressComponent,
     props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Destructive</tiButton>`
-  })
-};
-
-export const Outline: Story = {
-  args: {
-    id: "outline",
-    loading: false,
-    disabled: false,
-    type: "outline"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Outline</tiButton>`
-  })
-};
-
-
-export const Ghost: Story = {
-  args: {
-    id: "ghost",
-    loading: false,
-    disabled: false,
-    type: "ghost"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Ghost</tiButton>`
-  })
-};
-
-export const Link: Story = {
-  args: {
-    id: "link",
-    loading: false,
-    disabled: false,
-    type: "link"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Link</tiButton>`
+    template: `<tiProgress [value]="value" [showValue]="showValue" [width]="width" [type]="type" />`
   })
 };

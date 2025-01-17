@@ -1,8 +1,8 @@
-import { type Meta, type StoryObj } from '@storybook/angular';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 
-
-import { ButtonComponent } from '../../../libs/button/src/lib/button.component'
-import readme from '../../../libs/button/README.md';
+import { TabsComponent } from '../../../libs/tabs/src/lib/tabs.component'
+import { TabComponent } from '../../../libs/tabs/src/lib/tab.component'
+import readme from '../../../libs/tabs/README.md';
 
 function removeFirstTitle(content: string): string {
   if (!content) return '';
@@ -11,9 +11,15 @@ function removeFirstTitle(content: string): string {
 
 const updatedReadme = removeFirstTitle(readme);
 
-const meta: Meta<ButtonComponent> = {
-  title: 'Components/Tabs',
-  component: ButtonComponent,
+const meta: Meta<TabsComponent> = {
+  title: 'Components/Tabs/Tabs',
+  component: TabsComponent,
+  subcomponents: { TabComponent },
+  decorators: [
+    moduleMetadata({
+      imports: [TabComponent]
+    })
+  ],
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -23,121 +29,71 @@ const meta: Meta<ButtonComponent> = {
     }
   },
   argTypes: {
-    id: {
-      description: "The unique identifier for the button element.",
-    },
-    loading: {
-      description: "Displays a loading spinner when set to true.",
-      control: { type: "boolean" },
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" }
-      }
-    },
-    disabled: {
-      description: "Determines if the button is disabled.",
-      control: { type: "boolean" },
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" }
-      }
-    },
     type: {
-      description: "Specifies the button's style variant.",
+      description: "Defines the tab style: `default`, `primary`, or `ghost`.",
       table: {
         defaultValue: { summary: "default" },
-        type: { summary: "string" }
+        type: { summary: "'default' | 'primary' | 'ghost'" }
       },
-      options: ["default", "primary", "destructive", "outline", "ghost", "link"],
+      options: ["default", "primary", "ghost"],
       control: { type: "select" }
-    }
+    },
   }
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<TabsComponent>;
 
 export const Default: Story = {
   args: {
-    id: "default",
-    loading: false,
-    disabled: false,
-    type: "default"
+    type: "default",
   },
   render: (args: any) => ({
-    component: ButtonComponent,
+    component: TabsComponent,
     props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Default</tiButton>`
+    template: `<tiTabs [type]="type">
+      <tiTab tabTitle="Tab 1" [active]="true">
+        Content 1
+      </tiTab>
+      <tiTab tabTitle="Tab 2">
+        Content 2
+      </tiTab>
+    </tiTabs>`
   })
 };
 
 export const Primary: Story = {
   args: {
-    id: "primary",
-    loading: false,
-    disabled: false,
     type: "primary"
   },
   render: (args: any) => ({
-    component: ButtonComponent,
+    component: TabsComponent,
     props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Primary</tiButton>`
+    template: `<tiTabs [type]="type">
+      <tiTab tabTitle="Tab 1" [active]="true">
+        Content 1
+      </tiTab>
+      <tiTab tabTitle="Tab 2">
+        Content 2
+      </tiTab>
+    </tiTabs>`
   })
 };
-
-export const Destructive: Story = {
-  args: {
-    id: "destructive",
-    loading: false,
-    disabled: false,
-    type: "destructive"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Destructive</tiButton>`
-  })
-};
-
-export const Outline: Story = {
-  args: {
-    id: "outline",
-    loading: false,
-    disabled: false,
-    type: "outline"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Outline</tiButton>`
-  })
-};
-
 
 export const Ghost: Story = {
   args: {
-    id: "ghost",
-    loading: false,
-    disabled: false,
     type: "ghost"
   },
   render: (args: any) => ({
-    component: ButtonComponent,
+    component: TabsComponent,
     props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Ghost</tiButton>`
-  })
-};
-
-export const Link: Story = {
-  args: {
-    id: "link",
-    loading: false,
-    disabled: false,
-    type: "link"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Link</tiButton>`
+    template: `<tiTabs [type]="type">
+      <tiTab tabTitle="Tab 1" [active]="true">
+        Content 1
+      </tiTab>
+      <tiTab tabTitle="Tab 2">
+        Content 2
+      </tiTab>
+    </tiTabs>`
   })
 };

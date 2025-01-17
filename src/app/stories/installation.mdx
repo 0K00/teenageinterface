@@ -2,3 +2,61 @@ import { Meta } from "@storybook/blocks";
 
 <Meta title="Getting Started/Installation" />
 
+# Installation Guide
+
+Installation Guide for teenage interface Angular Library with Tailwind CSS.
+
+## Installation Steps
+
+### Install the Dependencies
+
+```bash
+npm install @teenageinterface/core tailwindcss postcss autoprefixer
+```
+
+### Configure Tailwind CSS
+
+Generate the Tailwind CSS configuration file by running:
+```bash
+npx tailwindcss init
+```
+
+Update the `tailwind.config.js` file to include your Angular project files. For example:
+```typescript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts,scss}", // Adjust paths if needed
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+Add the Tailwind directives to your global stylesheet `src/styles.scss`:
+```css
+@use '@teenageinterface/core'; // Import the @teenageinterface/core library styles
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## Use Components in Angular
+
+### For Standalone Components
+
+Import and use the components directly in your Angular files:
+```typescript
+import { Component } from '@angular/core';
+import { ButtonComponent } from '@teenageinterface/button';
+
+@Component({
+  selector: 'app-root',
+  template: `<tiButton>Default</tiButton>`,
+  standalone: true,
+  imports: [ButtonComponent],
+})
+export class AppComponent {}
+```

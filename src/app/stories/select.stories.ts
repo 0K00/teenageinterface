@@ -1,8 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
+import { action } from '@storybook/addon-actions';
 
-
-import { ButtonComponent } from '../../../libs/button/src/lib/button.component'
-import readme from '../../../libs/button/README.md';
+import { SelectComponent } from '../../../libs/select/src/lib/select.component'
+import readme from '../../../libs/select/README.md';
 
 function removeFirstTitle(content: string): string {
   if (!content) return '';
@@ -11,9 +11,9 @@ function removeFirstTitle(content: string): string {
 
 const updatedReadme = removeFirstTitle(readme);
 
-const meta: Meta<ButtonComponent> = {
+const meta: Meta<SelectComponent> = {
   title: 'Components/Select',
-  component: ButtonComponent,
+  component: SelectComponent,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -23,121 +23,92 @@ const meta: Meta<ButtonComponent> = {
     }
   },
   argTypes: {
-    id: {
-      description: "The unique identifier for the button element.",
-    },
-    loading: {
-      description: "Displays a loading spinner when set to true.",
-      control: { type: "boolean" },
+    options: {
+      description: "The list of options available in the dropdown.",
       table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" }
-      }
-    },
-    disabled: {
-      description: "Determines if the button is disabled.",
-      control: { type: "boolean" },
-      table: {
-        defaultValue: { summary: "false" },
-        type: { summary: "boolean" }
-      }
-    },
-    type: {
-      description: "Specifies the button's style variant.",
-      table: {
-        defaultValue: { summary: "default" },
-        type: { summary: "string" }
+        defaultValue: { summary: "[]" },
+        type: { summary: "{ value: string | number; title: string }[]"}
       },
-      options: ["default", "primary", "destructive", "outline", "ghost", "link"],
-      control: { type: "select" }
-    }
+      control: "object"
+    },
+    placeholder: {
+      description: "The placeholder text when no option is selected.",
+      table: {
+        defaultValue: { summary: "Select an option" },
+        type: { summary: "string" }
+      }
+    },
+    multiSelect: {
+      description: "Allows multiple selections when set to `true`.",
+      control: { type: "boolean" },
+      table: {
+        defaultValue: { summary: "false" },
+        type: { summary: "boolean" }
+      }
+    },
+    selectedIds: {
+      description: "The IDs of the currently selected options.",
+      table: {
+        defaultValue: { summary: "[]" },
+        type: { summary: "(string | number)[]" }
+      },
+      control: "object"
+    },
+    selectionChange: {
+      description: "Emits an array of selected options when the selection changes.",
+      type: "function",
+      control: false,
+      action: 'selectionChange',
+      table: {
+        type: { summary: "EventEmitter<{ value: string | number; title: string }[]>()" }
+      }
+    },
   }
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<SelectComponent>;
 
-export const Default: Story = {
+export const Single: Story = {
   args: {
-    id: "default",
-    loading: false,
-    disabled: false,
-    type: "default"
+    options: [{value: 1, title: 'Unlimited'}, {value: 10, title: '10 Minutes'}, {value: 60, title: '1 Hour'}, {value: 1440, title: '1 Day'}, {value: 10080, title: '1 Week'}],
+    placeholder: "Choose an option",
+    multiSelect: false,
+    selectedIds: [1]
   },
   render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Default</tiButton>`
+    component: SelectComponent,
+    props: {
+      ...args,
+      selectionChange: (e: boolean) => { action(`Value`)(e) }
+    },
+    template: `<tiSelect
+          [options]="options"
+          [placeholder]="placeholder"
+          [selectedIds]="selectedIds"
+          [multiSelect]="multiSelect"
+          (selectionChange)="selectionChange($event)" />`
   })
 };
 
-export const Primary: Story = {
+export const Multi: Story = {
   args: {
-    id: "primary",
-    loading: false,
-    disabled: false,
-    type: "primary"
+    options: [{value: 1, title: 'Unlimited'}, {value: 10, title: '10 Minutes'}, {value: 60, title: '1 Hour'}, {value: 1440, title: '1 Day'}, {value: 10080, title: '1 Week'}],
+    placeholder: "Choose an option",
+    multiSelect: true,
+    selectedIds: [1]
   },
   render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Primary</tiButton>`
-  })
-};
-
-export const Destructive: Story = {
-  args: {
-    id: "destructive",
-    loading: false,
-    disabled: false,
-    type: "destructive"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Destructive</tiButton>`
-  })
-};
-
-export const Outline: Story = {
-  args: {
-    id: "outline",
-    loading: false,
-    disabled: false,
-    type: "outline"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Outline</tiButton>`
-  })
-};
-
-
-export const Ghost: Story = {
-  args: {
-    id: "ghost",
-    loading: false,
-    disabled: false,
-    type: "ghost"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Ghost</tiButton>`
-  })
-};
-
-export const Link: Story = {
-  args: {
-    id: "link",
-    loading: false,
-    disabled: false,
-    type: "link"
-  },
-  render: (args: any) => ({
-    component: ButtonComponent,
-    props: args,
-    template: `<tiButton [id]="id" [type]="type" [loading]="loading" [disabled]="disabled">Link</tiButton>`
+    component: SelectComponent,
+    props: {
+      ...args,
+      selectionChange: (e: boolean) => { action(`Value`)(e) }
+    },
+    template: `<tiSelect
+          [options]="options"
+          [placeholder]="placeholder"
+          [selectedIds]="selectedIds"
+          [multiSelect]="multiSelect"
+          (selectionChange)="selectionChange($event)" />`
   })
 };

@@ -27,7 +27,7 @@ const meta: Meta<BadgeComponent> = {
       description: "Determines the style of the badge.",
       table: {
         defaultValue: { summary: "default" },
-        type: { summary: "string" }
+        type: { summary: "'default' | 'primary' | 'success' | 'informative' | 'warn' | 'destructive'" }
       },
       options: ["default", "primary", "success", "informative", "warn", "destructive"],
       control: { type: "select" }
