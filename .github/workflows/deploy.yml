@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Angular app
         run: |
-          ng build --prod
+          ng build
 
       - name: Build Storybook
         run: |
