@@ -36,7 +36,7 @@ jobs:
       - name: Deploy Angular app to GitHub Pages (docs/)
         run: |
           mkdir -p ./docs
-          cp -r ./dist/your-angular-app/* ./docs
+          cp -r ./dist/teenageinterface/* ./docs
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
