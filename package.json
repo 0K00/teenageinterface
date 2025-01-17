@@ -1,6 +1,7 @@
 {
   "name": "teenageinterface",
   "version": "0.0.0",
+  "homepage": "https://0k00.github.io/teenageinterface/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +9,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run teenageinterface:storybook",
-    "build-storybook": "ng run teenageinterface:build-storybook"
+    "build-storybook": "ng run teenageinterface:build-storybook",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "private": true,
   "dependencies": {
@@ -62,6 +65,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/node": "^22.10.2",
     "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.3.0",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
