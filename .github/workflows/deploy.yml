@@ -38,17 +38,17 @@ jobs:
           mkdir -p ./dist/gh-pages
           cp -r ./dist/teenageinterface/* ./dist/gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
       - name: Deploy Storybook to GitHub Pages
         run: |
           mkdir -p ./dist/storybook
           cp -r ./storybook-static/* ./dist/storybook
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
       - name: Push to GitHub Pages d
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./dist
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
