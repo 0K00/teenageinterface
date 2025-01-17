@@ -3,7 +3,7 @@ name: Deploy Angular & Storybook to GitHub Pages
 on:
   push:
     branches:
-      - main  # ou la branche de votre choix
+      - gh-pages  # ou la branche de votre choix
 
 jobs:
   deploy:
