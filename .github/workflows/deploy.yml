@@ -17,6 +17,10 @@ jobs:
         with:
           node-version: '16'  # utilisez la version de Node.js appropriée
 
+      - name: Install Angular
+        run: |
+          npm i @angular/cli
+
       - name: Install dependencies
         run: |
           npm install
