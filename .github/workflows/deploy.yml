@@ -3,7 +3,7 @@ name: Deploy Angular & Storybook to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages
+      - main  # ou la branche de votre choix
 
 jobs:
   deploy:
@@ -15,41 +15,41 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22.12.0'
-
-      - name: Install Angular CLI
-        run: |
-          npm install -g @angular/cli
+          node-version: '16'  # utilisez la version de Node.js appropriée
 
       - name: Install dependencies
         run: |
           npm install
 
+      - name: Install Angular CLI
+        run: |
+          npm install -g @angular/cli  # Installe Angular CLI globalement
+
       - name: Build Angular app
         run: |
-          ng build
+          ng build --prod
 
       - name: Build Storybook
         run: |
           npm run build-storybook
 
-      - name: Deploy Angular app to GitHub Pages
+      - name: Deploy Angular app to GitHub Pages (docs/)
         run: |
-          mkdir -p ./dist/gh-pages
-          cp -r ./dist/teenageinterface/* ./dist/gh-pages
+          mkdir -p ./docs
+          cp -r ./dist/your-angular-app/* ./docs
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy Storybook to GitHub Pages
+      - name: Deploy Storybook to GitHub Pages (docs/)
         run: |
-          mkdir -p ./dist/storybook
-          cp -r ./storybook-static/* ./dist/storybook
+          mkdir -p ./docs/storybook
+          cp -r ./storybook-static/* ./docs/storybook
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./dist
-          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-          target_branch: gh-pages
+          publish_branch: gh-pages  # Utilisez la branche `gh-pages` ou une autre branche
+          publish_dir: ./docs        # Répertoire à publier
+          github_token: ${{ secrets.GITHUB_TOKEN }}
