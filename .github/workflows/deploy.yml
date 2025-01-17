@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Angular app
         run: |
-          ng build
+          ng build --base-href /teenageinterface/
 
       - name: Build Storybook
         run: |
@@ -36,7 +36,7 @@ jobs:
       - name: Deploy Angular app to GitHub Pages (docs/)
         run: |
           mkdir -p ./docs
-          cp -r ./dist/teenageinterface/* ./docs
+          cp -r ./dist/teenageinterface/* ./docs/
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
