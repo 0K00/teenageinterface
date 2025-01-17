@@ -24,7 +24,8 @@ import { ButtonComponent } from "@teenageinterface/button";
 export class FooterShared {
   toGithub(): void {
     let pathname = window.location.pathname;
-    let url = "https://github.com/0K00/teenageinterface/tree/main/src/app/pages" + pathname;
+    let modifiedPath = pathname.replace(/^\/teenageinterface\//, '/');
+    let url = "https://github.com/0K00/teenageinterface/tree/main/src/app/pages" + modifiedPath;
     window.open(url, "_blank");
   }
 }
