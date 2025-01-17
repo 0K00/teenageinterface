@@ -1,4 +1,0 @@
-<div [ngClass]="classes.container">
-  <img *ngIf="imageValid && imageUrl" [ngClass]="classes.image" [src]="imageUrl" alt="Avatar" (error)="handleImageError()" />
-  <span *ngIf="!imageValid || !imageUrl" [ngClass]="classes.fallback">{{fallback}}</span>
-</div>
