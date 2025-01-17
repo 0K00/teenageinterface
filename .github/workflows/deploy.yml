@@ -3,7 +3,7 @@ name: Deploy Angular & Storybook to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages  # ou la branche de votre choix
+      - gh-pages
 
 jobs:
   deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # utilisez la version de Node.js appropriée
+          node-version: '22.12.0'
 
       - name: Install Angular
         run: |
