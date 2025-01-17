@@ -40,6 +40,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
+      - name: Copy index.html to 404.html for routing fix
+        run: |
+          cp ./dist/teenageinterface/browser/index.html ./docs/404.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+
       - name: Deploy Storybook to GitHub Pages (docs/)
         run: |
           mkdir -p ./docs/storybook
